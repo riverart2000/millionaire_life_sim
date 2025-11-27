@@ -134,8 +134,6 @@ class _AffirmationsViewState extends ConsumerState<AffirmationsView> {
           _buildAffirmationCard(theme, state, affirmation),
           const SizedBox(height: 24),
           if (state.currentBlankIndex < affirmation.blankIndices.length) ...[
-            _buildAnswerInput(theme),
-            const SizedBox(height: 16),
             _buildActionButtons(theme),
           ] else ...[
             _buildCompletionButtons(theme),
@@ -321,6 +319,7 @@ class _AffirmationsViewState extends ConsumerState<AffirmationsView> {
       spacing: 8,
       runSpacing: 8,
       alignment: WrapAlignment.center,
+      crossAxisAlignment: WrapCrossAlignment.center,
       children: List.generate(words.length, (index) {
         final blankPosition = blankIndices.indexOf(index);
         
@@ -351,21 +350,54 @@ class _AffirmationsViewState extends ConsumerState<AffirmationsView> {
             ),
           );
         } else if (blankPosition == state.currentBlankIndex) {
-          // Current blank to fill
-          return Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-            decoration: BoxDecoration(
-              color: theme.colorScheme.secondaryContainer,
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(
-                color: theme.colorScheme.secondary,
-                width: 2,
-              ),
-            ),
-            child: Text(
-              '_' * 8,
-              style: theme.textTheme.titleLarge?.copyWith(
-                color: theme.colorScheme.onSecondaryContainer,
+          // Current blank to fill - INLINE INPUT
+          return IntrinsicWidth(
+            child: Container(
+              constraints: const BoxConstraints(minWidth: 120),
+              child: TextField(
+                controller: _answerController,
+                focusNode: _answerFocus,
+                autofocus: true,
+                textAlign: TextAlign.center,
+                textCapitalization: TextCapitalization.words,
+                style: theme.textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+                decoration: InputDecoration(
+                  hintText: '____',
+                  hintStyle: theme.textTheme.titleLarge?.copyWith(
+                    color: theme.colorScheme.onSecondaryContainer.withOpacity(0.3),
+                  ),
+                  filled: true,
+                  fillColor: theme.colorScheme.secondaryContainer,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(
+                      color: theme.colorScheme.secondary,
+                      width: 2,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(
+                      color: theme.colorScheme.secondary,
+                      width: 2,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(
+                      color: theme.colorScheme.secondary,
+                      width: 3,
+                    ),
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 8,
+                  ),
+                  isDense: true,
+                ),
+                onSubmitted: (_) => _checkAnswer(),
               ),
             ),
           );
@@ -392,23 +424,7 @@ class _AffirmationsViewState extends ConsumerState<AffirmationsView> {
     );
   }
 
-  Widget _buildAnswerInput(ThemeData theme) {
-    return TextField(
-      controller: _answerController,
-      focusNode: _answerFocus,
-      decoration: InputDecoration(
-        labelText: 'Your answer',
-        hintText: 'Type the missing word',
-        border: const OutlineInputBorder(),
-        suffixIcon: IconButton(
-          icon: const Icon(Icons.send),
-          onPressed: _checkAnswer,
-        ),
-      ),
-      textCapitalization: TextCapitalization.words,
-      onSubmitted: (_) => _checkAnswer(),
-    );
-  }
+
 
   Widget _buildActionButtons(ThemeData theme) {
     return Row(
