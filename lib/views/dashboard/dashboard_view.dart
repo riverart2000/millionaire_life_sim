@@ -214,8 +214,8 @@ class _DragDropAllocationWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final profileAsync = ref.watch(userProfileProvider);
     final dailyIncome = profileAsync.maybeWhen(
-      data: (profile) => profile?.dailyIncome ?? 200.0,
-      orElse: () => 200.0,
+      data: (profile) => profile?.unallocatedBalance ?? 0.0,
+      orElse: () => 0.0,
     );
     
     // We need to pass a ref to MoneyDragDropWidget to access its state
@@ -223,20 +223,6 @@ class _DragDropAllocationWidget extends ConsumerWidget {
     return MoneyDragDropWidget(
       jars: jars,
       dailyIncome: dailyIncome,
-      onRegenerateRequested: () async {
-        // Show quest dialog every time
-        await showDialog(
-          context: context,
-          barrierDismissible: false,
-          builder: (context) => DailyAffirmationQuestDialog(
-            actionName: 'Regenerate Money',
-            onComplete: () {
-              // Quest completed, allow regeneration
-            },
-          ),
-        );
-        return true; // Quest completed, allow regeneration
-      },
       onAllocate: (jarId, amount, remainder) async {
         final jarService = ref.read(jarServiceProvider);
         final userId = ref.read(userIdProvider);

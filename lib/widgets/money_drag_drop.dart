@@ -423,13 +423,11 @@ class MoneyDragDropWidget extends StatefulWidget {
     required this.jars,
     required this.onAllocate,
     required this.dailyIncome,
-    this.onRegenerateRequested,
   });
 
   final List<Jar> jars;
   final Function(String jarId, double amount, double remainder) onAllocate;
   final double dailyIncome;
-  final Future<bool> Function()? onRegenerateRequested;
 
   @override
   State<MoneyDragDropWidget> createState() => _MoneyDragDropWidgetState();
@@ -574,24 +572,6 @@ class _MoneyDragDropWidgetState extends State<MoneyDragDropWidget> {
                       ),
                     ],
                   ),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.refresh, size: 20),
-                  tooltip: 'Regenerate money',
-                  onPressed: () async {
-                    // If a custom onRegenerateRequested callback is provided, ask for permission first
-                    // The callback returns true if regeneration should proceed, false otherwise
-                    if (widget.onRegenerateRequested != null) {
-                      final shouldProceed = await widget.onRegenerateRequested!();
-                      if (shouldProceed) {
-                        _generateAvailableMoney();
-                      }
-                    } else {
-                      _generateAvailableMoney();
-                    }
-                  },
-                  padding: const EdgeInsets.all(8),
-                  constraints: const BoxConstraints(),
                 ),
               ],
             ),
