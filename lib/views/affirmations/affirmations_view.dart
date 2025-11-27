@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:confetti/confetti.dart';
 import '../../providers/affirmations_provider.dart';
 
 class AffirmationsView extends ConsumerStatefulWidget {
@@ -12,12 +13,29 @@ class AffirmationsView extends ConsumerStatefulWidget {
 class _AffirmationsViewState extends ConsumerState<AffirmationsView> {
   final TextEditingController _answerController = TextEditingController();
   final FocusNode _answerFocus = FocusNode();
+  late ConfettiController _confettiController;
   String? _feedback;
+
+  @override
+  void initState() {
+    super.initState();
+    _confettiController = ConfettiController(duration: const Duration(seconds: 3));
+    // Initialize total affirmations count after affirmations are loaded
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      // Wait for affirmations to load
+      await ref.read(affirmationsLoadProvider.future);
+      // Then set the total count
+      final service = ref.read(affirmationsServiceProvider);
+      final total = service.getAffirmations().length;
+      ref.read(affirmationProvider.notifier).setTotalAffirmations(total);
+    });
+  }
 
   @override
   void dispose() {
     _answerController.dispose();
     _answerFocus.dispose();
+    _confettiController.dispose();
     super.dispose();
   }
 
@@ -65,6 +83,8 @@ class _AffirmationsViewState extends ConsumerState<AffirmationsView> {
         setState(() {
           _feedback = '🎉 Excellent! Affirmation complete!';
         });
+        // Trigger fireworks celebration!
+        _confettiController.play();
       } else {
         // Auto-focus next blank after a short delay for smooth transition
         Future.delayed(const Duration(milliseconds: 300), () {
@@ -114,12 +134,37 @@ class _AffirmationsViewState extends ConsumerState<AffirmationsView> {
           ),
         ],
       ),
-      body: asyncAffirmations.when(
-        data: (_) => _buildContent(theme, state, affirmation),
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (err, stack) => Center(
-          child: Text('Error loading affirmations: $err'),
-        ),
+      body: Stack(
+        children: [
+          asyncAffirmations.when(
+            data: (_) => _buildContent(theme, state, affirmation),
+            loading: () => const Center(child: CircularProgressIndicator()),
+            error: (err, stack) => Center(
+              child: Text('Error loading affirmations: $err'),
+            ),
+          ),
+          // Confetti overlay
+          Align(
+            alignment: Alignment.topCenter,
+            child: ConfettiWidget(
+              confettiController: _confettiController,
+              blastDirectionality: BlastDirectionality.explosive,
+              particleDrag: 0.05,
+              emissionFrequency: 0.05,
+              numberOfParticles: 50,
+              gravity: 0.2,
+              shouldLoop: false,
+              colors: const [
+                Colors.green,
+                Colors.blue,
+                Colors.pink,
+                Colors.orange,
+                Colors.purple,
+                Colors.yellow,
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
