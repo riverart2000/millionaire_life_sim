@@ -1,8 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
@@ -14,7 +11,6 @@ import '../../providers/bootstrap_provider.dart';
 import '../../providers/data_providers.dart';
 import '../../providers/investment_provider.dart';
 import '../../providers/session_providers.dart';
-import '../affirmations/affirmations_view.dart';
 import '../../providers/simulation_date_provider.dart';
 import '../../providers/sound_provider.dart';
 import '../../widgets/daily_affirmation_quest_dialog.dart';
@@ -45,8 +41,6 @@ class DashboardView extends ConsumerWidget {
             loading: () => const Center(child: CircularProgressIndicator()),
             error: (error, _) => Text('Error loading jars: $error'),
           ),
-          const SizedBox(height: 16),
-          _buildAffirmationCard(context),
         ],
       ),
     );
@@ -120,60 +114,6 @@ class DashboardView extends ConsumerWidget {
           ),
         );
       },
-    );
-  }
-
-  Widget _buildAffirmationCard(BuildContext context) {
-    final affirmations = <String>[
-      'Money is a tool that I control.',
-      'I allocate every dollar with purpose and vision.',
-      'Passive income streams flow to me consistently.',
-      'I invest in my education and expand my mindset daily.',
-      'Generosity compounds my abundance.',
-    ];
-    final randomAffirmation = affirmations[Random().nextInt(affirmations.length)];
-
-    return Card(
-      color: Colors.deepPurple.shade50,
-      child: InkWell(
-        onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => const AffirmationsView(),
-            ),
-          );
-        },
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Icon(Icons.psychology, color: Colors.deepPurple),
-              const SizedBox(width: 16),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      randomAffirmation,
-                      style: const TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
-                    ).animate().fadeIn(duration: 600.ms),
-                    const SizedBox(height: 8),
-                    Text(
-                      'Tap to practice MMI affirmations →',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.deepPurple[700],
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }
