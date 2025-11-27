@@ -112,30 +112,7 @@ class DashboardView extends ConsumerWidget {
                         ),
                       ],
                     ),
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        // Affirmations button
-                        FilledButton.tonalIcon(
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => const AffirmationsView(),
-                              ),
-                            );
-                          },
-                          icon: const Icon(Icons.psychology),
-                          label: const Text('Affirmations'),
-                          style: FilledButton.styleFrom(
-                            backgroundColor: Colors.deepPurple[100],
-                            foregroundColor: Colors.deepPurple[900],
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        const _NextDayButton(),
-                      ],
-                    ),
+                    const _NextDayButton(),
                   ],
                 ),
               ],
