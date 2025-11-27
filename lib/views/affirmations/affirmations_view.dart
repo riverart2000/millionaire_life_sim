@@ -66,7 +66,12 @@ class _AffirmationsViewState extends ConsumerState<AffirmationsView> {
           _feedback = '🎉 Excellent! Affirmation complete!';
         });
       } else {
-        _answerFocus.requestFocus();
+        // Auto-focus next blank after a short delay for smooth transition
+        Future.delayed(const Duration(milliseconds: 300), () {
+          if (mounted) {
+            _answerFocus.requestFocus();
+          }
+        });
       }
     } else {
       setState(() {
