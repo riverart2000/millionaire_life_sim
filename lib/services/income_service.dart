@@ -80,13 +80,18 @@ class IncomeService {
         // Don't fail the entire operation if bills processing fails
       }
       
-      // Add income to unallocated balance instead of auto-distributing
-      // User will manually allocate this money using the drag-drop interface
-      final updatedProfile = profile.copyWith(
-        unallocatedBalance: profile.unallocatedBalance + income,
+      // Distribute income across jars according to their percentages
+      logInfo('💰 Distributing income of £${income.toStringAsFixed(2)} across jars');
+      final distributeResult = await _jarService.distributeIncome(
+        userId: userId,
+        incomeAmount: income,
       );
-      await _userRepository.saveProfile(updatedProfile);
-      logInfo('💰 Added £${income.toStringAsFixed(2)} to unallocated balance. New balance: £${updatedProfile.unallocatedBalance.toStringAsFixed(2)}');
+      
+      if (distributeResult is Success<void>) {
+        logInfo('✅ Income distributed across all jars');
+      } else if (distributeResult is Failure<void>) {
+        logError('❌ Failed to distribute income', distributeResult.exception, distributeResult.stackTrace);
+      }
 
       // Apply interest to jars
       final interestRates = await _interestService.loadRates();
