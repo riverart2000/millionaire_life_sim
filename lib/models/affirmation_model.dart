@@ -27,6 +27,9 @@ class AffirmationProgress with _$AffirmationProgress {
     @Default(0) int completedAffirmations,
     @Default({}) Map<String, bool> completedIds,
     DateTime? lastPracticeDate,
+    @Default(0) int dailyStreak,
+    DateTime? lastQuestDate,
+    @Default(false) bool todayQuestCompleted,
   }) = _AffirmationProgress;
 
   factory AffirmationProgress.fromJson(Map<String, dynamic> json) =>

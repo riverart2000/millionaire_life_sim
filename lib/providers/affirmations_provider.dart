@@ -80,6 +80,47 @@ class AffirmationNotifier extends Notifier<AffirmationState> {
     state = state.copyWith(progress: newProgress);
   }
 
+  void completeDailyQuest() {
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final lastQuest = state.progress.lastQuestDate;
+    final lastQuestDay = lastQuest != null 
+        ? DateTime(lastQuest.year, lastQuest.month, lastQuest.day)
+        : null;
+    
+    int newStreak = state.progress.dailyStreak;
+    
+    // Check if this is a new day
+    if (lastQuestDay == null || today.isAfter(lastQuestDay)) {
+      // Check if streak continues (completed yesterday)
+      final yesterday = today.subtract(const Duration(days: 1));
+      if (lastQuestDay != null && lastQuestDay.isAtSameMomentAs(yesterday)) {
+        newStreak += 1; // Continue streak
+      } else if (lastQuestDay == null || !lastQuestDay.isAtSameMomentAs(today)) {
+        newStreak = 1; // Start new streak
+      }
+    }
+    
+    final newProgress = state.progress.copyWith(
+      lastQuestDate: now,
+      todayQuestCompleted: true,
+      dailyStreak: newStreak,
+    );
+    
+    state = state.copyWith(progress: newProgress);
+  }
+
+  bool shouldShowDailyQuest() {
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final lastQuest = state.progress.lastQuestDate;
+    
+    if (lastQuest == null) return true;
+    
+    final lastQuestDay = DateTime(lastQuest.year, lastQuest.month, lastQuest.day);
+    return today.isAfter(lastQuestDay);
+  }
+
   void setTotalAffirmations(int total) {
     final newProgress = state.progress.copyWith(totalAffirmations: total);
     state = state.copyWith(progress: newProgress);

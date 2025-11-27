@@ -338,6 +338,9 @@ mixin _$AffirmationProgress {
   int get completedAffirmations => throw _privateConstructorUsedError;
   Map<String, bool> get completedIds => throw _privateConstructorUsedError;
   DateTime? get lastPracticeDate => throw _privateConstructorUsedError;
+  int get dailyStreak => throw _privateConstructorUsedError;
+  DateTime? get lastQuestDate => throw _privateConstructorUsedError;
+  bool get todayQuestCompleted => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -355,7 +358,10 @@ abstract class $AffirmationProgressCopyWith<$Res> {
       {int totalAffirmations,
       int completedAffirmations,
       Map<String, bool> completedIds,
-      DateTime? lastPracticeDate});
+      DateTime? lastPracticeDate,
+      int dailyStreak,
+      DateTime? lastQuestDate,
+      bool todayQuestCompleted});
 }
 
 /// @nodoc
@@ -375,6 +381,9 @@ class _$AffirmationProgressCopyWithImpl<$Res, $Val extends AffirmationProgress>
     Object? completedAffirmations = null,
     Object? completedIds = null,
     Object? lastPracticeDate = freezed,
+    Object? dailyStreak = null,
+    Object? lastQuestDate = freezed,
+    Object? todayQuestCompleted = null,
   }) {
     return _then(_value.copyWith(
       totalAffirmations: null == totalAffirmations
@@ -393,6 +402,18 @@ class _$AffirmationProgressCopyWithImpl<$Res, $Val extends AffirmationProgress>
           ? _value.lastPracticeDate
           : lastPracticeDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      dailyStreak: null == dailyStreak
+          ? _value.dailyStreak
+          : dailyStreak // ignore: cast_nullable_to_non_nullable
+              as int,
+      lastQuestDate: freezed == lastQuestDate
+          ? _value.lastQuestDate
+          : lastQuestDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      todayQuestCompleted: null == todayQuestCompleted
+          ? _value.todayQuestCompleted
+          : todayQuestCompleted // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -409,7 +430,10 @@ abstract class _$$AffirmationProgressImplCopyWith<$Res>
       {int totalAffirmations,
       int completedAffirmations,
       Map<String, bool> completedIds,
-      DateTime? lastPracticeDate});
+      DateTime? lastPracticeDate,
+      int dailyStreak,
+      DateTime? lastQuestDate,
+      bool todayQuestCompleted});
 }
 
 /// @nodoc
@@ -427,6 +451,9 @@ class __$$AffirmationProgressImplCopyWithImpl<$Res>
     Object? completedAffirmations = null,
     Object? completedIds = null,
     Object? lastPracticeDate = freezed,
+    Object? dailyStreak = null,
+    Object? lastQuestDate = freezed,
+    Object? todayQuestCompleted = null,
   }) {
     return _then(_$AffirmationProgressImpl(
       totalAffirmations: null == totalAffirmations
@@ -445,6 +472,18 @@ class __$$AffirmationProgressImplCopyWithImpl<$Res>
           ? _value.lastPracticeDate
           : lastPracticeDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      dailyStreak: null == dailyStreak
+          ? _value.dailyStreak
+          : dailyStreak // ignore: cast_nullable_to_non_nullable
+              as int,
+      lastQuestDate: freezed == lastQuestDate
+          ? _value.lastQuestDate
+          : lastQuestDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      todayQuestCompleted: null == todayQuestCompleted
+          ? _value.todayQuestCompleted
+          : todayQuestCompleted // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -458,7 +497,10 @@ class _$AffirmationProgressImpl
       {this.totalAffirmations = 0,
       this.completedAffirmations = 0,
       final Map<String, bool> completedIds = const {},
-      this.lastPracticeDate})
+      this.lastPracticeDate,
+      this.dailyStreak = 0,
+      this.lastQuestDate,
+      this.todayQuestCompleted = false})
       : _completedIds = completedIds;
 
   factory _$AffirmationProgressImpl.fromJson(Map<String, dynamic> json) =>
@@ -481,10 +523,18 @@ class _$AffirmationProgressImpl
 
   @override
   final DateTime? lastPracticeDate;
+  @override
+  @JsonKey()
+  final int dailyStreak;
+  @override
+  final DateTime? lastQuestDate;
+  @override
+  @JsonKey()
+  final bool todayQuestCompleted;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AffirmationProgress(totalAffirmations: $totalAffirmations, completedAffirmations: $completedAffirmations, completedIds: $completedIds, lastPracticeDate: $lastPracticeDate)';
+    return 'AffirmationProgress(totalAffirmations: $totalAffirmations, completedAffirmations: $completedAffirmations, completedIds: $completedIds, lastPracticeDate: $lastPracticeDate, dailyStreak: $dailyStreak, lastQuestDate: $lastQuestDate, todayQuestCompleted: $todayQuestCompleted)';
   }
 
   @override
@@ -495,7 +545,10 @@ class _$AffirmationProgressImpl
       ..add(DiagnosticsProperty('totalAffirmations', totalAffirmations))
       ..add(DiagnosticsProperty('completedAffirmations', completedAffirmations))
       ..add(DiagnosticsProperty('completedIds', completedIds))
-      ..add(DiagnosticsProperty('lastPracticeDate', lastPracticeDate));
+      ..add(DiagnosticsProperty('lastPracticeDate', lastPracticeDate))
+      ..add(DiagnosticsProperty('dailyStreak', dailyStreak))
+      ..add(DiagnosticsProperty('lastQuestDate', lastQuestDate))
+      ..add(DiagnosticsProperty('todayQuestCompleted', todayQuestCompleted));
   }
 
   @override
@@ -510,7 +563,13 @@ class _$AffirmationProgressImpl
             const DeepCollectionEquality()
                 .equals(other._completedIds, _completedIds) &&
             (identical(other.lastPracticeDate, lastPracticeDate) ||
-                other.lastPracticeDate == lastPracticeDate));
+                other.lastPracticeDate == lastPracticeDate) &&
+            (identical(other.dailyStreak, dailyStreak) ||
+                other.dailyStreak == dailyStreak) &&
+            (identical(other.lastQuestDate, lastQuestDate) ||
+                other.lastQuestDate == lastQuestDate) &&
+            (identical(other.todayQuestCompleted, todayQuestCompleted) ||
+                other.todayQuestCompleted == todayQuestCompleted));
   }
 
   @JsonKey(ignore: true)
@@ -520,7 +579,10 @@ class _$AffirmationProgressImpl
       totalAffirmations,
       completedAffirmations,
       const DeepCollectionEquality().hash(_completedIds),
-      lastPracticeDate);
+      lastPracticeDate,
+      dailyStreak,
+      lastQuestDate,
+      todayQuestCompleted);
 
   @JsonKey(ignore: true)
   @override
@@ -542,7 +604,10 @@ abstract class _AffirmationProgress implements AffirmationProgress {
       {final int totalAffirmations,
       final int completedAffirmations,
       final Map<String, bool> completedIds,
-      final DateTime? lastPracticeDate}) = _$AffirmationProgressImpl;
+      final DateTime? lastPracticeDate,
+      final int dailyStreak,
+      final DateTime? lastQuestDate,
+      final bool todayQuestCompleted}) = _$AffirmationProgressImpl;
 
   factory _AffirmationProgress.fromJson(Map<String, dynamic> json) =
       _$AffirmationProgressImpl.fromJson;
@@ -555,6 +620,12 @@ abstract class _AffirmationProgress implements AffirmationProgress {
   Map<String, bool> get completedIds;
   @override
   DateTime? get lastPracticeDate;
+  @override
+  int get dailyStreak;
+  @override
+  DateTime? get lastQuestDate;
+  @override
+  bool get todayQuestCompleted;
   @override
   @JsonKey(ignore: true)
   _$$AffirmationProgressImplCopyWith<_$AffirmationProgressImpl> get copyWith =>

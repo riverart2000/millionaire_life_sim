@@ -10,6 +10,7 @@ import '../../core/utils/currency_formatter.dart';
 import '../../core/utils/result.dart';
 import '../../models/jar_model.dart';
 import '../../models/transaction_model.dart';
+import '../../providers/affirmations_provider.dart';
 import '../../providers/bootstrap_provider.dart';
 import '../../providers/data_providers.dart';
 import '../../providers/investment_provider.dart';
@@ -17,6 +18,7 @@ import '../../providers/session_providers.dart';
 import '../affirmations/affirmations_view.dart';
 import '../../providers/simulation_date_provider.dart';
 import '../../providers/sound_provider.dart';
+import '../../widgets/daily_affirmation_quest_dialog.dart';
 import '../../widgets/money_drag_drop.dart';
 import 'package:provider/provider.dart' as legacy;
 
@@ -222,6 +224,27 @@ class _DragDropAllocationWidget extends ConsumerWidget {
     return MoneyDragDropWidget(
       jars: jars,
       dailyIncome: dailyIncome,
+      onRegenerateRequested: () async {
+        // Check if daily quest should be shown
+        final shouldShow = ref.read(affirmationProvider.notifier).shouldShowDailyQuest();
+        
+        if (shouldShow) {
+          // Show daily quest dialog before allowing regeneration
+          await showDialog(
+            context: context,
+            barrierDismissible: false,
+            builder: (context) => DailyAffirmationQuestDialog(
+              actionName: 'Regenerate Money',
+              onComplete: () {
+                // Quest completed, return true to allow regeneration
+              },
+            ),
+          );
+          return true; // Quest completed, allow regeneration
+        }
+        
+        return true; // No quest needed, allow regeneration
+      },
       onAllocate: (jarId, amount, remainder) async {
         final jarService = ref.read(jarServiceProvider);
         final userId = ref.read(userIdProvider);
@@ -273,43 +296,67 @@ class _DragDropAllocationWidget extends ConsumerWidget {
 class _NextDayButton extends ConsumerWidget {
   const _NextDayButton();
 
+  Future<void> _executeSimulation(BuildContext context, WidgetRef ref) async {
+    final incomeService = ref.read(incomeServiceProvider);
+    final userId = ref.read(userIdProvider);
+    final dateNotifier = ref.read(simulationDateProvider.notifier);
+    
+    // Play the next day jingle
+    try {
+      final soundProvider = legacy.Provider.of<SoundProvider>(context, listen: false);
+      await soundProvider.playNextDayJingle();
+    } catch (e) {
+      // Sound failed, but continue with simulation
+      print('Sound error: $e');
+    }
+    
+    final result = await incomeService.simulateNextDay(userId: userId);
+    if (result is Success<double>) {
+      final income = result.value;
+      // Increment the simulation date
+      await dateNotifier.incrementDay();
+      // Refresh investments to show updated prices
+      ref.invalidate(investmentsProvider);
+      // Refresh jars to show updated balances (including interest)
+      ref.invalidate(jarsProvider);
+      // Refresh user profile to show updated unallocated balance
+      ref.invalidate(userProfileProvider);
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Simulated next day • Income earned: ${CurrencyFormatter.format(income)} (drag notes to jars to allocate)')),
+        );
+      }
+    } else if (result is Failure<double>) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Failed to simulate income: ${result.exception}')),
+        );
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final incomeService = ref.watch(incomeServiceProvider);
-    final userId = ref.watch(userIdProvider);
-    final dateNotifier = ref.read(simulationDateProvider.notifier);
-
     return FilledButton.icon(
       onPressed: () async {
-        // Play the next day jingle
-        try {
-          final soundProvider = legacy.Provider.of<SoundProvider>(context, listen: false);
-          await soundProvider.playNextDayJingle();
-        } catch (e) {
-          // Sound failed, but continue with simulation
-          print('Sound error: $e');
-        }
+        // Check if daily quest should be shown
+        final shouldShow = ref.read(affirmationProvider.notifier).shouldShowDailyQuest();
         
-        final result = await incomeService.simulateNextDay(userId: userId);
-        if (result is Success<double>) {
-          final income = result.value;
-          // Increment the simulation date
-          await dateNotifier.incrementDay();
-          // Refresh investments to show updated prices
-          ref.invalidate(investmentsProvider);
-          // Refresh jars to show updated balances (including interest)
-          ref.invalidate(jarsProvider);
-          // Refresh user profile to show updated unallocated balance
-          ref.invalidate(userProfileProvider);
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Simulated next day • Income earned: ${CurrencyFormatter.format(income)} (drag notes to jars to allocate)')),
+        if (shouldShow) {
+          // Show daily quest dialog
+          await showDialog(
+            context: context,
+            barrierDismissible: false,
+            builder: (context) => DailyAffirmationQuestDialog(
+              actionName: 'Simulate Next Day',
+              onComplete: () async {
+                await _executeSimulation(context, ref);
+              },
+            ),
           );
-        } else if (result is Failure<double>) {
-          if (context.mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('Failed to simulate income: ${result.exception}')),
-            );
-          }
+        } else {
+          // Execute directly without quest
+          await _executeSimulation(context, ref);
         }
       },
       icon: const Icon(Icons.calendar_today),

@@ -48,6 +48,11 @@ _$AffirmationProgressImpl _$$AffirmationProgressImplFromJson(
       lastPracticeDate: json['lastPracticeDate'] == null
           ? null
           : DateTime.parse(json['lastPracticeDate'] as String),
+      dailyStreak: (json['dailyStreak'] as num?)?.toInt() ?? 0,
+      lastQuestDate: json['lastQuestDate'] == null
+          ? null
+          : DateTime.parse(json['lastQuestDate'] as String),
+      todayQuestCompleted: json['todayQuestCompleted'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$AffirmationProgressImplToJson(
@@ -57,4 +62,7 @@ Map<String, dynamic> _$$AffirmationProgressImplToJson(
       'completedAffirmations': instance.completedAffirmations,
       'completedIds': instance.completedIds,
       'lastPracticeDate': instance.lastPracticeDate?.toIso8601String(),
+      'dailyStreak': instance.dailyStreak,
+      'lastQuestDate': instance.lastQuestDate?.toIso8601String(),
+      'todayQuestCompleted': instance.todayQuestCompleted,
     };
