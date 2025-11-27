@@ -1,0 +1,16 @@
+targets:
+  $default:
+    builders:
+      json_serializable:
+        enabled: true
+        generate_for:
+          - lib/models/*.dart
+      hive_generator:
+        enabled: true
+        generate_for:
+          - lib/models/*.dart
+      freezed:
+        enabled: true
+        generate_for:
+          - lib/models/*.dart
+

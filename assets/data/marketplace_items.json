@@ -1,0 +1,263 @@
+[
+  {
+    "id": "watch001",
+    "name": "Rolex Submariner",
+    "category": "Luxury Watches",
+    "requiredJar": "PLAY",
+    "price": 15000,
+    "description": "Iconic luxury dive watch with timeless design and Swiss precision.",
+    "imageUrl": "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "watch002",
+    "name": "Patek Philippe Nautilus",
+    "category": "Luxury Watches",
+    "requiredJar": "PLAY",
+    "price": 85000,
+    "description": "The ultimate status symbol - a masterpiece of haute horlogerie.",
+    "imageUrl": "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "car001",
+    "name": "Tesla Model S Plaid",
+    "category": "Luxury Cars",
+    "requiredJar": "PLAY",
+    "price": 135000,
+    "description": "Electric supercar with 1,020 horsepower and 0-60 in 1.99 seconds.",
+    "imageUrl": "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "car002",
+    "name": "Porsche 911 Turbo S",
+    "category": "Luxury Cars",
+    "requiredJar": "PLAY",
+    "price": 230000,
+    "description": "Legendary sports car combining performance and everyday usability.",
+    "imageUrl": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "car003",
+    "name": "Lamborghini Huracán",
+    "category": "Luxury Cars",
+    "requiredJar": "PLAY",
+    "price": 285000,
+    "description": "Italian supercar with stunning V10 engine and head-turning design.",
+    "imageUrl": "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "boat001",
+    "name": "Sunseeker Predator 55",
+    "category": "Luxury Yachts",
+    "requiredJar": "PLAY",
+    "price": 1850000,
+    "description": "55-foot luxury sports yacht with spacious deck and premium amenities.",
+    "imageUrl": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "boat002",
+    "name": "Princess V50",
+    "category": "Luxury Yachts",
+    "requiredJar": "PLAY",
+    "price": 1200000,
+    "description": "Elegant 50-foot motor yacht perfect for coastal cruising in style.",
+    "imageUrl": "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "property001",
+    "name": "Penthouse Suite Manhattan",
+    "category": "Real Estate",
+    "requiredJar": "LTSS",
+    "price": 8500000,
+    "description": "Luxury penthouse with panoramic city views and rooftop terrace.",
+    "imageUrl": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "art001",
+    "name": "Contemporary Art Collection",
+    "category": "Art & Collectibles",
+    "requiredJar": "FFA",
+    "price": 250000,
+    "description": "Curated collection of emerging artists with investment potential.",
+    "imageUrl": "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "experience001",
+    "name": "Private Island Retreat Package",
+    "category": "Experiences",
+    "requiredJar": "PLAY",
+    "price": 95000,
+    "description": "One week on an exclusive private island with luxury villa and chef.",
+    "imageUrl": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "experience002",
+    "name": "Antarctic Expedition",
+    "category": "Experiences",
+    "requiredJar": "PLAY",
+    "price": 45000,
+    "description": "21-day luxury expedition cruise to Antarctica with expert guides.",
+    "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "experience003",
+    "name": "Space Tourism Flight",
+    "category": "Experiences",
+    "requiredJar": "PLAY",
+    "price": 450000,
+    "description": "Suborbital spaceflight with breathtaking views of Earth from space.",
+    "imageUrl": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "experience004",
+    "name": "African Safari & Conservation Experience",
+    "category": "Experiences",
+    "requiredJar": "PLAY",
+    "price": 35000,
+    "description": "Two-week luxury safari with wildlife conservation participation.",
+    "imageUrl": "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "experience005",
+    "name": "Monaco Grand Prix VIP Package",
+    "category": "Experiences",
+    "requiredJar": "PLAY",
+    "price": 25000,
+    "description": "Complete VIP experience including yacht access and paddock passes.",
+    "imageUrl": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "experience006",
+    "name": "Michelin 3-Star World Tour",
+    "category": "Experiences",
+    "requiredJar": "PLAY",
+    "price": 75000,
+    "description": "Month-long culinary journey visiting 15 three-Michelin-star restaurants.",
+    "imageUrl": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "jewelry001",
+    "name": "Cartier Love Bracelet",
+    "category": "Luxury Jewelry",
+    "requiredJar": "PLAY",
+    "price": 8500,
+    "description": "Iconic 18k gold bracelet symbolizing enduring love and commitment.",
+    "imageUrl": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "jewelry002",
+    "name": "Tiffany Diamond Necklace",
+    "category": "Luxury Jewelry",
+    "requiredJar": "PLAY",
+    "price": 125000,
+    "description": "Stunning diamond necklace with exceptional clarity and brilliance.",
+    "imageUrl": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "tech001",
+    "name": "Vertu Signature Cobalt",
+    "category": "Luxury Technology",
+    "requiredJar": "PLAY",
+    "price": 18000,
+    "description": "Handcrafted luxury phone with sapphire screen and concierge service.",
+    "imageUrl": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "fashion001",
+    "name": "Hermès Birkin 35",
+    "category": "Luxury Fashion",
+    "requiredJar": "PLAY",
+    "price": 45000,
+    "description": "The most coveted handbag in the world, handcrafted by artisans.",
+    "imageUrl": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "property002",
+    "name": "Malibu Beach House",
+    "category": "Real Estate",
+    "requiredJar": "LTSS",
+    "price": 12500000,
+    "description": "Oceanfront estate with private beach access and infinity pool.",
+    "imageUrl": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "property003",
+    "name": "Swiss Alps Chalet",
+    "category": "Real Estate",
+    "requiredJar": "LTSS",
+    "price": 6800000,
+    "description": "Luxury ski chalet with panoramic mountain views and spa facilities.",
+    "imageUrl": "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "vehicle001",
+    "name": "Gulfstream G550 Private Jet",
+    "category": "Aircraft",
+    "requiredJar": "PLAY",
+    "price": 45000000,
+    "description": "Ultra-long-range business jet with luxurious cabin for 16 passengers.",
+    "imageUrl": "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "wine001",
+    "name": "Vintage Wine Collection",
+    "category": "Art & Collectibles",
+    "requiredJar": "FFA",
+    "price": 180000,
+    "description": "Rare Bordeaux collection including Château Lafite and Pétrus vintages.",
+    "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "watch003",
+    "name": "Audemars Piguet Royal Oak",
+    "category": "Luxury Watches",
+    "requiredJar": "PLAY",
+    "price": 95000,
+    "description": "Iconic octagonal bezel watch, a true masterpiece of horology.",
+    "imageUrl": "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "art002",
+    "name": "Banksy Limited Edition Print",
+    "category": "Art & Collectibles",
+    "requiredJar": "FFA",
+    "price": 85000,
+    "description": "Authenticated limited edition print from the elusive street artist.",
+    "imageUrl": "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "experience007",
+    "name": "Personal Chef for One Year",
+    "category": "Experiences",
+    "requiredJar": "PLAY",
+    "price": 150000,
+    "description": "Michelin-trained chef preparing customized meals daily for a year.",
+    "imageUrl": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "experience008",
+    "name": "World Heritage Sites Private Tour",
+    "category": "Experiences",
+    "requiredJar": "PLAY",
+    "price": 125000,
+    "description": "3-month journey visiting 50 UNESCO World Heritage sites with historian.",
+    "imageUrl": "https://images.unsplash.com/photo-1549144511-f099e773c147?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "horse001",
+    "name": "Arabian Show Horse",
+    "category": "Luxury Animals",
+    "requiredJar": "PLAY",
+    "price": 250000,
+    "description": "Champion bloodline Arabian horse with full training and documentation.",
+    "imageUrl": "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "membership001",
+    "name": "Soho House Lifetime Membership",
+    "category": "Experiences",
+    "requiredJar": "PLAY",
+    "price": 50000,
+    "description": "Lifetime access to all Soho House locations worldwide with events.",
+    "imageUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=300&fit=crop"
+  }
+]
