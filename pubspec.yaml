@@ -48,4 +48,5 @@ flutter:
   assets:
     - assets/data/marketplace_items.json
     - assets/data/motivational_quotes.json
+    - MMI-affirmations.txt
 
