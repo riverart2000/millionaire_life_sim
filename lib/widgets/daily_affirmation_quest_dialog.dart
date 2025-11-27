@@ -71,9 +71,8 @@ class _DailyAffirmationQuestDialogState
 
       // Check if this was the last blank
       if (state.currentBlankIndex + 1 >= affirmation.blankIndices.length) {
-        ref.read(affirmationProvider.notifier).completeDailyQuest();
         setState(() {
-          _feedback = '🎉 Daily Quest Complete!';
+          _feedback = '🎉 Quest Complete!';
           _isCompleted = true;
         });
         _confettiController.play();
@@ -110,7 +109,6 @@ class _DailyAffirmationQuestDialogState
     final theme = Theme.of(context);
     final state = ref.watch(affirmationProvider);
     final affirmation = state.currentAffirmation;
-    final progress = state.progress;
 
     return Stack(
       children: [
@@ -152,31 +150,6 @@ class _DailyAffirmationQuestDialogState
                               ],
                             ),
                           ),
-                          if (progress.dailyStreak > 0)
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                                vertical: 6,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.orange[100],
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  const Text('🔥'),
-                                  const SizedBox(width: 4),
-                                  Text(
-                                    '${progress.dailyStreak}',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.orange[900],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
                         ],
                       ),
                       const SizedBox(height: 24),

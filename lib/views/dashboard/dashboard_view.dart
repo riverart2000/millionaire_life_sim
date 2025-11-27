@@ -10,7 +10,6 @@ import '../../core/utils/currency_formatter.dart';
 import '../../core/utils/result.dart';
 import '../../models/jar_model.dart';
 import '../../models/transaction_model.dart';
-import '../../providers/affirmations_provider.dart';
 import '../../providers/bootstrap_provider.dart';
 import '../../providers/data_providers.dart';
 import '../../providers/investment_provider.dart';
@@ -225,25 +224,18 @@ class _DragDropAllocationWidget extends ConsumerWidget {
       jars: jars,
       dailyIncome: dailyIncome,
       onRegenerateRequested: () async {
-        // Check if daily quest should be shown
-        final shouldShow = ref.read(affirmationProvider.notifier).shouldShowDailyQuest();
-        
-        if (shouldShow) {
-          // Show daily quest dialog before allowing regeneration
-          await showDialog(
-            context: context,
-            barrierDismissible: false,
-            builder: (context) => DailyAffirmationQuestDialog(
-              actionName: 'Regenerate Money',
-              onComplete: () {
-                // Quest completed, return true to allow regeneration
-              },
-            ),
-          );
-          return true; // Quest completed, allow regeneration
-        }
-        
-        return true; // No quest needed, allow regeneration
+        // Show quest dialog every time
+        await showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => DailyAffirmationQuestDialog(
+            actionName: 'Regenerate Money',
+            onComplete: () {
+              // Quest completed, allow regeneration
+            },
+          ),
+        );
+        return true; // Quest completed, allow regeneration
       },
       onAllocate: (jarId, amount, remainder) async {
         final jarService = ref.read(jarServiceProvider);
@@ -339,25 +331,17 @@ class _NextDayButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return FilledButton.icon(
       onPressed: () async {
-        // Check if daily quest should be shown
-        final shouldShow = ref.read(affirmationProvider.notifier).shouldShowDailyQuest();
-        
-        if (shouldShow) {
-          // Show daily quest dialog
-          await showDialog(
-            context: context,
-            barrierDismissible: false,
-            builder: (context) => DailyAffirmationQuestDialog(
-              actionName: 'Simulate Next Day',
-              onComplete: () async {
-                await _executeSimulation(context, ref);
-              },
-            ),
-          );
-        } else {
-          // Execute directly without quest
-          await _executeSimulation(context, ref);
-        }
+        // Show quest dialog every time
+        await showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => DailyAffirmationQuestDialog(
+            actionName: 'Simulate Next Day',
+            onComplete: () async {
+              await _executeSimulation(context, ref);
+            },
+          ),
+        );
       },
       icon: const Icon(Icons.calendar_today),
       label: const Text('Simulate Next Day'),
