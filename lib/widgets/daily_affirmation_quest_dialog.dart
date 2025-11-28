@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:provider/provider.dart' as legacy;
 import 'package:confetti/confetti.dart';
+import '../providers/sound_provider.dart';
 import '../providers/affirmations_provider.dart';
 
 class DailyAffirmationQuestDialog extends ConsumerStatefulWidget {
@@ -25,6 +27,7 @@ class _DailyAffirmationQuestDialogState
   late ConfettiController _confettiController;
   String? _feedback;
   bool _isCompleted = false;
+  int _wrongAttempts = 0; // Track wrong attempts for hints
 
   @override
   void initState() {
@@ -65,6 +68,7 @@ class _DailyAffirmationQuestDialogState
     if (isCorrect) {
       ref.read(affirmationProvider.notifier).addAnswer(userAnswer);
       _answerController.clear();
+      _wrongAttempts = 0; // Reset wrong attempts for next blank
       setState(() {
         _feedback = '✅ Correct!';
       });
@@ -76,6 +80,15 @@ class _DailyAffirmationQuestDialogState
           _isCompleted = true;
         });
         _confettiController.play();
+        
+        // Play celebration sound with fireworks
+        try {
+          final soundProvider = legacy.Provider.of<SoundProvider>(context, listen: false);
+          soundProvider.playCelebration();
+        } catch (e) {
+          // Sound failed, but continue
+          print('Sound error: $e');
+        }
         
         // Auto-close after celebration
         Future.delayed(const Duration(seconds: 2), () {
@@ -93,8 +106,26 @@ class _DailyAffirmationQuestDialogState
         });
       }
     } else {
+      _wrongAttempts++;
+      final correctWord = affirmation.words[affirmation.blankIndices[blankIndex]];
+      String hint = '';
+      
+      if (_wrongAttempts == 1) {
+        // First wrong attempt: show first character
+        hint = correctWord.length > 0 ? correctWord[0] : '';
+      } else if (_wrongAttempts >= 2) {
+        // Second+ wrong attempt: show first 3 characters
+        hint = correctWord.length >= 3 
+            ? correctWord.substring(0, 3) 
+            : correctWord;
+      }
+      
       setState(() {
-        _feedback = '❌ Try again!';
+        if (hint.isNotEmpty) {
+          _feedback = '💡 Hint: starts with "$hint"';
+        } else {
+          _feedback = '❌ Try again!';
+        }
       });
     }
   }
@@ -180,7 +211,9 @@ class _DailyAffirmationQuestDialogState
                           decoration: BoxDecoration(
                             color: _feedback!.contains('✅') || _feedback!.contains('🎉')
                                 ? Colors.green[50]
-                                : Colors.red[50],
+                                : _feedback!.contains('💡')
+                                    ? Colors.blue[50]
+                                    : Colors.red[50],
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Text(
@@ -188,7 +221,9 @@ class _DailyAffirmationQuestDialogState
                             style: theme.textTheme.titleMedium?.copyWith(
                               color: _feedback!.contains('✅') || _feedback!.contains('🎉')
                                   ? Colors.green[700]
-                                  : Colors.red[700],
+                                  : _feedback!.contains('💡')
+                                      ? Colors.blue[700]
+                                      : Colors.red[700],
                               fontWeight: FontWeight.bold,
                             ),
                             textAlign: TextAlign.center,
@@ -200,24 +235,10 @@ class _DailyAffirmationQuestDialogState
                       
                       // Action buttons
                       if (!_isCompleted)
-                        Row(
-                          children: [
-                            Expanded(
-                              child: OutlinedButton(
-                                onPressed: _skip,
-                                child: const Text('Skip for Now'),
-                              ),
-                            ),
-                            const SizedBox(width: 12),
-                            Expanded(
-                              flex: 2,
-                              child: FilledButton.icon(
-                                onPressed: _checkAnswer,
-                                icon: const Icon(Icons.check),
-                                label: const Text('Check Answer'),
-                              ),
-                            ),
-                          ],
+                        FilledButton.icon(
+                          onPressed: _checkAnswer,
+                          icon: const Icon(Icons.check),
+                          label: const Text('Check Answer'),
                         ),
                     ],
                   ),

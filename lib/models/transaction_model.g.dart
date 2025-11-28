@@ -81,6 +81,8 @@ class TransactionKindAdapter extends TypeAdapter<TransactionKind> {
         return TransactionKind.sale;
       case 4:
         return TransactionKind.transfer;
+      case 5:
+        return TransactionKind.answer;
       default:
         return TransactionKind.income;
     }
@@ -103,6 +105,9 @@ class TransactionKindAdapter extends TypeAdapter<TransactionKind> {
         break;
       case TransactionKind.transfer:
         writer.writeByte(4);
+        break;
+      case TransactionKind.answer:
+        writer.writeByte(5);
         break;
     }
   }
@@ -156,4 +161,5 @@ const _$TransactionKindEnumMap = {
   TransactionKind.purchase: 'purchase',
   TransactionKind.sale: 'sale',
   TransactionKind.transfer: 'transfer',
+  TransactionKind.answer: 'answer',
 };

@@ -67,6 +67,15 @@ class SoundService {
     );
   }
 
+  Future<void> playButtonClick() async {
+    if (!_enabled) return;
+    // Pleasant, soft button click sound
+    await _playUrl(
+      'https://assets.mixkit.co/active_storage/sfx/2997/2997-preview.mp3',
+      volume: 0.25,
+    );
+  }
+
   // Jar-specific jingles
   Future<void> playNecJingle() async {
     if (!_enabled) return;

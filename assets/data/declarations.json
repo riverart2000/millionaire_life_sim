@@ -1,0 +1,60 @@
+[
+  {
+    "id": "decl_001",
+    "type": "declaration",
+    "text": "I have an income of $100,000 every month because I work extremely hard and am very focused on my goals and aspirations.",
+    "requiresAccept": true
+  },
+  {
+    "id": "decl_002",
+    "type": "declaration",
+    "text": "I feel very strong powerful and extremely healthy in body mind and soul.",
+    "requiresAccept": true
+  },
+  {
+    "id": "decl_003",
+    "type": "declaration",
+    "text": "I COMMAND MY SUBCONSCIOUS MIND TO ALIGN EVERY THOUGHT EVERY ACTION AND EVERY OUNCE OF MY BEING TO MAKE ME STRONGER HEALTHIER WEALTHIER AND WISER THEN EVER BOFORE, TRANSFORMING ME INTO A RELENTLESS MONEY MAKING MACHINE AS QUICKLY AND AS EFFICIENTLY AS POSSIBLE.",
+    "requiresAccept": true
+  },
+  {
+    "id": "ans_001",
+    "type": "answer",
+    "text": "Write a success you enjoyed today?",
+    "requiresInput": true,
+    "placeholder": "Type your answer here..."
+  },
+  {
+    "id": "ans_002",
+    "type": "answer",
+    "text": "What are you grateful for today?",
+    "requiresInput": true,
+    "placeholder": "Type your answer here..."
+  },
+  {
+    "id": "ans_003",
+    "type": "answer",
+    "text": "Why do you want this money for?",
+    "requiresInput": true,
+    "placeholder": "Type your answer here..."
+  },
+  {
+    "id": "do_001",
+    "type": "do",
+    "text": "Take 30secs to visualize yourself being financially free?",
+    "countdownSeconds": 30
+  },
+  {
+    "id": "do_002",
+    "type": "do",
+    "text": "Take 1min to do the VAKS: I AM FINANCIALLY FREE.",
+    "countdownSeconds": 60
+  },
+  {
+    "id": "ans_004",
+    "type": "answer",
+    "text": "Why do you believe you deserve to be rich and wealthy?",
+    "requiresInput": true,
+    "placeholder": "Type your answer here..."
+  }
+]

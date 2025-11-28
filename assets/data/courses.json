@@ -1,0 +1,432 @@
+[
+  {
+    "id": "inv_101",
+    "title": "Stock Market Fundamentals",
+    "description": "Master the basics of stock investing, portfolio diversification, and risk management strategies.",
+    "category": "Investment",
+    "cost": 500,
+    "mindsetIncrease": 0.01,
+    "duration": "4 hours",
+    "icon": "trending_up"
+  },
+  {
+    "id": "inv_202",
+    "title": "Real Estate Investing Mastery",
+    "description": "Learn how to analyze properties, calculate ROI, and build passive income through real estate.",
+    "category": "Investment",
+    "cost": 1200,
+    "mindsetIncrease": 0.015,
+    "duration": "2 days",
+    "icon": "home_work"
+  },
+  {
+    "id": "inv_303",
+    "title": "Options Trading Advanced",
+    "description": "Master advanced options strategies including spreads, straddles, and income generation techniques.",
+    "category": "Investment",
+    "cost": 1500,
+    "mindsetIncrease": 0.02,
+    "duration": "3 days",
+    "icon": "show_chart"
+  },
+  {
+    "id": "inv_401",
+    "title": "Value Investing Principles",
+    "description": "Learn Warren Buffett's approach to finding undervalued companies and building long-term wealth.",
+    "category": "Investment",
+    "cost": 800,
+    "mindsetIncrease": 0.012,
+    "duration": "1 day",
+    "icon": "analytics"
+  },
+  {
+    "id": "inv_502",
+    "title": "Dividend Growth Strategy",
+    "description": "Build a portfolio of dividend-paying stocks for consistent passive income and compound growth.",
+    "category": "Investment",
+    "cost": 650,
+    "mindsetIncrease": 0.011,
+    "duration": "5 hours",
+    "icon": "paid"
+  },
+  {
+    "id": "biz_101",
+    "title": "Entrepreneurship Bootcamp",
+    "description": "Start and scale your own business from scratch with proven frameworks and strategies.",
+    "category": "Business",
+    "cost": 800,
+    "mindsetIncrease": 0.012,
+    "duration": "3 days",
+    "icon": "business_center"
+  },
+  {
+    "id": "biz_201",
+    "title": "Business Model Innovation",
+    "description": "Design winning business models that create sustainable competitive advantages.",
+    "category": "Business",
+    "cost": 950,
+    "mindsetIncrease": 0.014,
+    "duration": "2 days",
+    "icon": "lightbulb"
+  },
+  {
+    "id": "biz_301",
+    "title": "Scaling Operations",
+    "description": "Learn systems and processes to scale your business without sacrificing quality or culture.",
+    "category": "Business",
+    "cost": 1100,
+    "mindsetIncrease": 0.016,
+    "duration": "2 days",
+    "icon": "rocket_launch"
+  },
+  {
+    "id": "biz_401",
+    "title": "Exit Strategy Planning",
+    "description": "Maximize business valuation and prepare for successful acquisitions or IPOs.",
+    "category": "Business",
+    "cost": 1800,
+    "mindsetIncrease": 0.018,
+    "duration": "1 day",
+    "icon": "star"
+  },
+  {
+    "id": "mark_101",
+    "title": "Digital Marketing Blueprint",
+    "description": "Master social media, SEO, content marketing, and paid advertising to grow your business online.",
+    "category": "Marketing",
+    "cost": 600,
+    "mindsetIncrease": 0.01,
+    "duration": "5 hours",
+    "icon": "campaign"
+  },
+  {
+    "id": "mark_201",
+    "title": "Brand Building Mastery",
+    "description": "Create a powerful brand identity that resonates with your target audience and builds loyalty.",
+    "category": "Marketing",
+    "cost": 750,
+    "mindsetIncrease": 0.012,
+    "duration": "1 day",
+    "icon": "brush"
+  },
+  {
+    "id": "mark_301",
+    "title": "Content Marketing Strategy",
+    "description": "Develop content that attracts, educates, and converts your ideal customers consistently.",
+    "category": "Marketing",
+    "cost": 550,
+    "mindsetIncrease": 0.01,
+    "duration": "6 hours",
+    "icon": "article"
+  },
+  {
+    "id": "mark_401",
+    "title": "Email Marketing Automation",
+    "description": "Build automated email sequences that nurture leads and drive sales on autopilot.",
+    "category": "Marketing",
+    "cost": 480,
+    "mindsetIncrease": 0.01,
+    "duration": "4 hours",
+    "icon": "mail"
+  },
+  {
+    "id": "mark_501",
+    "title": "Social Media Monetization",
+    "description": "Turn your social media following into a profitable business with proven monetization strategies.",
+    "category": "Marketing",
+    "cost": 620,
+    "mindsetIncrease": 0.011,
+    "duration": "5 hours",
+    "icon": "share"
+  },
+  {
+    "id": "fin_101",
+    "title": "Personal Finance Mastery",
+    "description": "Take control of your money with budgeting, debt elimination, and wealth-building strategies.",
+    "category": "Finance",
+    "cost": 350,
+    "mindsetIncrease": 0.01,
+    "duration": "3 hours",
+    "icon": "account_balance_wallet"
+  },
+  {
+    "id": "fin_201",
+    "title": "Advanced Budgeting Techniques",
+    "description": "Master zero-based budgeting, envelope system, and automated savings strategies.",
+    "category": "Finance",
+    "cost": 420,
+    "mindsetIncrease": 0.01,
+    "duration": "4 hours",
+    "icon": "calculate"
+  },
+  {
+    "id": "fin_301",
+    "title": "Tax Optimization Strategies",
+    "description": "Learn legal tax reduction techniques and wealth preservation strategies for high earners.",
+    "category": "Finance",
+    "cost": 900,
+    "mindsetIncrease": 0.013,
+    "duration": "6 hours",
+    "icon": "receipt_long"
+  },
+  {
+    "id": "fin_401",
+    "title": "Estate Planning Essentials",
+    "description": "Protect your wealth for future generations with trusts, wills, and succession planning.",
+    "category": "Finance",
+    "cost": 1250,
+    "mindsetIncrease": 0.015,
+    "duration": "1 day",
+    "icon": "family_restroom"
+  },
+  {
+    "id": "fin_501",
+    "title": "Offshore Banking & Assets",
+    "description": "Navigate international banking, asset protection, and global investment opportunities.",
+    "category": "Finance",
+    "cost": 2000,
+    "mindsetIncrease": 0.02,
+    "duration": "2 days",
+    "icon": "public"
+  },
+  {
+    "id": "mind_101",
+    "title": "Millionaire Mindset Workshop",
+    "description": "Rewire your thinking patterns and adopt the beliefs and habits of wealthy individuals.",
+    "category": "Mindset",
+    "cost": 450,
+    "mindsetIncrease": 0.015,
+    "duration": "1 day",
+    "icon": "psychology"
+  },
+  {
+    "id": "mind_201",
+    "title": "Goal Setting & Achievement",
+    "description": "Create compelling visions, set SMART goals, and build systems to achieve extraordinary results.",
+    "category": "Mindset",
+    "cost": 400,
+    "mindsetIncrease": 0.01,
+    "duration": "4 hours",
+    "icon": "flag"
+  },
+  {
+    "id": "mind_301",
+    "title": "Overcoming Limiting Beliefs",
+    "description": "Identify and eliminate the mental blocks that prevent you from reaching your full potential.",
+    "category": "Mindset",
+    "cost": 520,
+    "mindsetIncrease": 0.012,
+    "duration": "1 day",
+    "icon": "psychology_alt"
+  },
+  {
+    "id": "mind_401",
+    "title": "Peak Performance Habits",
+    "description": "Develop daily routines and rituals used by top performers to maintain excellence.",
+    "category": "Mindset",
+    "cost": 580,
+    "mindsetIncrease": 0.013,
+    "duration": "5 hours",
+    "icon": "fitness_center"
+  },
+  {
+    "id": "mind_501",
+    "title": "Resilience & Mental Toughness",
+    "description": "Build unshakeable confidence and bounce back stronger from setbacks and failures.",
+    "category": "Mindset",
+    "cost": 490,
+    "mindsetIncrease": 0.011,
+    "duration": "6 hours",
+    "icon": "shield"
+  },
+  {
+    "id": "lead_101",
+    "title": "Leadership Excellence",
+    "description": "Develop essential leadership skills to inspire teams, drive results, and create lasting impact.",
+    "category": "Leadership",
+    "cost": 700,
+    "mindsetIncrease": 0.011,
+    "duration": "2 days",
+    "icon": "groups"
+  },
+  {
+    "id": "lead_201",
+    "title": "Emotional Intelligence for Leaders",
+    "description": "Master self-awareness, empathy, and relationship management for effective leadership.",
+    "category": "Leadership",
+    "cost": 820,
+    "mindsetIncrease": 0.013,
+    "duration": "1 day",
+    "icon": "favorite"
+  },
+  {
+    "id": "lead_301",
+    "title": "Building High-Performance Teams",
+    "description": "Recruit, develop, and retain top talent while fostering a culture of excellence.",
+    "category": "Leadership",
+    "cost": 950,
+    "mindsetIncrease": 0.014,
+    "duration": "2 days",
+    "icon": "people"
+  },
+  {
+    "id": "lead_401",
+    "title": "Strategic Decision Making",
+    "description": "Make better decisions faster using frameworks from military strategy and business leaders.",
+    "category": "Leadership",
+    "cost": 880,
+    "mindsetIncrease": 0.013,
+    "duration": "1 day",
+    "icon": "account_tree"
+  },
+  {
+    "id": "tech_101",
+    "title": "Cryptocurrency & Blockchain",
+    "description": "Understand crypto fundamentals, DeFi, NFTs, and how to safely invest in digital assets.",
+    "category": "Technology",
+    "cost": 550,
+    "mindsetIncrease": 0.01,
+    "duration": "5 hours",
+    "icon": "currency_bitcoin"
+  },
+  {
+    "id": "tech_201",
+    "title": "AI & Machine Learning Basics",
+    "description": "Learn how AI works and how to leverage it for business automation and decision-making.",
+    "category": "Technology",
+    "cost": 780,
+    "mindsetIncrease": 0.012,
+    "duration": "1 day",
+    "icon": "smart_toy"
+  },
+  {
+    "id": "tech_301",
+    "title": "Building Tech Startups",
+    "description": "Launch and scale technology companies from idea to product-market fit and beyond.",
+    "category": "Technology",
+    "cost": 1400,
+    "mindsetIncrease": 0.017,
+    "duration": "3 days",
+    "icon": "rocket"
+  },
+  {
+    "id": "tech_401",
+    "title": "No-Code Business Tools",
+    "description": "Build apps, websites, and automation without coding using modern no-code platforms.",
+    "category": "Technology",
+    "cost": 460,
+    "mindsetIncrease": 0.01,
+    "duration": "4 hours",
+    "icon": "construction"
+  },
+  {
+    "id": "sales_101",
+    "title": "High-Ticket Sales Mastery",
+    "description": "Learn consultative selling techniques to close premium deals and build long-term client relationships.",
+    "category": "Sales",
+    "cost": 650,
+    "mindsetIncrease": 0.011,
+    "duration": "1 day",
+    "icon": "handshake"
+  },
+  {
+    "id": "sales_201",
+    "title": "Objection Handling Pro",
+    "description": "Turn every objection into an opportunity and close more deals with proven rebuttal frameworks.",
+    "category": "Sales",
+    "cost": 520,
+    "mindsetIncrease": 0.01,
+    "duration": "5 hours",
+    "icon": "check_circle"
+  },
+  {
+    "id": "sales_301",
+    "title": "Sales Psychology Secrets",
+    "description": "Understand the psychological triggers that drive buying decisions and ethical persuasion.",
+    "category": "Sales",
+    "cost": 680,
+    "mindsetIncrease": 0.012,
+    "duration": "1 day",
+    "icon": "psychology"
+  },
+  {
+    "id": "sales_401",
+    "title": "Building Sales Funnels",
+    "description": "Design automated sales funnels that convert cold traffic into paying customers.",
+    "category": "Sales",
+    "cost": 740,
+    "mindsetIncrease": 0.012,
+    "duration": "6 hours",
+    "icon": "filter_alt"
+  },
+  {
+    "id": "sales_501",
+    "title": "Negotiation Tactics",
+    "description": "Master win-win negotiation strategies to close deals while building lasting partnerships.",
+    "category": "Sales",
+    "cost": 790,
+    "mindsetIncrease": 0.013,
+    "duration": "1 day",
+    "icon": "balance"
+  },
+  {
+    "id": "prod_101",
+    "title": "Time Management Mastery",
+    "description": "Maximize productivity using time-blocking, prioritization, and focus techniques.",
+    "category": "Productivity",
+    "cost": 380,
+    "mindsetIncrease": 0.01,
+    "duration": "3 hours",
+    "icon": "schedule"
+  },
+  {
+    "id": "prod_201",
+    "title": "Deep Work Strategies",
+    "description": "Eliminate distractions and achieve flow state for maximum creative output.",
+    "category": "Productivity",
+    "cost": 420,
+    "mindsetIncrease": 0.01,
+    "duration": "4 hours",
+    "icon": "wb_twilight"
+  },
+  {
+    "id": "prod_301",
+    "title": "Delegation & Outsourcing",
+    "description": "Build systems to delegate effectively and free up your time for high-value activities.",
+    "category": "Productivity",
+    "cost": 560,
+    "mindsetIncrease": 0.011,
+    "duration": "5 hours",
+    "icon": "supervised_user_circle"
+  },
+  {
+    "id": "net_101",
+    "title": "Strategic Networking",
+    "description": "Build valuable relationships and expand your network to create opportunities and partnerships.",
+    "category": "Networking",
+    "cost": 450,
+    "mindsetIncrease": 0.01,
+    "duration": "4 hours",
+    "icon": "lan"
+  },
+  {
+    "id": "net_201",
+    "title": "Personal Branding",
+    "description": "Position yourself as an authority in your field and attract high-value opportunities.",
+    "category": "Networking",
+    "cost": 620,
+    "mindsetIncrease": 0.011,
+    "duration": "1 day",
+    "icon": "badge"
+  },
+  {
+    "id": "net_301",
+    "title": "Public Speaking Confidence",
+    "description": "Master the art of captivating presentations and speaking engagements that inspire action.",
+    "category": "Networking",
+    "cost": 720,
+    "mindsetIncrease": 0.012,
+    "duration": "2 days",
+    "icon": "campaign"
+  }
+]

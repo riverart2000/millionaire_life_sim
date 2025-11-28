@@ -132,27 +132,27 @@ class _CatalogItemTile extends ConsumerWidget {
     final marketplaceService = ref.watch(marketplaceServiceProvider);
 
     return ListTile(
-      contentPadding: const EdgeInsets.symmetric(vertical: 8),
+      contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(8),
         child: item.imageUrl.isNotEmpty
             ? Image.network(
                 item.imageUrl,
-                width: 56,
-                height: 56,
+                width: 48,
+                height: 48,
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) {
                   return Container(
-                    width: 56,
-                    height: 56,
+                    width: 48,
+                    height: 48,
                     color: Colors.blueGrey.shade100,
-                    child: const Icon(Icons.image_not_supported, size: 28),
+                    child: const Icon(Icons.image_not_supported, size: 24),
                   );
                 },
               )
             : Container(
-                width: 56,
-                height: 56,
+                width: 48,
+                height: 48,
                 color: Colors.blueGrey.shade100,
                 child: Center(
                   child: Text(
@@ -163,24 +163,83 @@ class _CatalogItemTile extends ConsumerWidget {
               ),
       ),
       title: Text(item.name),
-      subtitle: Text('${item.category} • £${item.price.toStringAsFixed(0)} • Jar: ${item.requiredJar}'),
-      trailing: item.isListed
-          ? const Chip(label: Text('Listed'))
-          : OutlinedButton(
+      subtitle: Text('${item.category} • £${item.price.toStringAsFixed(0)} • Jar: ${item.requiredJar}'),
+      trailing: SizedBox(
+        width: 120,
+        child: item.isListed
+            ? const Chip(
+                label: Text('Listed', style: TextStyle(fontSize: 12)),
+                visualDensity: VisualDensity.compact,
+              )
+            : item.category == 'Experiences'
+                ? const Chip(
+                    label: Text('Experience', style: TextStyle(fontSize: 11)),
+                    backgroundColor: Colors.purple,
+                    visualDensity: VisualDensity.compact,
+                  )
+                : OutlinedButton(
               onPressed: () async {
-                final result = await marketplaceService.listItemForSale(userId: userId, item: item);
+                // Show confirmation dialog
+                final confirmed = await showDialog<bool>(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: const Text('Sell Back Item?'),
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Sell ${item.name} back to the marketplace?'),
+                        const SizedBox(height: 16),
+                        Text('You will receive: £${item.price.toStringAsFixed(0)}'),
+                        Text('Refunded to: ${item.requiredJar} jar'),
+                        const SizedBox(height: 8),
+                        Text(
+                          'The item will be removed from your catalog and become available for others to purchase.',
+                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                            fontStyle: FontStyle.italic,
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                      ],
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.of(context).pop(false),
+                        child: const Text('Cancel'),
+                      ),
+                      FilledButton(
+                        onPressed: () => Navigator.of(context).pop(true),
+                        child: const Text('Sell Back'),
+                      ),
+                    ],
+                  ),
+                );
+
+                if (confirmed != true || !context.mounted) return;
+
+                final result = await marketplaceService.sellBackItem(userId: userId, item: item);
                 if (result is Success<void>) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('${item.name} listed for sale.')),
-                  );
+                  ref.invalidate(marketplaceCatalogProvider);
+                  ref.invalidate(jarsProvider);
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('✅ Sold ${item.name} for £${item.price.toStringAsFixed(0)}'),
+                        backgroundColor: Colors.green,
+                      ),
+                    );
+                  }
                 } else if (result is Failure<void>) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Listing failed: ${result.exception}')),
-                  );
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Sale failed: ${result.exception}')),
+                    );
+                  }
                 }
               },
-              child: const Text('List for sale'),
+              child: const Text('List for sale', style: TextStyle(fontSize: 12)),
             ),
+      ),
     );
   }
 }

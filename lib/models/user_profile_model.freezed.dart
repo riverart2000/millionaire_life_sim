@@ -38,6 +38,12 @@ mixin _$UserProfile {
   bool get syncEnabled => throw _privateConstructorUsedError;
   @HiveField(8)
   double get unallocatedBalance => throw _privateConstructorUsedError;
+  @HiveField(9)
+  double get mindsetLevel => throw _privateConstructorUsedError;
+  @HiveField(10)
+  List<String> get purchasedCourses => throw _privateConstructorUsedError;
+  @HiveField(11)
+  int get dayCounter => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -60,7 +66,10 @@ abstract class $UserProfileCopyWith<$Res> {
       @HiveField(5) bool autoSimulateDaily,
       @HiveField(6) DateTime? lastSyncedAt,
       @HiveField(7) bool syncEnabled,
-      @HiveField(8) double unallocatedBalance});
+      @HiveField(8) double unallocatedBalance,
+      @HiveField(9) double mindsetLevel,
+      @HiveField(10) List<String> purchasedCourses,
+      @HiveField(11) int dayCounter});
 }
 
 /// @nodoc
@@ -85,6 +94,9 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
     Object? lastSyncedAt = freezed,
     Object? syncEnabled = null,
     Object? unallocatedBalance = null,
+    Object? mindsetLevel = null,
+    Object? purchasedCourses = null,
+    Object? dayCounter = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -123,6 +135,18 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
           ? _value.unallocatedBalance
           : unallocatedBalance // ignore: cast_nullable_to_non_nullable
               as double,
+      mindsetLevel: null == mindsetLevel
+          ? _value.mindsetLevel
+          : mindsetLevel // ignore: cast_nullable_to_non_nullable
+              as double,
+      purchasedCourses: null == purchasedCourses
+          ? _value.purchasedCourses
+          : purchasedCourses // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      dayCounter: null == dayCounter
+          ? _value.dayCounter
+          : dayCounter // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -144,7 +168,10 @@ abstract class _$$UserProfileImplCopyWith<$Res>
       @HiveField(5) bool autoSimulateDaily,
       @HiveField(6) DateTime? lastSyncedAt,
       @HiveField(7) bool syncEnabled,
-      @HiveField(8) double unallocatedBalance});
+      @HiveField(8) double unallocatedBalance,
+      @HiveField(9) double mindsetLevel,
+      @HiveField(10) List<String> purchasedCourses,
+      @HiveField(11) int dayCounter});
 }
 
 /// @nodoc
@@ -167,6 +194,9 @@ class __$$UserProfileImplCopyWithImpl<$Res>
     Object? lastSyncedAt = freezed,
     Object? syncEnabled = null,
     Object? unallocatedBalance = null,
+    Object? mindsetLevel = null,
+    Object? purchasedCourses = null,
+    Object? dayCounter = null,
   }) {
     return _then(_$UserProfileImpl(
       id: null == id
@@ -205,6 +235,18 @@ class __$$UserProfileImplCopyWithImpl<$Res>
           ? _value.unallocatedBalance
           : unallocatedBalance // ignore: cast_nullable_to_non_nullable
               as double,
+      mindsetLevel: null == mindsetLevel
+          ? _value.mindsetLevel
+          : mindsetLevel // ignore: cast_nullable_to_non_nullable
+              as double,
+      purchasedCourses: null == purchasedCourses
+          ? _value._purchasedCourses
+          : purchasedCourses // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      dayCounter: null == dayCounter
+          ? _value.dayCounter
+          : dayCounter // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -222,8 +264,12 @@ class _$UserProfileImpl implements _UserProfile {
       @HiveField(5) this.autoSimulateDaily = true,
       @HiveField(6) this.lastSyncedAt,
       @HiveField(7) this.syncEnabled = true,
-      @HiveField(8) this.unallocatedBalance = 0})
-      : _jarPercentages = jarPercentages;
+      @HiveField(8) this.unallocatedBalance = 0,
+      @HiveField(9) this.mindsetLevel = 1.0,
+      @HiveField(10) final List<String> purchasedCourses = const <String>[],
+      @HiveField(11) this.dayCounter = 1})
+      : _jarPercentages = jarPercentages,
+        _purchasedCourses = purchasedCourses;
 
   factory _$UserProfileImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserProfileImplFromJson(json);
@@ -266,10 +312,29 @@ class _$UserProfileImpl implements _UserProfile {
   @JsonKey()
   @HiveField(8)
   final double unallocatedBalance;
+  @override
+  @JsonKey()
+  @HiveField(9)
+  final double mindsetLevel;
+  final List<String> _purchasedCourses;
+  @override
+  @JsonKey()
+  @HiveField(10)
+  List<String> get purchasedCourses {
+    if (_purchasedCourses is EqualUnmodifiableListView)
+      return _purchasedCourses;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_purchasedCourses);
+  }
+
+  @override
+  @JsonKey()
+  @HiveField(11)
+  final int dayCounter;
 
   @override
   String toString() {
-    return 'UserProfile(id: $id, name: $name, email: $email, dailyIncome: $dailyIncome, jarPercentages: $jarPercentages, autoSimulateDaily: $autoSimulateDaily, lastSyncedAt: $lastSyncedAt, syncEnabled: $syncEnabled, unallocatedBalance: $unallocatedBalance)';
+    return 'UserProfile(id: $id, name: $name, email: $email, dailyIncome: $dailyIncome, jarPercentages: $jarPercentages, autoSimulateDaily: $autoSimulateDaily, lastSyncedAt: $lastSyncedAt, syncEnabled: $syncEnabled, unallocatedBalance: $unallocatedBalance, mindsetLevel: $mindsetLevel, purchasedCourses: $purchasedCourses, dayCounter: $dayCounter)';
   }
 
   @override
@@ -291,7 +356,13 @@ class _$UserProfileImpl implements _UserProfile {
             (identical(other.syncEnabled, syncEnabled) ||
                 other.syncEnabled == syncEnabled) &&
             (identical(other.unallocatedBalance, unallocatedBalance) ||
-                other.unallocatedBalance == unallocatedBalance));
+                other.unallocatedBalance == unallocatedBalance) &&
+            (identical(other.mindsetLevel, mindsetLevel) ||
+                other.mindsetLevel == mindsetLevel) &&
+            const DeepCollectionEquality()
+                .equals(other._purchasedCourses, _purchasedCourses) &&
+            (identical(other.dayCounter, dayCounter) ||
+                other.dayCounter == dayCounter));
   }
 
   @JsonKey(ignore: true)
@@ -306,7 +377,10 @@ class _$UserProfileImpl implements _UserProfile {
       autoSimulateDaily,
       lastSyncedAt,
       syncEnabled,
-      unallocatedBalance);
+      unallocatedBalance,
+      mindsetLevel,
+      const DeepCollectionEquality().hash(_purchasedCourses),
+      dayCounter);
 
   @JsonKey(ignore: true)
   @override
@@ -332,7 +406,10 @@ abstract class _UserProfile implements UserProfile {
       @HiveField(5) final bool autoSimulateDaily,
       @HiveField(6) final DateTime? lastSyncedAt,
       @HiveField(7) final bool syncEnabled,
-      @HiveField(8) final double unallocatedBalance}) = _$UserProfileImpl;
+      @HiveField(8) final double unallocatedBalance,
+      @HiveField(9) final double mindsetLevel,
+      @HiveField(10) final List<String> purchasedCourses,
+      @HiveField(11) final int dayCounter}) = _$UserProfileImpl;
 
   factory _UserProfile.fromJson(Map<String, dynamic> json) =
       _$UserProfileImpl.fromJson;
@@ -364,6 +441,15 @@ abstract class _UserProfile implements UserProfile {
   @override
   @HiveField(8)
   double get unallocatedBalance;
+  @override
+  @HiveField(9)
+  double get mindsetLevel;
+  @override
+  @HiveField(10)
+  List<String> get purchasedCourses;
+  @override
+  @HiveField(11)
+  int get dayCounter;
   @override
   @JsonKey(ignore: true)
   _$$UserProfileImplCopyWith<_$UserProfileImpl> get copyWith =>

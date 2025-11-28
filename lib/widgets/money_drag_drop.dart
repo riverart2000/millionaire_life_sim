@@ -434,8 +434,8 @@ class MoneyDragDropWidget extends StatefulWidget {
 }
 
 class _MoneyDragDropWidgetState extends State<MoneyDragDropWidget> {
-  final List<int> _denominations = [100, 50, 20, 10];
-  final List<int> _ascendingDenominations = [10, 20, 50, 100];
+  final List<int> _denominations = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10];
+  final List<int> _ascendingDenominations = [10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000];
   List<double> _availableAmounts = [];
   final Set<int> _usedAmountIndices = {};
   
@@ -460,9 +460,8 @@ class _MoneyDragDropWidgetState extends State<MoneyDragDropWidget> {
   }
   
   void _generateAvailableMoney() {
-    // Generate money bills based on daily income, up to 10 notes, using set denominations
-    final clampedIncome = widget.dailyIncome.clamp(0, 1000);
-    final incomeInt = ((clampedIncome / 10).floor()) * 10;
+    // Generate money bills based on daily income, maximum 10 bills, using larger denominations
+    final incomeInt = ((widget.dailyIncome / 10).floor()) * 10;
 
     if (incomeInt <= 0) {
       setState(() {
@@ -473,33 +472,26 @@ class _MoneyDragDropWidgetState extends State<MoneyDragDropWidget> {
       return;
     }
 
-    final noteCount = math.min(10, math.max(1, incomeInt ~/ 10));
     final notes = <int>[];
     var remaining = incomeInt;
+    const maxNotes = 10;
 
-    while (notes.length < noteCount && remaining >= 10) {
-      var addedInCycle = false;
-      for (var idx = 0; idx < _denominations.length; idx++) {
-        final value = _denominations[idx];
-        if (notes.length >= noteCount || remaining < 10) {
-          break;
-        }
-        if (value <= remaining) {
-          notes.add(value);
-          remaining -= value;
-          addedInCycle = true;
-        }
+    // First pass: Use greedy algorithm with largest denominations to minimize bill count
+    for (final denomination in _denominations) {
+      while (remaining >= denomination && notes.length < maxNotes) {
+        notes.add(denomination);
+        remaining -= denomination;
       }
-      if (!addedInCycle) {
-        break;
-      }
+      if (notes.length >= maxNotes) break;
     }
 
-    while (notes.length < noteCount && remaining >= 10) {
+    // If we have remaining amount and room for more bills, add them
+    while (remaining >= 10 && notes.length < maxNotes) {
       notes.add(10);
       remaining -= 10;
     }
 
+    // If we still have remaining amount but no room, upgrade existing bills
     var upgraded = true;
     while (remaining >= 10 && upgraded) {
       upgraded = false;
@@ -515,6 +507,9 @@ class _MoneyDragDropWidgetState extends State<MoneyDragDropWidget> {
         }
       }
     }
+
+    // Sort notes in descending order for better visual display
+    notes.sort((a, b) => b.compareTo(a));
 
     setState(() {
       // Generate new money notes

@@ -145,6 +145,7 @@ final incomeServiceProvider = Provider((ref) => IncomeService(
   marketPriceService: ref.watch(marketPriceServiceProvider),
   billsService: ref.watch(billsServiceProvider),
   investmentReturnService: ref.watch(investmentReturnServiceProvider),
+  marketplaceService: ref.watch(marketplaceServiceProvider),
 ));
 
 final syncServiceProvider = Provider((ref) {

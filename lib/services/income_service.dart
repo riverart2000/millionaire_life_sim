@@ -13,6 +13,7 @@ import 'investment_return_service.dart';
 import 'investment_service.dart';
 import 'jar_service.dart';
 import 'market_price_service.dart';
+import 'marketplace_service.dart';
 
 class IncomeService {
   IncomeService({
@@ -23,6 +24,7 @@ class IncomeService {
     required MarketPriceService marketPriceService,
     required BillsService billsService,
     required InvestmentReturnService investmentReturnService,
+    required MarketplaceService marketplaceService,
   })  : _userRepository = userRepository,
         _jarService = jarService,
         _interestService = interestService,
@@ -30,6 +32,7 @@ class IncomeService {
         _marketPriceService = marketPriceService,
         _billsService = billsService,
         _investmentReturnService = investmentReturnService,
+        _marketplaceService = marketplaceService,
         _random = Random();
 
   final UserRepository _userRepository;
@@ -39,6 +42,7 @@ class IncomeService {
   final MarketPriceService _marketPriceService;
   final BillsService _billsService;
   final InvestmentReturnService _investmentReturnService;
+  final MarketplaceService _marketplaceService;
   final Random _random;
 
   Future<Result<double>> simulateNextDay({required String userId}) async {
@@ -111,6 +115,15 @@ class IncomeService {
         // Don't fail the entire operation
       }
 
+      // Apply real estate growth to owned marketplace items (0.5% per day)
+      try {
+        await _marketplaceService.applyDailyGrowth(userId: userId, growthRate: 0.005);
+        logInfo('✅ Applied real estate growth to marketplace items');
+      } catch (error, stackTrace) {
+        logError('❌ Failed to apply marketplace item growth', error, stackTrace);
+        // Don't fail the entire operation
+      }
+
       // Increase bills by £0.10 per day (inflation)
       try {
         await _billsService.increaseBillsDaily();
@@ -178,7 +191,11 @@ class IncomeService {
     }
     final variance = base * 0.1; // ±10%
     final offset = (_random.nextDouble() * variance * 2) - variance;
-    return (base + offset).clamp(0, double.infinity);
+    final incomeBeforeMultiplier = (base + offset).clamp(0, double.infinity);
+    
+    // Apply mindset multiplier from education/courses
+    final mindsetMultiplier = profile.mindsetLevel;
+    return incomeBeforeMultiplier * mindsetMultiplier;
   }
 }
 

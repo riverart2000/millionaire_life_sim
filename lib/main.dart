@@ -13,6 +13,7 @@ import 'services/bootstrap_service.dart';
 import 'services/quote_service.dart';
 import 'views/auth/login_view.dart';
 import 'views/dashboard/dashboard_view.dart';
+import 'views/courses/courses_view.dart';
 import 'views/investments/investments_view.dart';
 import 'views/marketplace/marketplace_view.dart';
 import 'views/settings/settings_view.dart';
@@ -20,6 +21,8 @@ import 'views/transactions/transactions_view.dart';
 import 'widgets/template_footer.dart';
 import 'widgets/common_sticky_header.dart';
 import 'widgets/top_menu.dart';
+import 'widgets/declaration_dialog.dart';
+import 'providers/declaration_provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -157,6 +160,7 @@ class _RootShellState extends ConsumerState<_RootShell> {
   final List<TemplateMenuItem> _menuItems = const [
     TemplateMenuItem(id: 'dashboard', label: 'Dashboard', icon: Icons.dashboard_outlined),
     TemplateMenuItem(id: 'marketplace', label: 'Marketplace', icon: Icons.storefront_outlined),
+    TemplateMenuItem(id: 'education', label: 'Education', icon: Icons.school_outlined),
     TemplateMenuItem(id: 'investments', label: 'Investments', icon: Icons.trending_up_outlined),
     TemplateMenuItem(id: 'transactions', label: 'Transactions', icon: Icons.receipt_long_outlined),
     TemplateMenuItem(id: 'settings', label: 'Settings', icon: Icons.settings_outlined),
@@ -218,6 +222,7 @@ class _RootShellState extends ConsumerState<_RootShell> {
                 children: const [
                   DashboardView(),
                   MarketplaceView(),
+                  CoursesView(),
                   InvestmentsView(),
                   TransactionsView(),
                   SettingsView(),
@@ -270,4 +275,3 @@ class _RootShellState extends ConsumerState<_RootShell> {
     );
   }
 }
-

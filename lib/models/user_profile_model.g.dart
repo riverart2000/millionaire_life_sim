@@ -6,7 +6,7 @@ part of 'user_profile_model.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class UserProfileAdapter extends TypeAdapter<UserProfile> {
+class UserProfileAdapterGenerated extends TypeAdapter<UserProfile> {
   @override
   final int typeId = 3;
 
@@ -26,13 +26,16 @@ class UserProfileAdapter extends TypeAdapter<UserProfile> {
       lastSyncedAt: fields[6] as DateTime?,
       syncEnabled: fields[7] as bool,
       unallocatedBalance: fields[8] as double,
+      mindsetLevel: fields[9] as double,
+      purchasedCourses: (fields[10] as List).cast<String>(),
+      dayCounter: fields[11] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, UserProfile obj) {
     writer
-      ..writeByte(9)
+      ..writeByte(12)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -50,7 +53,13 @@ class UserProfileAdapter extends TypeAdapter<UserProfile> {
       ..writeByte(7)
       ..write(obj.syncEnabled)
       ..writeByte(8)
-      ..write(obj.unallocatedBalance);
+      ..write(obj.unallocatedBalance)
+      ..writeByte(9)
+      ..write(obj.mindsetLevel)
+      ..writeByte(10)
+      ..write(obj.purchasedCourses)
+      ..writeByte(11)
+      ..write(obj.dayCounter);
   }
 
   @override
@@ -59,7 +68,7 @@ class UserProfileAdapter extends TypeAdapter<UserProfile> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is UserProfileAdapter &&
+      other is UserProfileAdapterGenerated &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -84,6 +93,12 @@ _$UserProfileImpl _$$UserProfileImplFromJson(Map<String, dynamic> json) =>
           : DateTime.parse(json['lastSyncedAt'] as String),
       syncEnabled: json['syncEnabled'] as bool? ?? true,
       unallocatedBalance: (json['unallocatedBalance'] as num?)?.toDouble() ?? 0,
+      mindsetLevel: (json['mindsetLevel'] as num?)?.toDouble() ?? 1.0,
+      purchasedCourses: (json['purchasedCourses'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const <String>[],
+      dayCounter: (json['dayCounter'] as num?)?.toInt() ?? 1,
     );
 
 Map<String, dynamic> _$$UserProfileImplToJson(_$UserProfileImpl instance) =>
@@ -97,4 +112,7 @@ Map<String, dynamic> _$$UserProfileImplToJson(_$UserProfileImpl instance) =>
       'lastSyncedAt': instance.lastSyncedAt?.toIso8601String(),
       'syncEnabled': instance.syncEnabled,
       'unallocatedBalance': instance.unallocatedBalance,
+      'mindsetLevel': instance.mindsetLevel,
+      'purchasedCourses': instance.purchasedCourses,
+      'dayCounter': instance.dayCounter,
     };

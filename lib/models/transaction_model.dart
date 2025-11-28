@@ -16,6 +16,8 @@ enum TransactionKind {
   sale,
   @HiveField(4)
   transfer,
+  @HiveField(5)
+  answer,
 }
 
 @freezed

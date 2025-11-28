@@ -70,6 +70,22 @@ class _CommonStickyHeaderState extends State<CommonStickyHeader> {
     });
   }
 
+  /// Returns shortened label for compact screens
+  String _getShortLabel(String fullLabel, bool isCompact) {
+    if (!isCompact) return fullLabel;
+    
+    const shortLabels = {
+      'Dashboard': 'Dash',
+      'Marketplace': 'Market',
+      'Education': 'Edu',
+      'Investments': 'Invest',
+      'Transactions': 'Trans',
+      'Settings': 'Settings',
+    };
+    
+    return shortLabels[fullLabel] ?? fullLabel;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -108,54 +124,20 @@ class _CommonStickyHeaderState extends State<CommonStickyHeader> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              // Dashboard
-                              _buildIconButton(
-                                icon: Icons.dashboard_outlined,
-                                label: 'Dashboard',
-                                isActive: widget.currentScreen == 'dashboard',
-                                isCompact: isNarrowScreen,
-                                onPressed: () {
-                                  if (widget.currentScreen != 'dashboard') {
-                                    widget.onMenuSelected('dashboard');
-                                  }
-                                },
-                              ),
-                              // Marketplace
-                              _buildIconButton(
-                                icon: Icons.storefront_outlined,
-                                label: 'Market',
-                                isActive: widget.currentScreen == 'marketplace',
-                                isCompact: isNarrowScreen,
-                                onPressed: () {
-                                  if (widget.currentScreen != 'marketplace') {
-                                    widget.onMenuSelected('marketplace');
-                                  }
-                                },
-                              ),
-                              // Investments
-                              _buildIconButton(
-                                icon: Icons.trending_up_outlined,
-                                label: 'Invest',
-                                isActive: widget.currentScreen == 'investments',
-                                isCompact: isNarrowScreen,
-                                onPressed: () {
-                                  if (widget.currentScreen != 'investments') {
-                                    widget.onMenuSelected('investments');
-                                  }
-                                },
-                              ),
-                              // Transactions
-                              _buildIconButton(
-                                icon: Icons.receipt_long_outlined,
-                                label: 'Transactions',
-                                isActive: widget.currentScreen == 'transactions',
-                                isCompact: isNarrowScreen,
-                                onPressed: () {
-                                  if (widget.currentScreen != 'transactions') {
-                                    widget.onMenuSelected('transactions');
-                                  }
-                                },
-                              ),
+                              // Dynamically render menu items
+                              ...widget.menuItems.where((item) => item.id != 'settings').map((item) {
+                                return _buildIconButton(
+                                  icon: item.icon,
+                                  label: _getShortLabel(item.label, isNarrowScreen),
+                                  isActive: widget.currentScreen == item.id,
+                                  isCompact: isNarrowScreen,
+                                  onPressed: () {
+                                    if (widget.currentScreen != item.id) {
+                                      widget.onMenuSelected(item.id);
+                                    }
+                                  },
+                                );
+                              }),
                               // Sound toggle
                               legacy.Consumer<SoundProvider>(
                                 builder: (context, soundProvider, _) =>
@@ -169,18 +151,20 @@ class _CommonStickyHeaderState extends State<CommonStickyHeader> {
                                   },
                                 ),
                               ),
-                              // Settings
-                              _buildIconButton(
-                                icon: Icons.settings_outlined,
-                                label: 'Settings',
-                                isActive: widget.currentScreen == 'settings',
-                                isCompact: isNarrowScreen,
-                                onPressed: () {
-                                  if (widget.currentScreen != 'settings') {
-                                    widget.onMenuSelected('settings');
-                                  }
-                                },
-                              ),
+                              // Settings (always last)
+                              ...widget.menuItems.where((item) => item.id == 'settings').map((item) {
+                                return _buildIconButton(
+                                  icon: item.icon,
+                                  label: _getShortLabel(item.label, isNarrowScreen),
+                                  isActive: widget.currentScreen == item.id,
+                                  isCompact: isNarrowScreen,
+                                  onPressed: () {
+                                    if (widget.currentScreen != item.id) {
+                                      widget.onMenuSelected(item.id);
+                                    }
+                                  },
+                                );
+                              }),
                             ],
                           ),
                         ),

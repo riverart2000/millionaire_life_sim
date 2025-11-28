@@ -152,6 +152,10 @@ class _TransactionsViewState extends ConsumerState<TransactionsView> {
         icon = Icons.sync_alt;
         color = Colors.indigo;
         break;
+      case TransactionKind.answer:
+        icon = Icons.question_answer;
+        color = Colors.teal;
+        break;
     }
     return CircleAvatar(backgroundColor: color.withOpacity(0.15), child: Icon(icon, color: color));
   }

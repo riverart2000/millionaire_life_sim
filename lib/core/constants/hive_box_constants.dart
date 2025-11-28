@@ -7,5 +7,6 @@ class HiveBoxConstants {
   static const marketplaceItems = 'marketplace_items';
   static const ownedItems = 'owned_items';
   static const investmentPrices = 'investment_prices';
+  static const declarations = 'declarations';
 }
 

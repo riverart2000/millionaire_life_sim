@@ -47,6 +47,47 @@ class MarketplaceService {
     }
   }
 
+  Future<Result<void>> sellBackItem({
+    required String userId,
+    required MarketplaceItem item,
+  }) async {
+    try {
+      // Refund the money to the appropriate jar
+      await _jarService.deposit(
+        userId: userId,
+        jarId: item.requiredJar,
+        amount: item.price,
+        description: 'Sold back ${item.name}',
+        kind: TransactionKind.sale,
+      );
+
+      // Remove ownership and list the item back in the catalog
+      final listing = item.copyWith(
+        ownerId: '', // Remove ownership
+        sellerId: userId,
+        isListed: true,
+        listedAt: DateTime.now(),
+      );
+      await _localRepository.saveLocalItem(listing);
+      
+      // Sync to Firebase if available
+      if (_remoteRepository != null) {
+        try {
+          await _remoteRepository.publishListing(listing);
+          logInfo('✅ Listing synced to Firebase');
+        } catch (e) {
+          logInfo('⚠️ Could not sync listing to Firebase: $e');
+        }
+      }
+      
+      logInfo('✅ Sold back ${item.name} for £${item.price.toStringAsFixed(2)} to ${item.requiredJar} jar');
+      return const Success(null);
+    } catch (error, stackTrace) {
+      logError('Failed to sell back item', error, stackTrace);
+      return Failure(error, stackTrace);
+    }
+  }
+
   Future<Result<void>> listItemForSale({
     required String userId,
     required MarketplaceItem item,
@@ -125,6 +166,7 @@ class MarketplaceService {
       );
 
       final updatedItem = item.copyWith(
+        ownerId: userId,
         isListed: false,
         buyerId: userId,
         soldAt: DateTime.now(),
@@ -178,6 +220,37 @@ class MarketplaceService {
       return _localRepository.watchLocalCatalog();
     }
     return _remoteRepository.watchGlobalListings();
+  }
+
+  Future<void> applyDailyGrowth({required String userId, required double growthRate}) async {
+    try {
+      final items = await _localRepository.fetchLocalCatalog();
+      // Only grow items that are owned by user AND not in Experiences category
+      final ownedItems = items
+          .where((item) => item.ownerId == userId && item.category != 'Experiences')
+          .toList();
+      
+      if (ownedItems.isEmpty) {
+        logInfo('No owned marketplace items to grow (excluding Experiences)');
+        return;
+      }
+      
+      logInfo('📈 Applying ${(growthRate * 100).toStringAsFixed(2)}% growth to ${ownedItems.length} owned items (excluding Experiences)');
+      
+      for (final item in ownedItems) {
+        final oldPrice = item.price;
+        final newPrice = oldPrice * (1 + growthRate);
+        final updatedItem = item.copyWith(price: newPrice);
+        await _localRepository.saveLocalItem(updatedItem);
+        
+        logInfo('  ${item.name}: £${oldPrice.toStringAsFixed(2)} → £${newPrice.toStringAsFixed(2)}');
+      }
+      
+      logInfo('✅ Marketplace items growth applied');
+    } catch (error, stackTrace) {
+      logError('Failed to apply marketplace item growth', error, stackTrace);
+      rethrow;
+    }
   }
 }
 

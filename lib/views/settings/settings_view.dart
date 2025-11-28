@@ -1,7 +1,7 @@
-import 'dart:html' as html;
-
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
+// Conditional import for web-specific functionality
+import 'settings_web_utils.dart' if (dart.library.io) 'settings_stub.dart' as web_utils;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
 import 'package:provider/provider.dart' as legacy;
@@ -1085,14 +1085,7 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
       // Step 3: On web, also clear IndexedDB and localStorage directly
       if (kIsWeb) {
         try {
-          // Clear localStorage (except theme keys)
-          final storage = html.window.localStorage;
-          final storageKeys = storage.keys.toList();
-          for (final key in storageKeys) {
-            if (!key.startsWith('theme_') && !key.startsWith('flex_')) {
-              storage.remove(key);
-            }
-          }
+          web_utils.clearWebStorage();
           print('✅ localStorage cleared');
         } catch (e) {
           print('Error clearing localStorage: $e');
@@ -1112,14 +1105,12 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
       // Force a complete page reload on web, or invalidate everything on other platforms
       if (kIsWeb) {
         // On web, do a hard refresh to clear everything and let bootstrap recreate data
-        html.window.location.reload();
+        web_utils.reloadPage();
       } else {
         // On mobile/desktop, invalidate all providers
         ref.invalidate(jarsProvider);
-        ref.invalidate(transactionsProvider);
         ref.invalidate(userProfileProvider);
-        ref.invalidate(marketplaceCatalogProvider);
-        ref.invalidate(investmentsProvider);
+        ref.invalidate(transactionsProvider);
         ref.invalidate(simulationDateProvider);
         ref.invalidate(totalWealthProvider);
         ref.invalidate(userBootstrapProvider);
