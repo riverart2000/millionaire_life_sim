@@ -1,0 +1,65 @@
+{
+  "courseId": "mind_401",
+  "questions": [
+    {
+      "id": "mind_401_q1",
+      "text": "What is the 'morning routine' principle for peak performance?",
+      "options": [
+        "Waking up early is enough",
+        "Intentional morning rituals that set mental/physical state - controlling your first hour controls your day",
+        "Drinking coffee only",
+        "Checking emails immediately"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Peak performers design morning routines that prime their mind and body before reacting to external demands. Common elements: meditation, exercise, journaling, reading, visualization, healthy breakfast. The principle: control your first hour or your day controls you. Your morning ritual determines daily momentum."
+    },
+    {
+      "id": "mind_401_q2",
+      "text": "What is 'deep work' according to Cal Newport?",
+      "options": [
+        "Working long hours",
+        "Professional activities in a state of distraction-free concentration that push cognitive capabilities to their limit",
+        "Physical labor",
+        "Working underwater"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Deep work is focused, uninterrupted work on cognitively demanding tasks - the opposite of shallow work (emails, meetings, admin). It creates maximum value in minimum time and is increasingly rare/valuable. Schedule 2-4 hour blocks, eliminate distractions, build the skill through deliberate practice."
+    },
+    {
+      "id": "mind_401_q3",
+      "text": "What is the 'two-minute rule' for habit formation?",
+      "options": [
+        "Complete tasks in two minutes",
+        "Make new habits so easy they take two minutes or less to start - builds momentum for larger goals",
+        "Work for only two minutes daily",
+        "Think for two minutes before acting"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The two-minute rule (James Clear): make new habits ridiculously easy to start. Want to read more? Commit to one page. Exercise? Put on shoes. The key is showing up consistently. Once started, you often continue beyond two minutes. Master showing up, then gradually increase difficulty."
+    },
+    {
+      "id": "mind_401_q4",
+      "text": "What is 'habit stacking'?",
+      "options": [
+        "Doing everything at once",
+        "Linking new habits to existing ones using 'after I [current habit], I will [new habit]' formula",
+        "Putting habits in a pile",
+        "Working on weekends only"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Habit stacking leverages existing habits as triggers for new ones. Formula: 'After I [current habit], I will [new habit].' Example: 'After I pour my morning coffee, I will meditate for 2 minutes.' Your current habits create anchors for building new behaviors efficiently."
+    },
+    {
+      "id": "mind_401_q5",
+      "text": "What is the '80/20 rule' (Pareto Principle) for productivity?",
+      "options": [
+        "Work 80 hours, rest 20 hours",
+        "80% of results come from 20% of efforts - focus on high-leverage activities",
+        "80% skill, 20% luck",
+        "Save 80%, spend 20%"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The 80/20 rule: 80% of outputs come from 20% of inputs. In business: 80% of revenue from 20% of clients. In productivity: 80% of results from 20% of activities. Identify your high-leverage 20% activities and double down. Eliminate or delegate the rest. Work smarter, not harder."
+    }
+  ]
+}

@@ -117,8 +117,8 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
         // Dialog
         Dialog(
           child: Container(
-            constraints: const BoxConstraints(maxWidth: 600, maxHeight: 700),
-            padding: const EdgeInsets.all(24),
+            constraints: const BoxConstraints(maxWidth: 600, maxHeight: 650),
+            padding: const EdgeInsets.all(16),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -132,28 +132,37 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
                         children: [
                           Text(
                             widget.courseTitle,
-                            style: theme.textTheme.titleLarge?.copyWith(
+                            style: theme.textTheme.titleMedium?.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
-                          const SizedBox(height: 4),
+                          const SizedBox(height: 2),
                           Text(
-                            'Question ${_currentQuestionIndex + 1} of $_totalQuestions',
+                            'Q${_currentQuestionIndex + 1}/$_totalQuestions',
                             style: theme.textTheme.bodySmall,
                           ),
                         ],
                       ),
                     ),
-                    Text(
-                      '${_correctAnswers}/$_totalQuestions',
-                      style: theme.textTheme.titleMedium?.copyWith(
-                        color: Colors.green,
-                        fontWeight: FontWeight.bold,
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: Colors.green.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        '${_correctAnswers}/$_totalQuestions',
+                        style: theme.textTheme.titleSmall?.copyWith(
+                          color: Colors.green,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 12),
 
                 // Progress bar
                 LinearProgressIndicator(
@@ -161,7 +170,7 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
                   backgroundColor: theme.colorScheme.surfaceContainerHighest,
                   color: Colors.green,
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 16),
 
                 // Question
                 Expanded(
@@ -171,11 +180,11 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
                       children: [
                         Text(
                           _currentQuestion.text,
-                          style: theme.textTheme.titleMedium?.copyWith(
+                          style: theme.textTheme.bodyLarge?.copyWith(
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        const SizedBox(height: 24),
+                        const SizedBox(height: 12),
 
                         // Options
                         ...List.generate(_currentQuestion.options.length, (index) {
@@ -200,29 +209,29 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
                           }
 
                           return Padding(
-                            padding: const EdgeInsets.only(bottom: 12),
+                            padding: const EdgeInsets.only(bottom: 8),
                             child: InkWell(
                               onTap: _showExplanation ? null : () {
                                 setState(() {
                                   _selectedAnswer = index;
                                 });
                               },
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(8),
                               child: Container(
-                                padding: const EdgeInsets.all(16),
+                                padding: const EdgeInsets.all(12),
                                 decoration: BoxDecoration(
                                   color: backgroundColor,
                                   border: Border.all(
                                     color: borderColor ?? theme.colorScheme.outline,
                                     width: borderColor != null ? 2 : 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Row(
                                   children: [
                                     Container(
-                                      width: 32,
-                                      height: 32,
+                                      width: 28,
+                                      height: 28,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                         color: isSelected
@@ -237,21 +246,22 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
                                                 ? theme.colorScheme.onPrimary
                                                 : theme.colorScheme.onSurface,
                                             fontWeight: FontWeight.bold,
+                                            fontSize: 12,
                                           ),
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(width: 16),
+                                    const SizedBox(width: 12),
                                     Expanded(
                                       child: Text(
                                         _currentQuestion.options[index],
-                                        style: theme.textTheme.bodyLarge,
+                                        style: theme.textTheme.bodyMedium,
                                       ),
                                     ),
                                     if (showResult && isCorrect)
-                                      const Icon(Icons.check_circle, color: Colors.green),
+                                      const Icon(Icons.check_circle, color: Colors.green, size: 20),
                                     if (showResult && isSelected && !isCorrect)
-                                      const Icon(Icons.cancel, color: Colors.red),
+                                      const Icon(Icons.cancel, color: Colors.red, size: 20),
                                   ],
                                 ),
                               ),
@@ -261,14 +271,14 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
 
                         // Explanation
                         if (_showExplanation) ...[
-                          const SizedBox(height: 16),
+                          const SizedBox(height: 12),
                           Container(
-                            padding: const EdgeInsets.all(16),
+                            padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
                               color: _isCorrect
                                   ? Colors.green.withOpacity(0.1)
                                   : Colors.orange.withOpacity(0.1),
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(8),
                               border: Border.all(
                                 color: _isCorrect ? Colors.green : Colors.orange,
                               ),
@@ -281,21 +291,22 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
                                     Icon(
                                       _isCorrect ? Icons.check_circle : Icons.info_outline,
                                       color: _isCorrect ? Colors.green : Colors.orange,
+                                      size: 18,
                                     ),
-                                    const SizedBox(width: 8),
+                                    const SizedBox(width: 6),
                                     Text(
                                       _isCorrect ? 'Correct!' : 'Try Again',
-                                      style: theme.textTheme.titleSmall?.copyWith(
+                                      style: theme.textTheme.bodyMedium?.copyWith(
                                         color: _isCorrect ? Colors.green : Colors.orange,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 6),
                                 Text(
                                   _currentQuestion.explanation,
-                                  style: theme.textTheme.bodyMedium,
+                                  style: theme.textTheme.bodySmall,
                                 ),
                               ],
                             ),
@@ -306,7 +317,7 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
                   ),
                 ),
 
-                const SizedBox(height: 24),
+                const SizedBox(height: 16),
 
                 // Action buttons
                 Row(
@@ -315,18 +326,27 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
                     if (!_showExplanation) ...[
                       TextButton(
                         onPressed: () => Navigator.of(context).pop(),
+                        style: TextButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                        ),
                         child: const Text('Cancel'),
                       ),
                       const SizedBox(width: 8),
                       FilledButton(
                         onPressed: _selectedAnswer != null ? _checkAnswer : null,
-                        child: const Text('Submit Answer'),
+                        style: FilledButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        ),
+                        child: const Text('Submit'),
                       ),
                     ] else ...[
                       FilledButton(
                         onPressed: _nextQuestion,
+                        style: FilledButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        ),
                         child: Text(_isCorrect
-                            ? (_isLastQuestion ? 'Complete Course' : 'Next Question')
+                            ? (_isLastQuestion ? 'Complete' : 'Next')
                             : 'Try Again'),
                       ),
                     ],

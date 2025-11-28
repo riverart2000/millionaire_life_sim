@@ -1,0 +1,65 @@
+{
+  "courseId": "sales_301",
+  "questions": [
+    {
+      "id": "sales_301_q1",
+      "text": "What is the 'reciprocity principle' in sales psychology?",
+      "options": [
+        "Giving receipts to customers",
+        "People feel obligated to give back when they receive something first - offering value creates debt",
+        "Returning products",
+        "Mutual respect"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Reciprocity (Cialdini): when you give first, people feel psychological debt to return the favor. Examples: free trials, valuable content, consultations, samples. The gift must be: (1) Unexpected, (2) Personalized, (3) Valuable. This creates goodwill and increases likelihood of purchase. Amazon's free shipping drives Prime subscriptions via reciprocity."
+    },
+    {
+      "id": "sales_301_q2",
+      "text": "What is 'loss aversion' and how does it affect buying decisions?",
+      "options": [
+        "Avoiding losing weight",
+        "People feel the pain of losing something twice as strongly as the pleasure of gaining it",
+        "Being afraid of sales",
+        "Getting lost"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Loss aversion: losing $100 hurts more than gaining $100 feels good. In sales, frame your solution around what they'll LOSE by not acting (time, money, opportunity, competitive edge) rather than only what they'll gain. Example: 'Every month without this, you're losing $5K to inefficiency' (pain) vs 'You'll save $5K' (gain)."
+    },
+    {
+      "id": "sales_301_q3",
+      "text": "What is the 'scarcity principle'?",
+      "options": [
+        "Having few products to sell",
+        "People value things more when they're rare or limited - creates urgency through fear of missing out",
+        "Being scarce in meetings",
+        "Low inventory problems"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Scarcity increases perceived value. Types: (1) Limited quantity: 'Only 3 spots left,' (2) Limited time: '48-hour offer,' (3) Exclusive access: 'Invitation-only.' Must be genuine - false scarcity destroys trust. Works because of loss aversion and social proof (if others want it, it must be good). Use ethically, not manipulatively."
+    },
+    {
+      "id": "sales_301_q4",
+      "text": "What is 'anchoring' in pricing psychology?",
+      "options": [
+        "Dropping anchor on a boat",
+        "The first number mentioned becomes the reference point for all following numbers",
+        "Keeping prices stable",
+        "Setting minimum prices"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Anchoring: the first price you see influences perception of value. Example: Show $10,000 option first, then $5,000 option feels reasonable. Or: 'Competitors charge $15K, we're $8K.' The $15K anchor makes $8K seem like a deal. Always anchor high when presenting options. Also works with value: 'This saves clients $50K annually' before mentioning $10K price."
+    },
+    {
+      "id": "sales_301_q5",
+      "text": "What is the 'decoy effect' in pricing?",
+      "options": [
+        "Using fake products",
+        "Adding a strategically priced option to make another option more attractive",
+        "Duck hunting",
+        "Deceiving customers"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The decoy effect uses a third option to influence choice between two others. Example: Small coffee $3, Large $7 → Most buy Small. Add Medium $6.50 → Now Large seems like better value (+$0.50 for more coffee). The Medium is the 'decoy' - rarely purchased but makes Large attractive. Used in product tiers: Basic, Pro (decoy), Enterprise."
+    }
+  ]
+}

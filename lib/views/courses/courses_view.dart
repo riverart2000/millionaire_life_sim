@@ -486,6 +486,28 @@ class _CourseCard extends ConsumerWidget {
   }
 
   Future<void> _purchaseCourse(BuildContext context, WidgetRef ref, Course course) async {
+    // First, check balance before showing anything
+    final userId = ref.read(userIdProvider);
+    final jarsAsync = await ref.read(jarsProvider.future);
+    final eduJar = jarsAsync.firstWhere(
+      (jar) => jar.id.toUpperCase() == 'EDU',
+      orElse: () => jarsAsync.first,
+    );
+
+    // Check if sufficient balance
+    if (eduJar.balance < course.cost) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Not enough yet! Work harder, smarter, longer. Build your EDU jar to ${CurrencyFormatter.format(course.cost)} to unlock this course.'),
+            backgroundColor: Colors.orange,
+            duration: const Duration(seconds: 4),
+          ),
+        );
+      }
+      return;
+    }
+
     // Show confirmation dialog
     final confirmed = await showDialog<bool>(
       context: context,
@@ -582,27 +604,6 @@ class _CourseCard extends ConsumerWidget {
 
     final jarService = ref.read(jarServiceProvider);
     final userRepo = ref.read(userRepositoryProvider);
-    final userId = ref.read(userIdProvider);
-    
-    // Get EDU jar
-    final jarsAsync = await ref.read(jarsProvider.future);
-    final eduJar = jarsAsync.firstWhere(
-      (jar) => jar.id.toUpperCase() == 'EDU',
-      orElse: () => jarsAsync.first,
-    );
-
-    // Check if sufficient balance
-    if (eduJar.balance < course.cost) {
-      if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Insufficient EDU jar balance. Need ${CurrencyFormatter.format(course.cost)}, have ${CurrencyFormatter.format(eduJar.balance)}'),
-            backgroundColor: Colors.red,
-          ),
-        );
-      }
-      return;
-    }
 
     // Withdraw from EDU jar
     final withdrawResult = await jarService.withdraw(
@@ -614,10 +615,14 @@ class _CourseCard extends ConsumerWidget {
 
     if (withdrawResult is Failure<Jar>) {
       if (context.mounted) {
+        final message = withdrawResult.exception.toString();
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Failed to withdraw: ${withdrawResult.exception}'),
-            backgroundColor: Colors.red,
+            content: Text(message.contains('Insufficient') 
+              ? 'Not enough yet! Keep building your EDU jar to invest in your education.'
+              : message.replaceFirst('Exception: ', '')),
+            backgroundColor: Colors.orange,
+            duration: const Duration(seconds: 4),
           ),
         );
       }

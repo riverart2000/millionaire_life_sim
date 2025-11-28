@@ -1,0 +1,65 @@
+{
+  "courseId": "mind_101",
+  "questions": [
+    {
+      "id": "mind_101_q1",
+      "text": "What is the core difference between a scarcity mindset and abundance mindset?",
+      "options": [
+        "Amount of money in the bank",
+        "Scarcity sees limited resources and competition; abundance sees unlimited opportunities and collaboration",
+        "Education level",
+        "Geographic location"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A scarcity mindset believes resources are limited - if someone wins, you lose. This creates fear and competition. Abundance mindset believes opportunities are unlimited and success is available to all. This creates generosity, collaboration, and innovative thinking - traits common among wealthy individuals."
+    },
+    {
+      "id": "mind_101_q2",
+      "text": "What is 'delayed gratification' and why is it crucial for wealth building?",
+      "options": [
+        "Never enjoying anything",
+        "Choosing long-term rewards over immediate pleasure - investing today for tomorrow's wealth",
+        "Being late to events",
+        "Avoiding all spending"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Delayed gratification is the ability to resist immediate temptation for greater future rewards. Millionaires invest and save rather than spending on instant gratification. The famous marshmallow study showed children who delayed gratification had better life outcomes. It's essential for wealth accumulation."
+    },
+    {
+      "id": "mind_101_q3",
+      "text": "What is 'net worth thinking' versus 'paycheck thinking'?",
+      "options": [
+        "Rich vs poor",
+        "Focusing on building assets and equity versus only counting monthly income",
+        "Banks vs employers",
+        "Stocks vs jobs"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Paycheck thinkers measure success by monthly income and spend accordingly. Net worth thinkers focus on accumulating assets (investments, business equity, real estate). A $200k/year earner who spends it all has lower net worth than a $60k earner who invests 30%. Millionaires think in net worth."
+    },
+    {
+      "id": "mind_101_q4",
+      "text": "What does it mean to 'pay yourself first'?",
+      "options": [
+        "Buy luxuries before bills",
+        "Automatically invest/save before spending on anything else - treating wealth building as your first 'expense'",
+        "Give yourself raises",
+        "Spend all your money on yourself"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Pay yourself first means treating savings and investments as your #1 priority expense. Set up automatic transfers to investment accounts the day you get paid, before spending on anything. This ensures wealth building happens automatically rather than hoping there's money left at month's end."
+    },
+    {
+      "id": "mind_101_q5",
+      "text": "What is the millionaire's perspective on failure?",
+      "options": [
+        "Failures are shameful and should be hidden",
+        "Failure is tuition - valuable feedback and essential stepping stones to success",
+        "Millionaires never fail",
+        "Failure means you should quit"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Millionaires reframe failure as education. Each failure teaches what doesn't work, bringing you closer to what does. Many successful people failed multiple times - Walt Disney was fired for lacking creativity, Oprah was fired from her first TV job. The difference is they persisted and learned."
+    }
+  ]
+}

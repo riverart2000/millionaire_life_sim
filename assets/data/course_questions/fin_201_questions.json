@@ -1,0 +1,53 @@
+{
+  "courseId": "fin_201",
+  "questions": [
+    {
+      "id": "fin_201_q1",
+      "text": "What is zero-based budgeting?",
+      "options": [
+        "Starting with zero savings",
+        "Allocating every dollar of income to a specific category until income minus expenses equals zero",
+        "Having no budget at all",
+        "Spending everything you earn"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Zero-based budgeting means you give every dollar a job before the month begins. Income minus expenses should equal zero - not because you spend everything, but because you've allocated funds to savings, investments, and expenses. This ensures intentional money management."
+    },
+    {
+      "id": "fin_201_q2",
+      "text": "What is the envelope budgeting system?",
+      "options": [
+        "Hiding cash in envelopes",
+        "Physical or digital 'envelopes' for each spending category with set amounts",
+        "Mailing bills in envelopes",
+        "Investing in paper products"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The envelope system involves dividing your spending money into categories (groceries, entertainment, gas) and allocating a specific amount to each 'envelope.' Once an envelope is empty, you stop spending in that category. This prevents overspending and builds discipline."
+    },
+    {
+      "id": "fin_201_q3",
+      "text": "What is the 50/30/20 budgeting rule?",
+      "options": [
+        "50% taxes, 30% bills, 20% fun",
+        "50% needs, 30% wants, 20% savings/debt",
+        "50% investing, 30% spending, 20% giving",
+        "50% stocks, 30% bonds, 20% cash"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The 50/30/20 rule allocates: 50% to needs (housing, food, utilities, transportation), 30% to wants (entertainment, dining out, hobbies), and 20% to savings and debt repayment. It's a simple framework for balanced money management."
+    },
+    {
+      "id": "fin_201_q4",
+      "text": "What is 'pay yourself first' in budgeting?",
+      "options": [
+        "Spending on luxuries before bills",
+        "Automatically transferring money to savings/investments before spending on anything else",
+        "Getting paid in cash",
+        "Giving yourself a raise"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Pay yourself first' means treating savings and investments as your most important 'expense.' Set up automatic transfers to savings/investment accounts as soon as you get paid, before spending on anything else. This ensures wealth building becomes automatic."
+    }
+  ]
+}

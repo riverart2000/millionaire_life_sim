@@ -1,0 +1,65 @@
+{
+  "courseId": "fin_401",
+  "questions": [
+    {
+      "id": "fin_401_q1",
+      "text": "What is the primary purpose of a will?",
+      "options": [
+        "To avoid all taxes",
+        "To legally specify how your assets should be distributed after death",
+        "To hide assets from family",
+        "To guarantee immortality"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A will is a legal document that specifies how you want your assets distributed, names guardians for minor children, and designates an executor to manage your estate. Without a will, state laws determine asset distribution, which may not align with your wishes."
+    },
+    {
+      "id": "fin_401_q2",
+      "text": "What is a living trust and why is it useful?",
+      "options": [
+        "A trust that expires when you die",
+        "A legal entity that owns your assets, avoids probate, and provides privacy while maintaining control during your lifetime",
+        "A bank account for living expenses",
+        "Life insurance policy"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A living trust (revocable trust) holds your assets while you're alive, with you as trustee. Benefits include: avoiding probate (saving time and money), maintaining privacy (unlike wills which are public), and allowing seamless asset management if you become incapacitated."
+    },
+    {
+      "id": "fin_401_q3",
+      "text": "What is estate tax and who typically pays it?",
+      "options": [
+        "Tax on all inheritances",
+        "Federal tax on estates exceeding the exemption limit (currently $13.61M in 2024) before assets pass to heirs",
+        "Property tax on houses",
+        "Tax everyone pays annually"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Estate tax is a federal tax on the transfer of wealth at death. The 2024 exemption is $13.61M per person ($27.22M for couples). Only estates exceeding this pay tax, at rates up to 40%. Most estates don't owe federal estate tax, though some states have lower exemption amounts."
+    },
+    {
+      "id": "fin_401_q4",
+      "text": "What is the purpose of a healthcare power of attorney?",
+      "options": [
+        "To avoid medical bills",
+        "To designate someone to make medical decisions on your behalf if you're incapacitated",
+        "To become a doctor",
+        "To sue hospitals"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A healthcare power of attorney (healthcare proxy) legally authorizes someone to make medical decisions for you if you're unable to communicate. This prevents family conflict and ensures your medical wishes are honored during emergencies or incapacitation."
+    },
+    {
+      "id": "fin_401_q5",
+      "text": "What is beneficiary designation and why does it override a will?",
+      "options": [
+        "A charity organization",
+        "Named recipients on accounts (401k, IRA, insurance) who receive assets directly, bypassing probate and will instructions",
+        "A legal firm",
+        "A type of will"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Beneficiary designations on retirement accounts, life insurance, and some bank accounts supersede will instructions. These assets transfer directly to named beneficiaries, avoiding probate. Critical to review and update beneficiaries after major life events (marriage, divorce, births)."
+    }
+  ]
+}

@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:provider/provider.dart' as legacy;
+import 'package:get_it/get_it.dart';
 
 import '../../core/utils/currency_formatter.dart';
 import '../../core/utils/result.dart';
 import '../../models/investment_model.dart';
 import '../../models/jar_model.dart';
+import '../../providers/bootstrap_provider.dart';
 import '../../providers/data_providers.dart';
 import '../../providers/investment_provider.dart';
+import '../../providers/session_providers.dart';
 import '../../providers/sound_provider.dart';
 import '../../widgets/purchase_celebration.dart';
+import '../../widgets/riddle_dialog.dart';
+import '../../widgets/streak_reward_dialog.dart';
+import '../../services/riddle_service.dart';
+import '../../services/jar_service.dart';
+import '../../models/transaction_model.dart';
 
 class InvestmentsView extends ConsumerWidget {
   const InvestmentsView({super.key});
@@ -138,6 +146,66 @@ class InvestmentsView extends ConsumerWidget {
     Investment investment,
     double amount,
   ) async {
+    // Show riddle challenge first
+    final riddleService = GetIt.instance<RiddleService>();
+    final riddle = riddleService.getRiddleBasedOnStreak();
+    
+    final riddleResult = await showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => RiddleDialog(
+        riddle: riddle,
+        riddleService: riddleService,
+        onComplete: (correct, reward) {},
+      ),
+    );
+    
+    // Only proceed if riddle was answered correctly
+    if (riddleResult != true) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('❌ Transaction cancelled. Try again when you\'re ready!'),
+            backgroundColor: Colors.orange,
+            duration: Duration(seconds: 3),
+          ),
+        );
+      }
+      return;
+    }
+    
+    // Check for streak milestone reward
+    final newStreak = riddleService.getCurrentStreak();
+    final reward = riddleService.getStreakReward(newStreak);
+    
+    if (reward != null) {
+      // Add reward to FFA jar
+      final jarService = ref.read(jarServiceProvider);
+      final profile = ref.read(userProfileProvider).value;
+      final userId = profile?.id ?? 'demo';
+      
+      await jarService.deposit(
+        userId: userId,
+        jarId: 'FFA',
+        amount: reward,
+        description: 'Riddle Streak Bonus (${newStreak}x)',
+        kind: TransactionKind.income,
+      );
+      
+      // Show streak reward dialog with fireworks
+      if (context.mounted) {
+        await showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => StreakRewardDialog(
+            streak: newStreak,
+            reward: reward,
+            jarName: 'FFA',
+          ),
+        );
+      }
+    }
+    
     // Play investment-specific jingle
     try {
       final soundProvider = legacy.Provider.of<SoundProvider>(context, listen: false);
@@ -179,6 +247,66 @@ class InvestmentsView extends ConsumerWidget {
     Investment investment,
     double units,
   ) async {
+    // Show riddle challenge first
+    final riddleService = GetIt.instance<RiddleService>();
+    final riddle = riddleService.getRiddleBasedOnStreak();
+    
+    final riddleResult = await showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => RiddleDialog(
+        riddle: riddle,
+        riddleService: riddleService,
+        onComplete: (correct, reward) {},
+      ),
+    );
+    
+    // Only proceed if riddle was answered correctly
+    if (riddleResult != true) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('❌ Transaction cancelled. Try again when you\'re ready!'),
+            backgroundColor: Colors.orange,
+            duration: Duration(seconds: 3),
+          ),
+        );
+      }
+      return;
+    }
+    
+    // Check for streak milestone reward
+    final newStreak = riddleService.getCurrentStreak();
+    final reward = riddleService.getStreakReward(newStreak);
+    
+    if (reward != null) {
+      // Add reward to FFA jar
+      final jarService = ref.read(jarServiceProvider);
+      final profile = ref.read(userProfileProvider).value;
+      final userId = profile?.id ?? 'demo';
+      
+      await jarService.deposit(
+        userId: userId,
+        jarId: 'FFA',
+        amount: reward,
+        description: 'Riddle Streak Bonus (${newStreak}x)',
+        kind: TransactionKind.income,
+      );
+      
+      // Show streak reward dialog with fireworks
+      if (context.mounted) {
+        await showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => StreakRewardDialog(
+            streak: newStreak,
+            reward: reward,
+            jarName: 'FFA',
+          ),
+        );
+      }
+    }
+    
     // Play investment-specific jingle
     try {
       final soundProvider = legacy.Provider.of<SoundProvider>(context, listen: false);

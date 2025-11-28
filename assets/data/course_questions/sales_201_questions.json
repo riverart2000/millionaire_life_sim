@@ -1,0 +1,65 @@
+{
+  "courseId": "sales_201",
+  "questions": [
+    {
+      "id": "sales_201_q1",
+      "text": "What is the most effective way to handle price objections?",
+      "options": [
+        "Immediately drop your price",
+        "Understand the underlying concern, reframe value, break down costs, and use social proof",
+        "Argue with the prospect",
+        "Walk away"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Price objections rarely mean 'too expensive' - they mean 'I don't see the value.' Strategy: (1) Clarify: 'Compared to what?' (2) Reframe value: ROI, cost of inaction, (3) Break it down: '$10K/year = $27/day for 3 new customers/month,' (4) Social proof: 'Our clients typically see 5x ROI,' (5) Ask: 'If price weren't a factor, would this solve your problem?'"
+    },
+    {
+      "id": "sales_201_q2",
+      "text": "How do you handle 'I need to think about it'?",
+      "options": [
+        "Say 'okay' and leave",
+        "Uncover the real objection: 'I appreciate that. What specifically would you like to think about?'",
+        "Pressure them to decide now",
+        "Give up immediately"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'I need to think about it' usually masks a real objection. Respond: 'I appreciate that. Most people say that when something specific is bothering them. Is it the price, the timeline, or something else?' Create safe space to voice concerns. Then address the real issue. Thinking time without addressing concerns rarely results in sales."
+    },
+    {
+      "id": "sales_201_q3",
+      "text": "What is the 'feel, felt, found' objection handling framework?",
+      "options": [
+        "A therapy technique",
+        "'I understand how you feel, others felt the same way, here's what they found after trying it'",
+        "A massage technique",
+        "Emotional manipulation"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Feel-Felt-Found builds empathy and social proof: (1) Feel: 'I understand how you feel,' (2) Felt: 'Other clients felt the same way,' (3) Found: 'Here's what they found after implementing...' Example: 'I understand you're concerned about implementation time. Many clients felt that way. What they found was our onboarding cuts it in half.'"
+    },
+    {
+      "id": "sales_201_q4",
+      "text": "How do you handle 'Your competitor is cheaper'?",
+      "options": [
+        "Match their price immediately",
+        "Differentiate on value, not price: 'Yes, they charge less. Here's why we're different and worth more...'",
+        "Badmouth the competitor",
+        "Give up"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Never compete on price alone - it's a race to zero. Response: 'You're right, they do charge less. Let me explain what's different...' Then highlight: superior results, better service, unique features, lower total cost of ownership, risk reduction. Reinforce ROI. If they only care about price, they're not your ideal customer."
+    },
+    {
+      "id": "sales_201_q5",
+      "text": "What is the 'boomerang' technique for objections?",
+      "options": [
+        "Throwing objections back at customers",
+        "Converting the objection into a reason to buy: using their concern as justification for moving forward",
+        "Australian sales technique",
+        "Returning products"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The boomerang turns objections into buying reasons. Examples: 'It's expensive' → 'That's exactly why we should move forward - the longer you wait, the more you're losing.' 'We're too busy' → 'That's precisely why you need this - it'll free up 10 hours weekly.' Only works when authentic, not manipulative."
+    }
+  ]
+}

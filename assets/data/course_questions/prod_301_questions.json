@@ -1,0 +1,41 @@
+{
+  "courseId": "prod_301",
+  "questions": [
+    {
+      "id": "prod_301_q1",
+      "text": "What is the key principle of effective delegation?",
+      "options": [
+        "Dumping all your work on others",
+        "Transfer both responsibility and authority - empower others to own outcomes, not just tasks",
+        "Micromanaging every detail",
+        "Never delegating anything important"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Effective delegation gives both the task AND the authority to complete it. Don't just delegate tasks ('do this'); delegate outcomes ('achieve this result however you see fit'). Provide: (1) Clear desired outcome, (2) Context/constraints, (3) Authority to make decisions, (4) Resources needed, (5) Check-in schedule. Then step back. Micromanaging isn't delegation."
+    },
+    {
+      "id": "prod_301_q2",
+      "text": "What is the '$10/hour vs $1000/hour' activity framework?",
+      "options": [
+        "Pricing hourly rates",
+        "Identifying which tasks create low value vs high value - delegate low-value work to focus on high-leverage activities",
+        "Salary negotiations",
+        "Billing clients"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Ask: 'Is this a $10/hour activity (admin, scheduling, data entry) or $1000/hour activity (strategy, relationship building, high-level decisions)?' Successful people relentlessly focus on high-value activities and delegate/automate the rest. Track your time for a week. Any $10/hour work you're doing? Delegate it. Your time is your scarcest resource."
+    },
+    {
+      "id": "prod_301_q3",
+      "text": "What is a Virtual Assistant (VA) and when should you hire one?",
+      "options": [
+        "A video game assistant",
+        "A remote professional who handles administrative tasks - hire when your time is worth more than their cost",
+        "An AI chatbot",
+        "A personal assistant robot"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A VA handles: email management, scheduling, research, data entry, social media, customer service, bookkeeping. Cost: $5-50/hour depending on skills/location. Hire when: (1) You're doing work worth less than your hourly rate, (2) Tasks are repeatable/trainable, (3) You're working IN your business, not ON it. Start 5-10 hours/week with clear SOPs."
+    }
+  ]
+}

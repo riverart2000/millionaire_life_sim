@@ -1,0 +1,65 @@
+{
+  "courseId": "mind_501",
+  "questions": [
+    {
+      "id": "mind_501_q1",
+      "text": "What is resilience in the context of mental toughness?",
+      "options": [
+        "Never experiencing setbacks",
+        "The ability to recover quickly from difficulties and adapt to challenges",
+        "Being stubborn",
+        "Avoiding all problems"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Resilience is the capacity to bounce back from adversity, adapt to change, and keep going despite setbacks. It's not about avoiding failure - it's about how quickly you recover. Resilient people view challenges as temporary, focus on what they can control, and extract lessons from every setback."
+    },
+    {
+      "id": "mind_501_q2",
+      "text": "What is the 'locus of control' and why does it matter?",
+      "options": [
+        "A meditation technique",
+        "Your belief about whether you control events (internal) or external forces control them (external)",
+        "A management style",
+        "A type of therapy"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Internal locus of control: believing your actions determine outcomes. External: believing luck, fate, others control your life. Successful people have strong internal locus - they take responsibility for results and believe their actions matter. This drives proactive behavior and persistence through obstacles."
+    },
+    {
+      "id": "mind_501_q3",
+      "text": "What is 'antifragile' according to Nassim Taleb?",
+      "options": [
+        "Fragile but pretending to be strong",
+        "Beyond resilient - systems that gain from disorder, stress, and volatility",
+        "Against fragility",
+        "A type of glass"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Antifragile goes beyond resilience. Fragile things break under stress. Resilient things withstand stress. Antifragile things improve from stress. Example: muscles grow stronger from workout stress. Build antifragility by: embracing small failures, diversifying, building optionality, having skin in the game."
+    },
+    {
+      "id": "mind_501_q4",
+      "text": "What is the 'growth through adversity' principle?",
+      "options": [
+        "Seeking unnecessary pain",
+        "Major breakthroughs often emerge from navigating challenges - adversity reveals and develops character",
+        "Complaining about problems",
+        "Avoiding all difficulty"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The principle: your greatest growth occurs during/after your biggest challenges. Adversity reveals your true character, forces innovation, and builds mental toughness. Many successful people credit their struggles as catalysts for breakthrough. Ask: 'What is this teaching me?' and 'How am I growing stronger?'"
+    },
+    {
+      "id": "mind_501_q5",
+      "text": "What is 'self-compassion' and why is it important for resilience?",
+      "options": [
+        "Making excuses for yourself",
+        "Treating yourself with kindness during failure/difficulty - crucial for sustained performance and recovery",
+        "Being lazy and self-indulgent",
+        "Ignoring problems"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Self-compassion is treating yourself with the same kindness you'd show a friend during struggles. Research shows it increases resilience, reduces anxiety, and leads to better performance than harsh self-criticism. Components: self-kindness (vs self-judgment), common humanity (everyone struggles), mindfulness (vs over-identification)."
+    }
+  ]
+}

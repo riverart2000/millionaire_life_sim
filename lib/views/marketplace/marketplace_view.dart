@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/services.dart';
+import 'package:get_it/get_it.dart';
 
 import '../../core/utils/result.dart';
 import '../../models/marketplace_item_model.dart';
@@ -7,6 +9,11 @@ import '../../providers/data_providers.dart';
 import '../../providers/bootstrap_provider.dart';
 import '../../providers/session_providers.dart';
 import '../../widgets/purchase_celebration.dart';
+import '../../widgets/riddle_dialog.dart';
+import '../../widgets/streak_reward_dialog.dart';
+import '../../services/riddle_service.dart';
+import '../../services/jar_service.dart';
+import '../../models/transaction_model.dart';
 
 class MarketplaceView extends ConsumerWidget {
   const MarketplaceView({super.key});
@@ -16,6 +23,7 @@ class MarketplaceView extends ConsumerWidget {
     final localCatalog = ref.watch(marketplaceCatalogProvider);
     final globalListings = ref.watch(marketplaceListingsProvider);
     final userId = ref.watch(userIdProvider);
+    final jars = ref.watch(jarsProvider);
 
     return PurchaseCelebration(
       child: RefreshIndicator(
@@ -27,9 +35,42 @@ class MarketplaceView extends ConsumerWidget {
         physics: const AlwaysScrollableScrollPhysics(),
         padding: const EdgeInsets.all(16),
         children: [
-          Text(
-            'Marketplace',
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Marketplace',
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+              ),
+              jars.when(
+                data: (jarList) {
+                  final ffaJar = jarList.firstWhere(
+                    (jar) => jar.id == 'FFA',
+                    orElse: () => jarList.first,
+                  );
+                  final playJar = jarList.firstWhere(
+                    (jar) => jar.id == 'PLAY',
+                    orElse: () => jarList.first,
+                  );
+                  final ltssJar = jarList.firstWhere(
+                    (jar) => jar.id == 'LTSS',
+                    orElse: () => jarList.first,
+                  );
+                  return Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      _JarChip(label: 'FFA', balance: ffaJar.balance, color: Colors.green),
+                      const SizedBox(width: 8),
+                      _JarChip(label: 'PLAY', balance: playJar.balance, color: Colors.purple),
+                      const SizedBox(width: 8),
+                      _JarChip(label: 'LTSS', balance: ltssJar.balance, color: Colors.blue),
+                    ],
+                  );
+                },
+                loading: () => const SizedBox.shrink(),
+                error: (_, __) => const SizedBox.shrink(),
+              ),
+            ],
           ),
           const SizedBox(height: 8),
           Text(
@@ -135,32 +176,12 @@ class _CatalogItemTile extends ConsumerWidget {
       contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(8),
-        child: item.imageUrl.isNotEmpty
-            ? Image.network(
-                item.imageUrl,
-                width: 48,
-                height: 48,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) {
-                  return Container(
-                    width: 48,
-                    height: 48,
-                    color: Colors.blueGrey.shade100,
-                    child: const Icon(Icons.image_not_supported, size: 24),
-                  );
-                },
-              )
-            : Container(
-                width: 48,
-                height: 48,
-                color: Colors.blueGrey.shade100,
-                child: Center(
-                  child: Text(
-                    item.name.substring(0, 1),
-                    style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
+        child: _MarketplaceImage(
+          imageUrl: item.imageUrl,
+          width: 48,
+          height: 48,
+          fit: BoxFit.cover,
+        ),
       ),
       title: Text(item.name),
       subtitle: Text('${item.category} • £${item.price.toStringAsFixed(0)} • Jar: ${item.requiredJar}'),
@@ -317,27 +338,16 @@ class _ListingTile extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (item.imageUrl.isNotEmpty) ...[
-              ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: Image.network(
-                  item.imageUrl,
-                  height: 200,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) {
-                    return Container(
-                      height: 200,
-                      color: Colors.blueGrey.shade100,
-                      child: const Center(
-                        child: Icon(Icons.image_not_supported, size: 60),
-                      ),
-                    );
-                  },
-                ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: _MarketplaceImage(
+                imageUrl: item.imageUrl,
+                height: 200,
+                width: double.infinity,
+                fit: BoxFit.cover,
               ),
-              const SizedBox(height: 12),
-            ],
+            ),
+            const SizedBox(height: 12),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -377,6 +387,81 @@ class _ListingTile extends ConsumerWidget {
                 else
                   FilledButton.icon(
                     onPressed: () async {
+                      // First check if user has enough money by getting jar balance
+                      final jars = await ref.read(jarsProvider.future);
+                      final requiredJar = jars.firstWhere(
+                        (jar) => jar.id == item.requiredJar,
+                        orElse: () => jars.first,
+                      );
+                      
+                      if (requiredJar.balance < item.price) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('Not enough yet! Work harder, smarter, longer. Build your ${requiredJar.name} jar to £${item.price.toStringAsFixed(0)} to unlock this.'),
+                            backgroundColor: Colors.orange,
+                            duration: const Duration(seconds: 4),
+                          ),
+                        );
+                        return;
+                      }
+                      
+                      // Show riddle challenge after money check passes
+                      final riddleService = GetIt.instance<RiddleService>();
+                      final riddle = riddleService.getRiddleBasedOnStreak();
+                      
+                      final riddleResult = await showDialog<bool>(
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (context) => RiddleDialog(
+                          riddle: riddle,
+                          riddleService: riddleService,
+                          onComplete: (correct, reward) {},
+                        ),
+                      );
+                      
+                      // Only proceed with purchase if riddle was answered correctly
+                      if (riddleResult != true) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('❌ Purchase cancelled. Try again when you\'re ready!'),
+                            backgroundColor: Colors.orange,
+                            duration: Duration(seconds: 3),
+                          ),
+                        );
+                        return;
+                      }
+                      
+                      // Check for streak milestone reward
+                      final newStreak = riddleService.getCurrentStreak();
+                      final reward = riddleService.getStreakReward(newStreak);
+                      
+                      if (reward != null) {
+                        // Add reward to PLAY jar
+                        final jarService = ref.read(jarServiceProvider);
+                        final profile = ref.read(userProfileProvider).value;
+                        final userId = profile?.id ?? 'demo';
+                        
+                        await jarService.deposit(
+                          userId: userId,
+                          jarId: 'PLAY',
+                          amount: reward,
+                          description: 'Riddle Streak Bonus (${newStreak}x)',
+                          kind: TransactionKind.income,
+                        );
+                        
+                        // Show streak reward dialog with fireworks
+                        await showDialog(
+                          context: context,
+                          barrierDismissible: false,
+                          builder: (context) => StreakRewardDialog(
+                            streak: newStreak,
+                            reward: reward,
+                            jarName: 'PLAY',
+                          ),
+                        );
+                      }
+                      
+                      // Now proceed with purchase
                       final result = await marketplaceService.purchaseItem(
                         userId: currentUserId,
                         sellerId: item.sellerId ?? item.ownerId ?? '',
@@ -393,8 +478,13 @@ class _ListingTile extends ConsumerWidget {
                           ),
                         );
                       } else if (result is Failure<void>) {
+                        final message = result.exception.toString();
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Purchase failed: ${result.exception}')),
+                          SnackBar(
+                            content: Text(message.replaceFirst('Bad state: ', '').replaceFirst('StateError: ', '')),
+                            backgroundColor: Colors.orange,
+                            duration: const Duration(seconds: 4),
+                          ),
                         );
                       }
                     },
@@ -405,6 +495,96 @@ class _ListingTile extends ConsumerWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+/// Helper widget to safely load marketplace images with fallback
+class _MarketplaceImage extends StatelessWidget {
+  const _MarketplaceImage({
+    required this.imageUrl,
+    required this.width,
+    required this.height,
+    this.fit = BoxFit.cover,
+  });
+
+  final String imageUrl;
+  final double width;
+  final double height;
+  final BoxFit fit;
+
+  @override
+  Widget build(BuildContext context) {
+    if (imageUrl.isEmpty) {
+      return _buildPlaceholder(context);
+    }
+
+    return Image.asset(
+      imageUrl,
+      width: width,
+      height: height,
+      fit: fit,
+      errorBuilder: (context, error, stackTrace) {
+        debugPrint('Failed to load image: $imageUrl - Error: $error');
+        return _buildPlaceholder(context);
+      },
+    );
+  }
+
+  Widget _buildPlaceholder(BuildContext context) {
+    final iconSize = width.isFinite ? width / 2 : 48.0;
+    return Container(
+      width: width.isFinite ? width : null,
+      height: height,
+      color: Colors.blueGrey.shade100,
+      child: Center(
+        child: Icon(Icons.image, color: Colors.grey, size: iconSize),
+      ),
+    );
+  }
+}
+
+/// Helper widget to display jar balance chips
+class _JarChip extends StatelessWidget {
+  const _JarChip({
+    required this.label,
+    required this.balance,
+    required this.color,
+  });
+
+  final String label;
+  final double balance;
+  final MaterialColor color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      decoration: BoxDecoration(
+        color: color.shade100,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: color.shade300),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            label,
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: color.shade900,
+            ),
+          ),
+          const SizedBox(width: 6),
+          Text(
+            '£${balance.toStringAsFixed(0)}',
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: color.shade900,
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -1,0 +1,41 @@
+{
+  "courseId": "mark_501",
+  "questions": [
+    {
+      "id": "mark_501_q1",
+      "text": "What is the most effective monetization strategy for a growing social media following?",
+      "options": [
+        "Only posting ads constantly",
+        "Building trust first, then offering value-based products or services aligned with your audience's needs",
+        "Selling followers' data",
+        "Copying competitors' content"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The most sustainable monetization approach involves building genuine trust and authority with your audience first. Once established, you can offer products, services, or partnerships that genuinely solve your audience's problems. This creates long-term revenue rather than short-term gains."
+    },
+    {
+      "id": "mark_501_q2",
+      "text": "What are the main social media monetization methods?",
+      "options": [
+        "Only sponsored posts",
+        "Affiliate marketing, sponsored content, digital products, services, and ad revenue",
+        "Begging for donations",
+        "Clickbait and scams"
+      ],
+      "correctAnswer": 1,
+      "explanation": "There are five main monetization methods: (1) Affiliate marketing (promoting others' products), (2) Sponsored content (brand partnerships), (3) Digital products (courses, ebooks), (4) Services (coaching, consulting), and (5) Ad revenue (YouTube Partner, Facebook monetization). The best strategy combines multiple streams."
+    },
+    {
+      "id": "mark_501_q3",
+      "text": "What is engagement rate and why does it matter for monetization?",
+      "options": [
+        "Total followers divided by posts",
+        "The percentage of your audience that interacts with your content - crucial for brand deals and conversions",
+        "How fast you respond to comments",
+        "Number of posts per day"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Engagement rate measures the percentage of your audience that likes, comments, shares, or saves your content. A 3-6% rate is good, above 6% is excellent. High engagement signals an active, loyal audience - brands pay more for engaged audiences because they're more likely to convert."
+    }
+  ]
+}

@@ -1,5 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/di/injection.dart';
@@ -16,10 +14,6 @@ import '../repositories/local/hive_jar_repository.dart';
 import '../repositories/local/hive_marketplace_repository.dart';
 import '../repositories/local/hive_transaction_repository.dart';
 import '../repositories/local/hive_user_repository.dart';
-import '../repositories/remote/firestore_jar_repository.dart';
-import '../repositories/remote/firestore_marketplace_repository.dart';
-import '../repositories/remote/firestore_transaction_repository.dart';
-import '../repositories/remote/firestore_user_repository.dart';
 import '../services/bootstrap_service.dart';
 import '../services/bills_service.dart';
 import '../services/data_export_service.dart';
@@ -31,7 +25,6 @@ import '../services/investment_service.dart';
 import '../services/jar_service.dart';
 import '../services/market_price_service.dart';
 import '../services/marketplace_service.dart';
-import '../services/sync_service.dart';
 import '../services/transaction_service.dart';
 import 'session_providers.dart';
 
@@ -44,84 +37,24 @@ final appInitializationProvider = FutureProvider<void>((ref) async {
   await bootstrapService.initialize();
 });
 
-/// Get FirebaseFirestore instance safely, or null if not initialized
-FirebaseFirestore? _getFirestore() {
-  try {
-    Firebase.app(); // Check if Firebase is initialized
-    return FirebaseFirestore.instance;
-  } catch (e) {
-    // Firebase not initialized
-    return null;
-  }
-}
-
-// Manual DI - create instances directly
+// Offline-only local repositories
 final jarRepositoryProvider = Provider<JarRepository>((ref) => HiveJarRepository());
-final jarRemoteRepositoryProvider = Provider<JarRemoteRepository>((ref) {
-  final firestore = _getFirestore();
-  if (firestore == null) {
-    throw StateError('Firebase not initialized - remote repository unavailable');
-  }
-  return FirestoreJarRepository(firestore: firestore);
-});
-
 final transactionRepositoryProvider = Provider<TransactionRepository>((ref) => HiveTransactionRepository());
-final transactionRemoteRepositoryProvider = Provider<TransactionRemoteRepository>((ref) {
-  final firestore = _getFirestore();
-  if (firestore == null) {
-    throw StateError('Firebase not initialized - remote repository unavailable');
-  }
-  return FirestoreTransactionRepository(firestore: firestore);
-});
-
 final marketplaceRepositoryProvider = Provider<MarketplaceRepository>((ref) => HiveMarketplaceRepository());
-final marketplaceRemoteRepositoryProvider = Provider<MarketplaceRemoteRepository>((ref) {
-  final firestore = _getFirestore();
-  if (firestore == null) {
-    throw StateError('Firebase not initialized - remote repository unavailable');
-  }
-  return FirestoreMarketplaceRepository(firestore: firestore);
-});
-
 final userRepositoryProvider = Provider<UserRepository>((ref) => HiveUserRepository());
-final userRemoteRepositoryProvider = Provider<UserRemoteRepository>((ref) {
-  final firestore = _getFirestore();
-  if (firestore == null) {
-    throw StateError('Firebase not initialized - remote repository unavailable');
-  }
-  return FirestoreUserRepository(firestore: firestore);
-});
 
 final transactionServiceProvider = Provider((ref) {
-  // Try to get remote repository, null if Firebase not initialized
-  TransactionRemoteRepository? remoteRepo;
-  try {
-    remoteRepo = ref.watch(transactionRemoteRepositoryProvider);
-  } catch (e) {
-    // Firebase not initialized - remote repository unavailable
-    remoteRepo = null;
-  }
-  
   return TransactionService(
     localRepository: ref.watch(transactionRepositoryProvider),
-    remoteRepository: remoteRepo,
+    remoteRepository: null,  // Fully offline
     userRepository: ref.watch(userRepositoryProvider),
   );
 });
 
 final jarServiceProvider = Provider((ref) {
-  // Try to get remote repository, null if Firebase not initialized
-  JarRemoteRepository? remoteRepo;
-  try {
-    remoteRepo = ref.watch(jarRemoteRepositoryProvider);
-  } catch (e) {
-    // Firebase not initialized - remote repository unavailable
-    remoteRepo = null;
-  }
-  
   return JarService(
     localRepository: ref.watch(jarRepositoryProvider),
-    remoteRepository: remoteRepo,
+    remoteRepository: null,  // Fully offline
     userRepository: ref.watch(userRepositoryProvider),
     transactionService: ref.watch(transactionServiceProvider),
   );
@@ -148,38 +81,10 @@ final incomeServiceProvider = Provider((ref) => IncomeService(
   marketplaceService: ref.watch(marketplaceServiceProvider),
 ));
 
-final syncServiceProvider = Provider((ref) {
-  // Only create sync service if Firebase is initialized
-  final firestore = _getFirestore();
-  if (firestore == null) {
-    throw StateError('Sync service requires Firebase - please configure Firebase to enable sync');
-  }
-  
-  return SyncService(
-    jarRepository: ref.watch(jarRepositoryProvider),
-    jarRemoteRepository: ref.watch(jarRemoteRepositoryProvider),
-    transactionRepository: ref.watch(transactionRepositoryProvider),
-    transactionRemoteRepository: ref.watch(transactionRemoteRepositoryProvider),
-    userRepository: ref.watch(userRepositoryProvider),
-    userRemoteRepository: ref.watch(userRemoteRepositoryProvider),
-    marketplaceRepository: ref.watch(marketplaceRepositoryProvider),
-    marketplaceRemoteRepository: ref.watch(marketplaceRemoteRepositoryProvider),
-  );
-});
-
 final marketplaceServiceProvider = Provider((ref) {
-  // Try to get remote repository, null if Firebase not initialized
-  MarketplaceRemoteRepository? remoteRepo;
-  try {
-    remoteRepo = ref.watch(marketplaceRemoteRepositoryProvider);
-  } catch (e) {
-    // Firebase not initialized - remote repository unavailable
-    remoteRepo = null;
-  }
-  
   return MarketplaceService(
     localRepository: ref.watch(marketplaceRepositoryProvider),
-    remoteRepository: remoteRepo,
+    remoteRepository: null,  // Fully offline
     jarRepository: ref.watch(jarRepositoryProvider),
     jarService: ref.watch(jarServiceProvider),
     transactionService: ref.watch(transactionServiceProvider),
@@ -187,17 +92,9 @@ final marketplaceServiceProvider = Provider((ref) {
 });
 
 final dataSeedServiceProvider = Provider((ref) {
-  // Try to get remote repository, null if Firebase not initialized
-  MarketplaceRemoteRepository? remoteRepo;
-  try {
-    remoteRepo = ref.watch(marketplaceRemoteRepositoryProvider);
-  } catch (e) {
-    remoteRepo = null;
-  }
-  
   return DataSeedService(
     marketplaceRepository: ref.watch(marketplaceRepositoryProvider),
-    marketplaceRemoteRepository: remoteRepo,
+    marketplaceRemoteRepository: null,  // Fully offline
   );
 });
 
@@ -283,14 +180,6 @@ final userBootstrapProvider = FutureProvider<void>((ref) async {
       final seedResult = await dataSeedService.seedMarketplaceFromAsset('assets/data/marketplace_items.json');
       if (seedResult.isSuccess) {
         logInfo('✅ Seeded marketplace catalog locally');
-        
-        // Also sync to Firebase if available (one-time setup)
-        final firebaseSyncResult = await dataSeedService.syncMarketplaceToFirebase('assets/data/marketplace_items.json');
-        if (firebaseSyncResult.isSuccess) {
-          logInfo('✅ Synced marketplace to Firebase');
-        } else {
-          logInfo('ℹ️ Could not sync to Firebase (may be offline or not configured)');
-        }
       } else {
         logError('Failed to seed marketplace', seedResult.error);
       }

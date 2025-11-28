@@ -1,0 +1,53 @@
+{
+  "courseId": "prod_201",
+  "questions": [
+    {
+      "id": "prod_201_q1",
+      "text": "What is 'Deep Work' according to Cal Newport?",
+      "options": [
+        "Working underground",
+        "Professional activities performed in a state of distraction-free concentration that push your cognitive capabilities to their limit",
+        "Physical labor",
+        "Working overtime"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Deep Work is focused, uninterrupted work on cognitively demanding tasks. Opposite of 'shallow work' (email, admin, meetings). Deep work: (1) Produces valuable output, (2) Improves skills, (3) Is hard to replicate. In 4 hours of deep work, you can accomplish more than 8 hours of fragmented work. Schedule deep work blocks when energy is highest."
+    },
+    {
+      "id": "prod_201_q2",
+      "text": "What is 'flow state'?",
+      "options": [
+        "Going with the flow",
+        "Complete absorption in an activity where time disappears and performance peaks",
+        "Water flow",
+        "Traffic flow"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Flow (Mihály Csíkszentmihályi) is optimal experience where: (1) Challenge matches skill level, (2) Clear goals exist, (3) Immediate feedback present, (4) Full concentration engaged. In flow, performance is 500% higher. Triggers: eliminate distractions, clear goals, slightly difficult tasks, uninterrupted time. Athletes call it 'the zone.'"
+    },
+    {
+      "id": "prod_201_q3",
+      "text": "What is 'attention residue' and why does it hurt productivity?",
+      "options": [
+        "Leftover attention at day's end",
+        "When switching tasks, part of your attention remains stuck on the previous task, reducing performance",
+        "Eye strain",
+        "Memory loss"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Attention residue (Sophie Leroy): when you switch tasks, your attention doesn't fully shift - part remains on the previous task. This significantly reduces performance on the new task. Solution: (1) Time-blocking - complete tasks before switching, (2) Transition rituals - clear mental palate, (3) Batch similar tasks. Minimize task switching for peak productivity."
+    },
+    {
+      "id": "prod_201_q4",
+      "text": "What is 'maker time' vs 'manager time'?",
+      "options": [
+        "Making time vs managing time",
+        "Maker time needs long uninterrupted blocks; manager time works in short scheduled intervals",
+        "Creating vs delegating",
+        "Morning vs afternoon"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Paul Graham's concept: Maker time (programmers, writers, designers) needs 3-4 hour uninterrupted blocks for deep work. Manager time works in 30-60 minute blocks for meetings/calls. Conflict arises when managers schedule 30-minute meetings during makers' deep work blocks - destroys productivity. Batch meetings; protect maker time."
+    }
+  ]
+}

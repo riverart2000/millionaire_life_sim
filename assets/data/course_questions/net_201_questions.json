@@ -1,0 +1,53 @@
+{
+  "courseId": "net_201",
+  "questions": [
+    {
+      "id": "net_201_q1",
+      "text": "What is a personal brand?",
+      "options": [
+        "Your favorite clothing brand",
+        "Your unique professional identity and reputation - what people say about you when you're not in the room",
+        "A company logo",
+        "Your personality"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Personal brand is your reputation: what you're known for, how you're perceived, the value you represent. Jeff Bezos: 'Your brand is what people say about you when you're not in the room.' Elements: expertise, values, personality, visual identity, content, consistency. Everyone has a brand; successful people build theirs intentionally."
+    },
+    {
+      "id": "net_201_q2",
+      "text": "What is 'thought leadership'?",
+      "options": [
+        "Thinking about leadership",
+        "Establishing expertise by consistently sharing valuable insights and innovative ideas in your field",
+        "Leading with your thoughts only",
+        "Being a know-it-all"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Thought leaders are recognized experts who shape conversations in their industry. Build thought leadership by: (1) Publishing valuable content (articles, books, videos), (2) Speaking at events, (3) Sharing original insights/research, (4) Taking positions on industry issues, (5) Being quoted in media. Thought leadership attracts opportunities, clients, and partnerships."
+    },
+    {
+      "id": "net_201_q3",
+      "text": "What is the best content strategy for building authority?",
+      "options": [
+        "Post everything about your life",
+        "Focus on one niche, consistently share valuable insights that solve audience problems, demonstrate expertise",
+        "Copy competitors' content",
+        "Only post promotional content"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Authority-building content: (1) Pick specific niche - be known for ONE thing first, (2) Solve real problems your audience faces, (3) Share knowledge freely - teach, don't sell, (4) Be consistent - daily/weekly presence, (5) Tell stories - make ideas memorable, (6) Document journey - authenticity builds trust. The 80/20 rule: 80% value, 20% promotion."
+    },
+    {
+      "id": "net_201_q4",
+      "text": "What is LinkedIn's purpose in personal branding?",
+      "options": [
+        "Social networking only",
+        "Professional platform for demonstrating expertise, building network, and attracting opportunities",
+        "Job searching only",
+        "Posting memes"
+      ],
+      "correctAnswer": 1,
+      "explanation": "LinkedIn is the #1 platform for professional branding. Use it to: (1) Optimize profile for keywords, (2) Share valuable content regularly, (3) Engage meaningfully with others' content, (4) Build authority in your niche, (5) Make strategic connections. Posting 3-5x weekly with valuable insights positions you as authority and attracts opportunities passively."
+    }
+  ]
+}

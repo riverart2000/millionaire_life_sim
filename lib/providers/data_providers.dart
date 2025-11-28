@@ -37,18 +37,8 @@ final marketplaceCatalogProvider = StreamProvider<List<MarketplaceItem>>((ref) {
 
 final marketplaceListingsProvider = StreamProvider<List<MarketplaceItem>>((ref) {
   final syncEnabled = ref.watch(syncEnabledProvider);
-  if (!syncEnabled) {
-    return ref.watch(marketplaceRepositoryProvider).watchLocalCatalog();
-  }
-  
-  // Try to use remote repository, fall back to local if Firebase not initialized
-  try {
-    final repo = ref.watch(marketplaceRemoteRepositoryProvider);
-    return repo.watchGlobalListings();
-  } catch (e) {
-    // Firebase not initialized, use local catalog
-    return ref.watch(marketplaceRepositoryProvider).watchLocalCatalog();
-  }
+  // Fully offline - always use local catalog
+  return ref.watch(marketplaceRepositoryProvider).watchLocalCatalog();
 });
 
 final totalWealthProvider = Provider<double>((ref) {

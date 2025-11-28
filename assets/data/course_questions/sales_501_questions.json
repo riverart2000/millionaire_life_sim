@@ -1,0 +1,77 @@
+{
+  "courseId": "sales_501",
+  "questions": [
+    {
+      "id": "sales_501_q1",
+      "text": "What is the most important principle of ethical negotiation?",
+      "options": [
+        "Win at all costs",
+        "Seek win-win outcomes where both parties feel they've gained value",
+        "Take advantage of the other party",
+        "Never compromise"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Win-win negotiation (principled negotiation) creates mutual value rather than dividing a fixed pie. Both parties' interests are satisfied. This builds long-term relationships and repeat business. Contrast with win-lose (one party dominates) which breeds resentment. Focus on interests (why they want it), not positions (what they're demanding)."
+    },
+    {
+      "id": "sales_501_q2",
+      "text": "What is BATNA in negotiation?",
+      "options": [
+        "Best Alternative To a Negotiated Agreement",
+        "Better Approaches To New Agreements",
+        "Basic Automatic Trading Network Analysis",
+        "Business And Trade Negotiation Act"
+      ],
+      "correctAnswer": 0,
+      "explanation": "BATNA (Roger Fisher) is your best alternative if this negotiation fails. Knowing your BATNA gives you power - you'll only accept deals better than your alternative. Example: Job negotiation with $80K BATNA (another offer) - you won't accept less than $85K. Always know your BATNA and try to improve it before negotiating. Also, understand their BATNA."
+    },
+    {
+      "id": "sales_501_q3",
+      "text": "What is 'anchoring' in negotiation?",
+      "options": [
+        "Staying in one position",
+        "Making the first offer to set a reference point that influences the entire negotiation",
+        "Being stubborn",
+        "Using boat analogies"
+      ],
+      "correctAnswer": 1,
+      "explanation": "In negotiation, the first number mentioned (anchor) disproportionately influences the final outcome. Research shows negotiations cluster around the anchor. Strategy: Make the first offer when you have good information about fair value. Anchor high when selling, low when buying. If they anchor unreasonably, reset with a counter-anchor backed by market data."
+    },
+    {
+      "id": "sales_501_q4",
+      "text": "What is the 'mirroring' technique in negotiation?",
+      "options": [
+        "Looking in mirrors during negotiation",
+        "Repeating the last few words they said to encourage them to elaborate",
+        "Copying their appearance",
+        "Reflecting on the negotiation"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Mirroring (Chris Voss, FBI negotiator) repeats their last 1-3 words with an upward inflection. Them: 'This price is too high.' You: 'Too high?' Them: [explains their reasoning]. It: (1) Encourages elaboration, (2) Builds rapport, (3) Buys thinking time, (4) Shows you're listening. Simple but powerful for uncovering hidden information and objections."
+    },
+    {
+      "id": "sales_501_q5",
+      "text": "What does 'silence' do in negotiation?",
+      "options": [
+        "Wastes time",
+        "Creates pressure for the other party to fill the void, often revealing valuable information or making concessions",
+        "Shows you're not listening",
+        "Means you've lost"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Most people are uncomfortable with silence and rush to fill it - often revealing information or making concessions. After making your offer or asking a question, stay silent. Let them break the silence. Discipline yourself not to rescue them. The first person to speak after a proposal often loses. Silence is a negotiation power move."
+    },
+    {
+      "id": "sales_501_q6",
+      "text": "What is the 'nibble' negotiation tactic?",
+      "options": [
+        "Eating during negotiations",
+        "Asking for small additional concessions after the main deal is agreed upon",
+        "Making small talk",
+        "Taking small breaks"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The nibble asks for extras after agreement: 'Great, we have a deal! By the way, can you include shipping?' People are more likely to give small concessions after committing to the big deal. Defense: recognize it ('Nice nibble!'), tie it to something ('I can include shipping if you pay within 10 days'), or simply say no graciously."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "courseId": "net_101",
+  "questions": [
+    {
+      "id": "net_101_q1",
+      "text": "What is strategic networking vs casual networking?",
+      "options": [
+        "Online vs in-person",
+        "Strategic is intentional relationship-building with specific goals; casual is random social connection",
+        "Business vs personal",
+        "Formal vs informal"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Casual networking is attending events and collecting business cards randomly. Strategic networking is: (1) Identifying valuable connections aligned with your goals, (2) Researching them before meeting, (3) Offering value first, (4) Following up systematically, (5) Nurturing relationships long-term. Quality over quantity - 10 deep relationships beat 100 superficial ones."
+    },
+    {
+      "id": "net_101_q2",
+      "text": "What is the 'give first' principle in networking?",
+      "options": [
+        "Always paying for lunch",
+        "Offering value, help, or connections before asking for anything in return",
+        "Giving business cards first",
+        "Speaking first in meetings"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Give first means leading with generosity: make introductions, share knowledge, offer help, provide resources - without expecting immediate return. This: (1) Builds goodwill, (2) Activates reciprocity, (3) Demonstrates value, (4) Differentiates you. Ask: 'How can I help?' not 'What can you do for me?' Most networkers only take; givers build powerful networks."
+    },
+    {
+      "id": "net_101_q3",
+      "text": "What is the most important thing to do after meeting someone valuable?",
+      "options": [
+        "Connect on all social media immediately",
+        "Follow up within 24-48 hours with personalized message referencing your conversation",
+        "Wait for them to reach out first",
+        "Add them to your spam list"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The fortune is in the follow-up. Within 24-48 hours: (1) Send personalized message referencing specific conversation points, (2) Offer promised value/introduction, (3) Suggest specific next step if appropriate, (4) Connect on LinkedIn with custom note. Most people never follow up. Those who do systematically build powerful networks. Use CRM to track relationships."
+    },
+    {
+      "id": "net_101_q4",
+      "text": "What is a 'super-connector'?",
+      "options": [
+        "A powerful electrical connector",
+        "Someone with large network who generously makes valuable introductions between people",
+        "A social media influencer",
+        "A phone company"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Super-connectors (Scott Gerber) have: (1) Large, diverse networks, (2) Strong social capital, (3) Generosity in making introductions, (4) Reputation for valuable connections. Become one by: connecting people who should know each other, hosting events, being helpful, following up. Super-connectors attract opportunities because they create value for others."
+    }
+  ]
+}

@@ -80,12 +80,13 @@ class DashboardView extends ConsumerWidget {
                 profileAsync.when(
                   data: (profile) {
                     final name = profile?.name ?? 'Investor';
-                    // Remove "Millionaire" prefix if it's already in the name
-                    final displayName = name.startsWith('Millionaire ') 
-                        ? name.substring(12) 
-                        : name;
+                    // If name already contains "Millionaire", use it as-is
+                    // Otherwise, add "Millionaire" prefix
+                    final displayName = name.contains('Millionaire')
+                        ? name
+                        : 'Millionaire $name';
                     return Text(
-                      'Welcome back, Millionaire $displayName',
+                      'Welcome back, $displayName',
                       style: textTheme.displaySmall?.copyWith(fontWeight: FontWeight.bold),
                     );
                   },

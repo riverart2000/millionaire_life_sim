@@ -1,0 +1,53 @@
+{
+  "courseId": "tech_401",
+  "questions": [
+    {
+      "id": "tech_401_q1",
+      "text": "What are no-code platforms?",
+      "options": [
+        "Platforms with no security codes",
+        "Visual development tools that let you build apps, websites, and automations without traditional programming",
+        "Platforms for programmers only",
+        "Platforms that don't work"
+      ],
+      "correctAnswer": 1,
+      "explanation": "No-code platforms use visual interfaces (drag-and-drop, forms, templates) instead of writing code. Examples: Webflow (websites), Bubble (web apps), Zapier (automation), Airtable (databases). Democratizes software creation - entrepreneurs can build MVPs without hiring developers. Limitations: less customization than traditional coding."
+    },
+    {
+      "id": "tech_401_q2",
+      "text": "What is Zapier used for?",
+      "options": [
+        "Zipping files faster",
+        "Connecting different apps and automating workflows between them without coding",
+        "Web design",
+        "Video editing"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Zapier automates workflows between 5,000+ apps. Example: When email arrives (Gmail) → create task (Trello) → send Slack notification. Called 'Zaps.' Use cases: lead capture, data sync, notifications, content distribution. Similar tools: Make, IFTTT. Saves hours of manual work; enables non-technical people to automate business processes."
+    },
+    {
+      "id": "tech_401_q3",
+      "text": "What can you build with Webflow?",
+      "options": [
+        "Only static websites",
+        "Professional responsive websites and web apps with CMS, e-commerce, and animations - no coding required",
+        "Mobile apps only",
+        "Desktop software"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Webflow is a visual web development platform. Create: responsive websites, blogs (CMS), e-commerce stores, landing pages, complex animations. Generates clean, production-ready code. More powerful than Wix/Squarespace, less complex than traditional coding. Many agencies and freelancers use it professionally."
+    },
+    {
+      "id": "tech_401_q4",
+      "text": "What is Airtable and how is it different from Excel?",
+      "options": [
+        "It's just Excel with a new name",
+        "A hybrid spreadsheet-database with relational features, integrations, and collaborative tools",
+        "An airline table",
+        "A furniture brand"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Airtable combines spreadsheet simplicity with database power. Key advantages over Excel: (1) Relational databases - link records between tables, (2) Multiple views - grid, calendar, kanban, gallery, (3) Integrations - connects to other tools, (4) Collaboration - real-time teamwork, (5) Automations - triggered actions. Use for: CRM, project management, content calendars."
+    }
+  ]
+}

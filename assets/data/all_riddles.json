@@ -1,0 +1,765 @@
+[
+  {
+    "category": "investing_riddles",
+    "description": "Riddles to teach core investing principles: compounding, risk, diversification, time horizon, behavior, and fundamentals.",
+    "items": [
+    {
+      "id": "r1",
+      "difficulty": "beginner",
+      "tags": ["compounding", "time"],
+      "riddle": "I grow stronger the longer you ignore me, but I shrink when you constantly touch me. I work best with years, not days. What am I?",
+      "options": [
+        "Day trading",
+        "Compound interest",
+        "Pay rise",
+        "Lottery winnings"
+      ],
+      "correct_option_index": 1,
+      "answer": "Compound interest",
+      "explanation": "Compound interest grows best when investments are left alone over long periods, not constantly moved or traded."
+    },
+    {
+      "id": "r2",
+      "difficulty": "beginner",
+      "tags": ["risk", "volatility"],
+      "riddle": "I rise and fall like waves on the sea. If you stare at me hourly, I make you seasick. If you watch me over decades, I often drift upward. What am I?",
+      "options": [
+        "The stock market",
+        "Your monthly salary",
+        "House prices on your street",
+        "The price of bread"
+      ],
+      "correct_option_index": 0,
+      "answer": "The stock market",
+      "explanation": "Stock markets are volatile in the short term but historically tend to trend upward over long periods."
+    },
+    {
+      "id": "r3",
+      "difficulty": "beginner",
+      "tags": ["diversification"],
+      "riddle": "I keep your wealth safer by never standing in one place. I spread across countries, sectors and companies. What am I?",
+      "options": [
+        "Putting money in one stock",
+        "Keeping cash under the mattress",
+        "Diversification",
+        "Borrowing more money"
+      ],
+      "correct_option_index": 2,
+      "answer": "Diversification",
+      "explanation": "Diversification spreads risk across multiple assets instead of concentrating it in one place."
+    },
+    {
+      "id": "r4",
+      "difficulty": "intermediate",
+      "tags": ["fees", "costs"],
+      "riddle": "I am small in percentage but huge over decades. Hidden, I quietly eat your returns each year. What am I?",
+      "options": [
+        "Inflation",
+        "Management fees",
+        "Taxes",
+        "Dividends"
+      ],
+      "correct_option_index": 1,
+      "answer": "Management fees",
+      "explanation": "High fund or advisor fees compound against you over time and can dramatically reduce overall returns."
+    },
+    {
+      "id": "r5",
+      "difficulty": "intermediate",
+      "tags": ["inflation", "cash"],
+      "riddle": "I make your money look the same while secretly making it worth less. Saving only in cash feeds me. What am I?",
+      "options": [
+        "Tax",
+        "Inflation",
+        "Debt",
+        "Recession"
+      ],
+      "correct_option_index": 1,
+      "answer": "Inflation",
+      "explanation": "Inflation erodes the purchasing power of cash, so money that isn’t invested may lose real value over time."
+    },
+    {
+      "id": "r6",
+      "difficulty": "beginner",
+      "tags": ["emergency_fund", "risk_management"],
+      "riddle": "I am boring, liquid and safe. I don’t make you rich, but I stop you selling your investments in a panic. What am I?",
+      "options": [
+        "Cryptocurrency",
+        "A luxury car",
+        "Emergency fund",
+        "Credit card limit"
+      ],
+      "correct_option_index": 2,
+      "answer": "Emergency fund",
+      "explanation": "An emergency fund lets you handle surprises without being forced to sell long-term investments at a bad time."
+    },
+    {
+      "id": "r7",
+      "difficulty": "intermediate",
+      "tags": ["behavior", "emotions"],
+      "riddle": "I am the difference between your investment’s return and your actual return. Greed and fear give me power. What am I?",
+      "options": [
+        "Market timing",
+        "Behavior gap",
+        "Capital gains tax",
+        "Leverage"
+      ],
+      "correct_option_index": 1,
+      "answer": "Behavior gap",
+      "explanation": "The behavior gap is the loss from emotional decisions versus simply holding investments."
+    },
+    {
+      "id": "r8",
+      "difficulty": "intermediate",
+      "tags": ["time_in_market"],
+      "riddle": "Many chase me for the perfect entry and exit, but I am almost impossible to catch. Instead, my cousin 'staying invested' wins more often. Who am I?",
+      "options": [
+        "Stock picking",
+        "Timing the market",
+        "Dollar-cost averaging",
+        "Index investing"
+      ],
+      "correct_option_index": 1,
+      "answer": "Timing the market",
+      "explanation": "Trying to perfectly time market highs and lows rarely works; time in the market tends to outperform."
+    },
+    {
+      "id": "r9",
+      "difficulty": "beginner",
+      "tags": ["index_funds", "diversification"],
+      "riddle": "I am one purchase that buys hundreds or thousands of businesses at once. I don’t try to be clever, just to match the crowd. What am I?",
+      "options": [
+        "Active mutual fund",
+        "Individual stock",
+        "Index fund or ETF",
+        "Savings account"
+      ],
+      "correct_option_index": 2,
+      "answer": "Index fund or ETF",
+      "explanation": "Index funds and ETFs track broad markets and give instant diversification in one investment."
+    },
+    {
+      "id": "r10",
+      "difficulty": "intermediate",
+      "tags": ["dollar_cost_averaging"],
+      "riddle": "I buy more when prices are low and less when prices are high, without using emotions or predictions. What am I?",
+      "options": [
+        "Lump-sum investing",
+        "Dollar-cost averaging",
+        "Day trading",
+        "Short selling"
+      ],
+      "correct_option_index": 1,
+      "answer": "Dollar-cost averaging",
+      "explanation": "Dollar-cost averaging invests a fixed amount regularly, automatically buying more shares when prices are low."
+    },
+    {
+      "id": "r11",
+      "difficulty": "intermediate",
+      "tags": ["leverage", "risk"],
+      "riddle": "I make your gains larger but your losses larger too. Used well, I accelerate wealth; used poorly, I destroy it. What am I?",
+      "options": [
+        "Leverage",
+        "Diversification",
+        "Tax relief",
+        "Rebalancing"
+      ],
+      "correct_option_index": 0,
+      "answer": "Leverage",
+      "explanation": "Leverage uses borrowed money to invest, magnifying both gains and losses."
+    },
+    {
+      "id": "r12",
+      "difficulty": "beginner",
+      "tags": ["goals", "time_horizon"],
+      "riddle": "I decide whether your money should be in calm waters or stormy seas. I am measured in years, not days. What am I?",
+      "options": [
+        "Your job title",
+        "Your time horizon",
+        "Your risk tolerance",
+        "Your credit score"
+      ],
+      "correct_option_index": 1,
+      "answer": "Your time horizon",
+      "explanation": "How long you plan to invest for determines how much risk you can reasonably take."
+    },
+    {
+      "id": "r13",
+      "difficulty": "intermediate",
+      "tags": ["asset_allocation"],
+      "riddle": "I am your financial recipe. Get me right and you can sleep through market storms. I mix stocks, bonds, cash and more. What am I?",
+      "options": [
+        "Asset allocation",
+        "Tax planning",
+        "Pension statement",
+        "Credit report"
+      ],
+      "correct_option_index": 0,
+      "answer": "Asset allocation",
+      "explanation": "Asset allocation is the mix of asset types that balances growth and stability based on your circumstances."
+    },
+    {
+      "id": "r14",
+      "difficulty": "intermediate",
+      "tags": ["rebalancing", "risk_management"],
+      "riddle": "I quietly sell some of what has grown too big and buy what has shrunk too small, bringing you back to your plan. What am I?",
+      "options": [
+        "Day trading",
+        "Market timing",
+        "Rebalancing",
+        "Short selling"
+      ],
+      "correct_option_index": 2,
+      "answer": "Rebalancing",
+      "explanation": "Rebalancing restores your target asset mix by selling outperformers and buying underperformers."
+    },
+    {
+      "id": "r15",
+      "difficulty": "beginner",
+      "tags": ["speculation", "investment"],
+      "riddle": "I promise quick riches with little effort. I rarely mention risk. I’m more like gambling than building wealth. What am I?",
+      "options": [
+        "Long-term investing",
+        "Speculation",
+        "Pension saving",
+        "Index funds"
+      ],
+      "correct_option_index": 1,
+      "answer": "Speculation",
+      "explanation": "Speculation is high-risk betting on short-term moves, unlike disciplined long-term investing."
+    },
+    {
+      "id": "r16",
+      "difficulty": "beginner",
+      "tags": ["human_capital", "education"],
+      "riddle": "I am the investment that no market crash can fully take away. Skills, knowledge and health increase my value. What am I?",
+      "options": [
+        "Gold",
+        "Property",
+        "Human capital",
+        "Government bonds"
+      ],
+      "correct_option_index": 2,
+      "answer": "Human capital",
+      "explanation": "Your ability to earn through skills and health is a core asset that underpins your financial life."
+    },
+    {
+      "id": "r17",
+      "difficulty": "intermediate",
+      "tags": ["liquidity"],
+      "riddle": "I can be sold quickly for near my full value, but I don’t always offer high returns. Which property do I describe?",
+      "options": [
+        "Volatility",
+        "Leverage",
+        "Liquidity",
+        "Diversification"
+      ],
+      "correct_option_index": 2,
+      "answer": "Liquidity",
+      "explanation": "Liquidity is how easily an asset can be converted to cash without major loss in value."
+    },
+    {
+      "id": "r18",
+      "difficulty": "advanced",
+      "tags": ["concentration_risk"],
+      "riddle": "I feel exciting when I work and devastating when I don’t. I put most of your money into very few bets. What am I?",
+      "options": [
+        "Diversification",
+        "Concentration risk",
+        "Rebalancing",
+        "Emergency savings"
+      ],
+      "correct_option_index": 1,
+      "answer": "Concentration risk",
+      "explanation": "Concentration risk occurs when too much capital is tied up in a small number of investments."
+    },
+    {
+      "id": "r19",
+      "difficulty": "intermediate",
+      "tags": ["tax_efficiency"],
+      "riddle": "I don’t change what you earn before tax, but I change what you keep after. Using me well means arranging where you hold your investments. What concept am I?",
+      "options": [
+        "Asset allocation",
+        "Time horizon",
+        "Tax efficiency",
+        "Leverage"
+      ],
+      "correct_option_index": 2,
+      "answer": "Tax efficiency",
+      "explanation": "Tax efficiency focuses on structuring investments to minimise tax and maximise after-tax returns."
+    },
+    {
+      "id": "r20",
+      "difficulty": "beginner",
+      "tags": ["pay_yourself_first", "saving"],
+      "riddle": "If you treat me as what’s left over, I stay small. If you treat me as the first bill you must pay, I grow large. What am I?",
+      "options": [
+        "Rent",
+        "Debt payment",
+        "Savings and investing",
+        "Food budget"
+      ],
+      "correct_option_index": 2,
+      "answer": "Savings and investing",
+      "explanation": "Paying yourself first means saving and investing before spending on everything else."
+    },
+    {
+      "id": "r21",
+      "difficulty": "beginner",
+      "tags": ["emotions", "market_cycles"],
+      "riddle": "I show up when prices are high and convince you they’ll rise forever. I also show up when prices crash and tell you to sell everything. Who am I?",
+      "options": [
+        "Patience",
+        "Discipline",
+        "Emotional herd",
+        "Diversification"
+      ],
+      "correct_option_index": 2,
+      "answer": "Emotional herd",
+      "explanation": "Following the crowd emotionally often means buying high and selling low."
+    },
+    {
+      "id": "r22",
+      "difficulty": "intermediate",
+      "tags": ["real_estate", "leverage"],
+      "riddle": "I’m often bought with borrowed money, lived in or rented out, and can both appreciate and generate cash flow. What type of asset am I?",
+      "options": [
+        "Government bond",
+        "Real estate property",
+        "Commodities",
+        "Cryptocurrency"
+      ],
+      "correct_option_index": 1,
+      "answer": "Real estate property",
+      "explanation": "Real estate is frequently leveraged, can rise in value and may produce rental income."
+    },
+    {
+      "id": "r23",
+      "difficulty": "advanced",
+      "tags": ["sequence_of_returns", "retirement"],
+      "riddle": "For the accumulator I matter less, but for the retiree I can be lethal. Bad years early hurt far more than bad years late. What risk am I?",
+      "options": [
+        "Inflation risk",
+        "Credit risk",
+        "Sequence of returns risk",
+        "Currency risk"
+      ],
+      "correct_option_index": 2,
+      "answer": "Sequence of returns risk",
+      "explanation": "Sequence of returns risk is the danger of poor returns early in retirement when withdrawals are happening."
+    },
+    {
+      "id": "r24",
+      "difficulty": "intermediate",
+      "tags": ["valuation"],
+      "riddle": "I describe the price of a company compared to the profit it makes each year. High numbers can mean high expectations. What ratio am I?",
+      "options": [
+        "Dividend yield",
+        "Price-to-earnings (P/E) ratio",
+        "Debt-to-equity ratio",
+        "Return on equity"
+      ],
+      "correct_option_index": 1,
+      "answer": "Price-to-earnings (P/E) ratio",
+      "explanation": "The P/E ratio compares a company’s share price to its earnings per share."
+    },
+    {
+      "id": "r25",
+      "difficulty": "beginner",
+      "tags": ["starting_early", "compounding"],
+      "riddle": "Two friends invest the same amount. One starts at 25, the other at 40. If they earn the same return, who is richer at 65?",
+      "options": [
+        "The one who started earlier",
+        "The one who started later",
+        "They are equal",
+        "The one with the higher salary"
+      ],
+      "correct_option_index": 0,
+      "answer": "The one who started earlier",
+      "explanation": "Starting earlier gives compounding more years to work, even with the same contributions and returns."
+    },
+    {
+      "id": "r26",
+      "difficulty": "intermediate",
+      "tags": ["factor_investing", "style"],
+      "riddle": "Some investors believe buying shares with lower prices relative to fundamentals will outperform long term. What style am I?",
+      "options": [
+        "Growth investing",
+        "Value investing",
+        "Momentum investing",
+        "Index investing"
+      ],
+      "correct_option_index": 1,
+      "answer": "Value investing",
+      "explanation": "Value investing focuses on buying companies that appear cheap relative to their fundamentals."
+    },
+    {
+      "id": "r27",
+      "difficulty": "intermediate",
+      "tags": ["growth_investing", "risk"],
+      "riddle": "I chase companies expected to expand quickly, often at high valuations and with more volatility. What style am I?",
+      "options": [
+        "Income investing",
+        "Value investing",
+        "Growth investing",
+        "Cash-only strategy"
+      ],
+      "correct_option_index": 2,
+      "answer": "Growth investing",
+      "explanation": "Growth investing targets companies with strong expected earnings or revenue growth, often with higher risk."
+    },
+    {
+      "id": "r28",
+      "difficulty": "beginner",
+      "tags": ["dividends", "income"],
+      "riddle": "I am the cash that some companies send you just for owning their shares. You can spend me or reinvest me. What am I?",
+      "options": [
+        "Interest",
+        "Capital gains",
+        "Dividends",
+        "Tax refunds"
+      ],
+      "correct_option_index": 2,
+      "answer": "Dividends",
+      "explanation": "Dividends are cash payments from companies to shareholders, usually from profits."
+    },
+    {
+      "id": "r29",
+      "difficulty": "advanced",
+      "tags": ["risk_adjusted_return"],
+      "riddle": "I compare your returns to the bumps you endured on the way. High value means better reward for each unit of risk. What metric am I?",
+      "options": [
+        "Sharpe ratio",
+        "Dividend yield",
+        "Price-to-book ratio",
+        "Expense ratio"
+      ],
+      "correct_option_index": 0,
+      "answer": "Sharpe ratio",
+      "explanation": "The Sharpe ratio measures risk-adjusted return by comparing excess return to volatility."
+    },
+    {
+      "id": "r30",
+      "difficulty": "beginner",
+      "tags": ["plan", "discipline"],
+      "riddle": "I am written before the storm so you don’t make decisions during the storm. I tell you what to buy, how much, and when to change. What am I?",
+      "options": [
+        "Market forecast",
+        "Investment plan or policy",
+        "News headline",
+        "Friend’s tip"
+      ],
+      "correct_option_index": 1,
+      "answer": "Investment plan or policy",
+      "explanation": "A written investment plan guides decisions so you don’t react emotionally to short-term events."
+    }
+  ]
+  },
+  {
+    "category": "growth_mindset_riddles",
+    "description": "Riddles teaching core T. Harv Eker principles: inner world creates outer world, wealth conditioning, responsibility, beliefs, comfort zone, and millionaire mind habits.",
+    "items": [
+    {
+      "id": "r1",
+      "difficulty": "beginner",
+      "tags": ["inner_world", "beliefs"],
+      "riddle": "I live in your mind before I ever show up in your bank account. Change me inside, and I change outside. What am I?",
+      "options": ["Your salary", "Your inner world", "Your job title", "Your house"],
+      "correct_option_index": 1,
+      "answer": "Your inner world",
+      "explanation": "T. Harv Eker teaches that your inner world creates your outer world."
+    },
+    {
+      "id": "r2",
+      "difficulty": "beginner",
+      "tags": ["responsibility"],
+      "riddle": "When you blame me, justify me, or complain about me, you lose your power. When you own me, you win. What am I?",
+      "options": ["Luck", "Responsibility", "The economy", "Your parents"],
+      "correct_option_index": 1,
+      "answer": "Responsibility",
+      "explanation": "Taking 100% responsibility is foundational in Eker’s Millionaire Mind philosophy."
+    },
+    {
+      "id": "r3",
+      "difficulty": "beginner",
+      "tags": ["comfort_zone"],
+      "riddle": "I feel safe but keep you small. Step outside me, and growth follows instantly. What am I?",
+      "options": ["Your comfort zone", "Your savings account", "Your office", "Your daily routine"],
+      "correct_option_index": 0,
+      "answer": "Your comfort zone",
+      "explanation": "Growth requires stepping beyond familiar limits."
+    },
+    {
+      "id": "r4",
+      "difficulty": "intermediate",
+      "tags": ["conditioning", "wealth_blueprint"],
+      "riddle": "I was written before you could read. I control how much you think you deserve until you rewrite me. What am I?",
+      "options": ["Your CV", "Your bank", "Your money blueprint", "Your to-do list"],
+      "correct_option_index": 2,
+      "answer": "Your money blueprint",
+      "explanation": "Your subconscious financial script is formed early and must be upgraded."
+    },
+    {
+      "id": "r5",
+      "difficulty": "beginner",
+      "tags": ["focus", "abundance"],
+      "riddle": "What you focus on grows. If you focus on me, you get more of me—even when you don’t want me. What am I?",
+      "options": ["Debt", "Fear", "Problems", "All of the above"],
+      "correct_option_index": 3,
+      "answer": "All of the above",
+      "explanation": "Where attention goes, energy flows—Eker’s principle."
+    },
+    {
+      "id": "r6",
+      "difficulty": "intermediate",
+      "tags": ["identity"],
+      "riddle": "Your results can never rise above me. Upgrade me, and your results rise automatically. What am I?",
+      "options": ["Your income", "Your identity", "Your habits", "Your postcode"],
+      "correct_option_index": 1,
+      "answer": "Your identity",
+      "explanation": "Identity determines the level of success you’ll tolerate or reject."
+    },
+    {
+      "id": "r7",
+      "difficulty": "beginner",
+      "tags": ["fear", "action"],
+      "riddle": "Action shrinks me. Inaction feeds me. The rich move through me; the poor obey me. What am I?",
+      "options": ["Fear", "Doubt", "Failure", "Pain"],
+      "correct_option_index": 0,
+      "answer": "Fear",
+      "explanation": "Millionaire minds act in spite of fear."
+    },
+    {
+      "id": "r8",
+      "difficulty": "beginner",
+      "tags": ["taking_action"],
+      "riddle": "I beat talent, education and intelligence. Without me, nothing happens. With me, almost anything is possible. What am I?",
+      "options": ["Luck", "Money", "Action", "Meditation"],
+      "correct_option_index": 2,
+      "answer": "Action",
+      "explanation": "You must act to change your life—Eker’s principle: ready → fire → aim."
+    },
+    {
+      "id": "r9",
+      "difficulty": "intermediate",
+      "tags": ["wealth_files"],
+      "riddle": "Some call me greedy, but the wealthy know I’m simply a reflection of your ability to receive. What am I?",
+      "options": ["Sales", "Confidence", "Value", "Money"],
+      "correct_option_index": 3,
+      "answer": "Money",
+      "explanation": "Money reflects mindset, value creation and receiving ability."
+    },
+    {
+      "id": "r10",
+      "difficulty": "advanced",
+      "tags": ["self_worth"],
+      "riddle": "When you undervalue me, everything around you shrinks. When you upgrade me, everything expands. Who am I?",
+      "options": ["Your work ethic", "Your network", "Your self-worth", "Your intelligence"],
+      "correct_option_index": 2,
+      "answer": "Your self-worth",
+      "explanation": "Your internal worth sets your earning ceiling."
+    },
+    {
+      "id": "r11",
+      "difficulty": "beginner",
+      "tags": ["income_growth"],
+      "riddle": "I follow your personal growth. When you grow, I grow. When you don’t, I stay flat. What am I?",
+      "options": ["Your weight", "Your mood", "Your income", "Your age"],
+      "correct_option_index": 2,
+      "answer": "Your income",
+      "explanation": "Income follows mindset and skill expansion."
+    },
+    {
+      "id": "r12",
+      "difficulty": "intermediate",
+      "tags": ["environment"],
+      "riddle": "I determine your standards without your permission. Upgrade me, and your life upgrades. What am I?",
+      "options": ["Your friends", "Your house", "Your job title", "Your shoes"],
+      "correct_option_index": 0,
+      "answer": "Your friends",
+      "explanation": "Your environment and peer group shape your financial thermostat."
+    },
+    {
+      "id": "r13",
+      "difficulty": "intermediate",
+      "tags": ["helping_others", "abundance"],
+      "riddle": "Poor minds ask, 'What’s in it for me?' Rich minds ask, 'How can I help?' What am I describing?",
+      "options": ["Sales tactic", "Charity work", "Value creation", "Negotiation"],
+      "correct_option_index": 2,
+      "answer": "Value creation",
+      "explanation": "Wealth flows to those who solve problems and add value."
+    },
+    {
+      "id": "r14",
+      "difficulty": "beginner",
+      "tags": ["jar_system"],
+      "riddle": "I am the smallest jar yet create the biggest future. Neglect me and your freedom never arrives. What am I?",
+      "options": ["Play jar", "Necessities jar", "Education jar", "Financial freedom jar"],
+      "correct_option_index": 3,
+      "answer": "Financial freedom jar",
+      "explanation": "The FFA jar feeds long-term wealth."
+    },
+    {
+      "id": "r15",
+      "difficulty": "beginner",
+      "tags": ["discipline"],
+      "riddle": "I am the bridge between your intentions and your results. Without me, dreams remain dreams. What am I?",
+      "options": ["Passion", "Discipline", "Meditation", "Hope"],
+      "correct_option_index": 1,
+      "answer": "Discipline",
+      "explanation": "Discipline makes wealth building consistent."
+    },
+    {
+      "id": "r16",
+      "difficulty": "intermediate",
+      "tags": ["mindset"],
+      "riddle": "I ask, 'How can I?' instead of 'I can’t.' I turn problems into projects. Who am I?",
+      "options": ["Excuses", "Positive thinking", "Resourceful thinking", "Denial"],
+      "correct_option_index": 2,
+      "answer": "Resourceful thinking",
+      "explanation": "Millionaire minds ask empowering questions."
+    },
+    {
+      "id": "r17",
+      "difficulty": "advanced",
+      "tags": ["fear", "growth"],
+      "riddle": "The rich lean into me; the poor avoid me. Yet I am the doorway to every new level. What am I?",
+      "options": ["Books", "Networking", "Uncertainty", "Comfort"],
+      "correct_option_index": 2,
+      "answer": "Uncertainty",
+      "explanation": "Growth lives on the other side of uncertainty."
+    },
+    {
+      "id": "r18",
+      "difficulty": "beginner",
+      "tags": ["habits"],
+      "riddle": "I am small but repeated daily, I build empires or destroy them. What am I?",
+      "options": ["Habits", "Motivation", "Weather", "Technology"],
+      "correct_option_index": 0,
+      "answer": "Habits",
+      "explanation": "Daily habits shape long-term wealth and mindset."
+    },
+    {
+      "id": "r19",
+      "difficulty": "intermediate",
+      "tags": ["money_blueprint"],
+      "riddle": "You learned me from your parents, but you can rewrite me anytime. I decide your financial ceiling. Who am I?",
+      "options": ["Luck", "Genetics", "Money blueprint", "Education"],
+      "correct_option_index": 2,
+      "answer": "Money blueprint",
+      "explanation": "Your subconscious financial script must be reprogrammed for wealth."
+    },
+    {
+      "id": "r20",
+      "difficulty": "beginner",
+      "tags": ["action"],
+      "riddle": "The poor wait for me to feel right before acting. The rich act first, then I follow. What am I?",
+      "options": ["Motivation", "Confidence", "Luck", "Guidance"],
+      "correct_option_index": 1,
+      "answer": "Confidence",
+      "explanation": "Confidence grows from action, not before it."
+    },
+    {
+      "id": "r21",
+      "difficulty": "intermediate",
+      "tags": ["mindset_shift"],
+      "riddle": "I separate victims from leaders. Victims say I happen to them; leaders say I happen because of them. What am I?",
+      "options": ["Change", "Life", "Success", "Failure"],
+      "correct_option_index": 1,
+      "answer": "Life",
+      "explanation": "A millionaire mind sees life as self-created."
+    },
+    {
+      "id": "r22",
+      "difficulty": "beginner",
+      "tags": ["abundance"],
+      "riddle": "Poor minds see me as limited. Rich minds see me as infinite and renewable. What am I?",
+      "options": ["Opportunities", "Coffee", "Time", "Books"],
+      "correct_option_index": 0,
+      "answer": "Opportunities",
+      "explanation": "Abundance mindset attracts possibilities."
+    },
+    {
+      "id": "r23",
+      "difficulty": "intermediate",
+      "tags": ["learning"],
+      "riddle": "I am priceless when gained and deadly when ignored. Once you learn me, wealth becomes easier. What am I?",
+      "options": ["Certificates", "Financial education", "Motivation", "A mentor"],
+      "correct_option_index": 1,
+      "answer": "Financial education",
+      "explanation": "Financial literacy shapes all money decisions."
+    },
+    {
+      "id": "r24",
+      "difficulty": "advanced",
+      "tags": ["mindset", "ego"],
+      "riddle": "I make you defend old beliefs even if they limit you. I fear being wrong more than staying broke. What am I?",
+      "options": ["Logic", "Your ego", "Your values", "Your intuition"],
+      "correct_option_index": 1,
+      "answer": "Your ego",
+      "explanation": "Ego keeps you stuck unless humbled and reprogrammed."
+    },
+    {
+      "id": "r25",
+      "difficulty": "beginner",
+      "tags": ["wealth_files"],
+      "riddle": "I am the habit of doing more than paid for, giving more than expected. I always return multiplied. What am I?",
+      "options": ["Overworking", "Generosity", "Consistent effort", "Going the extra mile"],
+      "correct_option_index": 3,
+      "answer": "Going the extra mile",
+      "explanation": "Value creation expands income exponentially."
+    },
+    {
+      "id": "r26",
+      "difficulty": "intermediate",
+      "tags": ["external_vs_internal"],
+      "riddle": "The poor fix external conditions. The rich fix me first. What am I?",
+      "options": ["Their office", "Their bank balance", "Their internal state", "Their diet"],
+      "correct_option_index": 2,
+      "answer": "Their internal state",
+      "explanation": "Internal alignment precedes external results."
+    },
+    {
+      "id": "r27",
+      "difficulty": "beginner",
+      "tags": ["resourcefulness"],
+      "riddle": "When you lack resources, you must use me. I turn limitations into advantages. What am I?",
+      "options": ["Hard work", "Resourcefulness", "Hope", "Networking"],
+      "correct_option_index": 1,
+      "answer": "Resourcefulness",
+      "explanation": "Resourcefulness beats resources."
+    },
+    {
+      "id": "r28",
+      "difficulty": "advanced",
+      "tags": ["emotions", "wealth"],
+      "riddle": "The rich manage me; the poor are controlled by me. I can multiply your opportunities or sabotage your future. What am I?",
+      "options": ["Time", "Emotions", "Skill", "Debt"],
+      "correct_option_index": 1,
+      "answer": "Emotions",
+      "explanation": "Emotional mastery is key to decision-making and wealth."
+    },
+    {
+      "id": "r29",
+      "difficulty": "intermediate",
+      "tags": ["commitment"],
+      "riddle": "I separate dabblers from achievers. When you give me fully, the universe moves. What am I?",
+      "options": ["Half-effort", "Commitment", "Practice", "Luck"],
+      "correct_option_index": 1,
+      "answer": "Commitment",
+      "explanation": "Commitment creates momentum and results."
+    },
+    {
+      "id": "r30",
+      "difficulty": "beginner",
+      "tags": ["mindset_shift"],
+      "riddle": "Poor minds say, 'I know this.' Rich minds ask, 'How can I use this?' What mindset am I describing?",
+      "options": ["Beginner's mind", "Stubborn mind", "Fearful mind", "Lazy mind"],
+      "correct_option_index": 0,
+      "answer": "Beginner's mind",
+      "explanation": "Being open to learning keeps growth constant."
+    }
+  ]
+  }
+]
+

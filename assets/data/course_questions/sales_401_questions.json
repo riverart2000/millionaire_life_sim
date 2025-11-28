@@ -1,0 +1,65 @@
+{
+  "courseId": "sales_401",
+  "questions": [
+    {
+      "id": "sales_401_q1",
+      "text": "What is a sales funnel?",
+      "options": [
+        "A physical funnel for sales materials",
+        "The journey prospects take from awareness to purchase, visualized as stages with decreasing numbers",
+        "A sales tool",
+        "A type of chart"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A sales funnel maps the customer journey: Awareness → Interest → Consideration → Purchase. Wide at top (many prospects), narrow at bottom (fewer buyers). Each stage needs specific content/actions. Example: Awareness (blog posts), Interest (free guide), Consideration (case studies), Purchase (demo/trial). Optimize each stage to increase conversion rate."
+    },
+    {
+      "id": "sales_401_q2",
+      "text": "What is a 'lead magnet'?",
+      "options": [
+        "A magnet for attracting metals",
+        "A valuable free offer that captures contact information in exchange for value",
+        "A person who generates leads",
+        "Magnetic personality"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A lead magnet is free value exchanged for contact info (email, phone). Types: ebooks, checklists, templates, webinars, free trials, consultations, calculators. Must: (1) Solve specific problem, (2) Deliver quick win, (3) Be relevant to your paid offer. Good lead magnet attracts qualified prospects, not just anyone."
+    },
+    {
+      "id": "sales_401_q3",
+      "text": "What is 'tripwire' in funnel strategy?",
+      "options": [
+        "A wire that makes people trip",
+        "A low-cost, high-value offer that converts leads into buyers, making bigger purchases easier",
+        "A security system",
+        "A type of trap"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A tripwire is a low-friction first purchase ($7-$47) that: (1) Covers ad costs, (2) Turns leads into customers (psychological barrier crossed), (3) Segments serious buyers. Example: Free ebook (lead magnet) → $27 mini-course (tripwire) → $997 full program (core offer). First purchase is hardest; tripwires lower the barrier."
+    },
+    {
+      "id": "sales_401_q4",
+      "text": "What is a 'value ladder'?",
+      "options": [
+        "A physical ladder",
+        "Sequential offers of increasing value and price that guide customers from entry to premium products",
+        "Company hierarchy",
+        "Climbing the corporate ladder"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A value ladder structures offers from low to high investment: Free content → Lead magnet → Tripwire ($7-$47) → Core offer ($97-$997) → Premium ($1K-$10K) → High-ticket ($10K+). Each rung delivers more value, builds trust, and qualifies buyers for the next level. Maximizes customer lifetime value."
+    },
+    {
+      "id": "sales_401_q5",
+      "text": "What is marketing automation in a funnel?",
+      "options": [
+        "Robots doing marketing",
+        "Using software to automatically deliver targeted messages based on user behavior and triggers",
+        "Automatic advertisements",
+        "Self-driving marketing cars"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Marketing automation delivers the right message at the right time based on behavior. Examples: (1) Download ebook → trigger email sequence, (2) Abandon cart → send reminder, (3) Purchase course → enroll in upsell sequence. Tools: ActiveCampaign, HubSpot, ConvertKit. Enables personalization at scale - nurture thousands of leads individually."
+    }
+  ]
+}

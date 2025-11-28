@@ -792,31 +792,21 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
   }
 
   Future<void> _toggleSync(bool enabled) async {
-    final userRepository = ref.read(userRepositoryProvider);
-    final syncService = ref.read(syncServiceProvider);
-    final userId = ref.read(userIdProvider);
-    final profile = await userRepository.fetchProfile();
-    if (profile == null) return;
-
-    setState(() => _firebaseSyncEnabled = enabled);
-    await userRepository.saveProfile(profile.copyWith(syncEnabled: enabled));
-
-    if (!enabled) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Cloud sync disabled. Staying offline.')),
-        );
-      }
-      return;
+    // Sync is not available in offline mode
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Cloud sync not available in offline mode')),
+      );
     }
-
-    await _runSync(() => syncService.pullUserData(userId));
   }
 
   Future<void> _manualSync() async {
-    final syncService = ref.read(syncServiceProvider);
-    final userId = ref.read(userIdProvider);
-    await _runSync(() => syncService.pullUserData(userId));
+    // Sync is not available in offline mode
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Cloud sync not available in offline mode')),
+      );
+    }
   }
 
   Future<void> _saveInterestRates() async {

@@ -1,0 +1,41 @@
+{
+  "courseId": "prod_101",
+  "questions": [
+    {
+      "id": "prod_101_q1",
+      "text": "What is time-blocking and why is it effective?",
+      "options": [
+        "Blocking people who waste your time",
+        "Scheduling specific blocks of time for specific tasks - prevents multitasking and creates focus",
+        "Working in overtime",
+        "Blocking websites"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Time-blocking assigns specific time slots to specific tasks in your calendar. Example: 9-11am deep work, 11-12pm emails, 1-2pm meetings. Benefits: (1) Prevents reactive scheduling, (2) Eliminates multitasking, (3) Ensures important work gets done, (4) Creates realistic expectations of time. Elon Musk time-blocks in 5-minute increments."
+    },
+    {
+      "id": "prod_101_q2",
+      "text": "What is the Eisenhower Matrix for prioritization?",
+      "options": [
+        "A mathematical formula",
+        "A 2x2 grid: Urgent/Not Urgent vs Important/Not Important - helps prioritize tasks effectively",
+        "A war strategy",
+        "A type of spreadsheet"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Eisenhower Matrix divides tasks into four quadrants: (1) Urgent + Important = Do now, (2) Important + Not Urgent = Schedule (most valuable), (3) Urgent + Not Important = Delegate, (4) Not Urgent + Not Important = Eliminate. Most people live in quadrant 1 (crisis). Success lives in quadrant 2 (strategic work). Use this to focus on what truly matters."
+    },
+    {
+      "id": "prod_101_q3",
+      "text": "What is the 'Pomodoro Technique'?",
+      "options": [
+        "Italian cooking method",
+        "Work in focused 25-minute intervals with 5-minute breaks to maintain concentration",
+        "A type of tomato",
+        "Meeting schedule"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Pomodoro Technique (Francesco Cirillo): (1) Work focused for 25 minutes, (2) Take 5-minute break, (3) After 4 pomodoros, take 15-30 minute break. Benefits: maintains focus, prevents burnout, builds time awareness, makes daunting tasks manageable. The timer creates urgency and the breaks prevent mental fatigue. Adapt interval length to your needs."
+    }
+  ]
+}

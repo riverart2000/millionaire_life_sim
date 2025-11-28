@@ -11,6 +11,7 @@ import 'providers/sound_provider.dart';
 import 'providers/theme_provider.dart';
 import 'services/bootstrap_service.dart';
 import 'services/quote_service.dart';
+import 'services/riddle_service.dart';
 import 'views/auth/login_view.dart';
 import 'views/dashboard/dashboard_view.dart';
 import 'views/courses/courses_view.dart';
@@ -21,8 +22,6 @@ import 'views/transactions/transactions_view.dart';
 import 'widgets/template_footer.dart';
 import 'widgets/common_sticky_header.dart';
 import 'widgets/top_menu.dart';
-import 'widgets/declaration_dialog.dart';
-import 'providers/declaration_provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,11 +30,19 @@ Future<void> main() async {
   await configureDependencies();
 
   final bootstrapService = getIt<BootstrapService>();
+  
+  // Initialize Hive first (required for riddle service)
+  await bootstrapService.initialize();
+  
   final container = ProviderContainer(
     overrides: [
       bootstrapServiceProvider.overrideWithValue(bootstrapService),
     ],
   );
+  
+  // Initialize riddle service after Hive is ready
+  final riddleService = getIt<RiddleService>();
+  await riddleService.initialize();
 
   // Create theme provider but don't await initialization - load lazily
   final themeProvider = ThemeProvider();

@@ -1,0 +1,53 @@
+{
+  "courseId": "mind_201",
+  "questions": [
+    {
+      "id": "mind_201_q1",
+      "text": "What makes a goal 'SMART'?",
+      "options": [
+        "Intelligent and clever",
+        "Specific, Measurable, Achievable, Relevant, Time-bound",
+        "Simple, Minimal, Automatic, Rich, Tactical",
+        "Strategic, Monetary, Ambitious, Realistic, Timely"
+      ],
+      "correctAnswer": 1,
+      "explanation": "SMART goals are: Specific (clear and detailed), Measurable (quantifiable progress), Achievable (realistic yet challenging), Relevant (aligned with larger objectives), Time-bound (has a deadline). Example: 'Save $10,000 for house down payment by December 31st' vs vague 'save money.'"
+    },
+    {
+      "id": "mind_201_q2",
+      "text": "What is the difference between outcome goals and process goals?",
+      "options": [
+        "Short-term vs long-term",
+        "Outcome is the end result; process is the daily actions/systems that achieve it",
+        "Big vs small goals",
+        "Business vs personal goals"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Outcome goal: 'Lose 30 pounds.' Process goal: 'Exercise 4x weekly and eat 5 servings of vegetables daily.' Outcome goals define success; process goals define behavior. Millionaires focus on process - control the inputs (daily actions), and outcomes follow naturally."
+    },
+    {
+      "id": "mind_201_q3",
+      "text": "What is visualization and why do successful people use it?",
+      "options": [
+        "Daydreaming about success",
+        "Mental rehearsal of achieving goals using all senses - programs subconscious and increases performance",
+        "Looking at pictures of rich people",
+        "Meditation only"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Visualization is vividly imagining achieving your goals - seeing, feeling, hearing the experience. Athletes use this to improve performance. It programs your subconscious, increases motivation, and primes your brain to recognize opportunities. Spend 5-10 minutes daily visualizing your success in detail."
+    },
+    {
+      "id": "mind_201_q4",
+      "text": "What is the purpose of writing goals down?",
+      "options": [
+        "To impress others",
+        "Written goals are 42% more likely to be achieved - activates RAS and creates psychological commitment",
+        "To waste paper",
+        "Goals must be mental only"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Writing goals activates the Reticular Activating System (RAS) - your brain's filter for important information. It signals importance and triggers your subconscious to seek opportunities. Studies show written goals are 42% more likely to be achieved than unwritten ones. Review them daily."
+    }
+  ]
+}

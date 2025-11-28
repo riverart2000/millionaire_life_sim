@@ -1,0 +1,65 @@
+{
+  "courseId": "tech_201",
+  "questions": [
+    {
+      "id": "tech_201_q1",
+      "text": "What is artificial intelligence (AI)?",
+      "options": [
+        "Robots that look human",
+        "Computer systems that can perform tasks normally requiring human intelligence - learning, reasoning, problem-solving",
+        "Advanced calculators",
+        "Science fiction only"
+      ],
+      "correctAnswer": 1,
+      "explanation": "AI is technology that enables computers to simulate human intelligence - understanding language, recognizing patterns, making decisions, learning from experience. Types: Narrow AI (specific tasks like chess, image recognition), General AI (human-level intelligence across domains - not yet achieved)."
+    },
+    {
+      "id": "tech_201_q2",
+      "text": "What is machine learning?",
+      "options": [
+        "Robots learning to walk",
+        "AI systems that improve automatically through experience without explicit programming",
+        "Online courses for machines",
+        "Computer repair"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Machine Learning is a subset of AI where systems learn patterns from data rather than following explicit rules. Types: Supervised learning (labeled data), Unsupervised learning (find patterns), Reinforcement learning (learn from feedback). Used in: recommendations, fraud detection, self-driving cars, medical diagnosis."
+    },
+    {
+      "id": "tech_201_q3",
+      "text": "How can businesses leverage AI for competitive advantage?",
+      "options": [
+        "Replace all employees with robots",
+        "Automate repetitive tasks, gain insights from data, personalize customer experiences, improve decision-making",
+        "AI has no business applications",
+        "Make websites look futuristic"
+      ],
+      "correctAnswer": 1,
+      "explanation": "AI business applications: (1) Automation - free humans for strategic work, (2) Analytics - uncover patterns humans miss, (3) Personalization - tailor experiences at scale, (4) Prediction - forecast trends and behavior, (5) Optimization - improve operations continuously. Start small, scale what works."
+    },
+    {
+      "id": "tech_201_q4",
+      "text": "What is 'prompt engineering' in AI?",
+      "options": [
+        "Engineering prompts for plays",
+        "Crafting effective instructions/questions to get optimal responses from AI language models",
+        "Building physical prompts",
+        "Timing engineering projects"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Prompt engineering is the skill of writing inputs that produce desired AI outputs. Good prompts are: clear, specific, contextual, and iterative. Example: Instead of 'Write marketing copy,' try 'Write 3 Instagram captions for eco-friendly water bottles targeting fitness enthusiasts, include emojis and call-to-action.' Skills become more valuable as AI adoption grows."
+    },
+    {
+      "id": "tech_201_q5",
+      "text": "What are the main risks of AI that business leaders should understand?",
+      "options": [
+        "Skynet and robot uprising",
+        "Bias in training data, privacy concerns, job displacement, security vulnerabilities, over-reliance on automation",
+        "AI has no risks",
+        "Computers becoming too smart"
+      ],
+      "correctAnswer": 1,
+      "explanation": "AI risks include: (1) Bias - inherits prejudices from training data, (2) Privacy - handling sensitive data, (3) Job displacement - need reskilling strategies, (4) Security - AI systems can be hacked/manipulated, (5) Over-reliance - humans must oversee critical decisions. Responsible AI requires addressing these proactively."
+    }
+  ]
+}

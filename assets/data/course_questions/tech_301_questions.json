@@ -1,0 +1,77 @@
+{
+  "courseId": "tech_301",
+  "questions": [
+    {
+      "id": "tech_301_q1",
+      "text": "What is an MVP (Minimum Viable Product) in tech startups?",
+      "options": [
+        "Most Valuable Player",
+        "The simplest version of a product that solves the core problem - used to test assumptions with real users",
+        "A complete product with all features",
+        "The most expensive version"
+      ],
+      "correctAnswer": 1,
+      "explanation": "MVP is the leanest version of your product that delivers core value. Goal: test your hypothesis with minimal resources before building the full product. Example: Airbnb's MVP was a simple website with photos of their apartment. MVP prevents wasting resources on features users don't want."
+    },
+    {
+      "id": "tech_301_q2",
+      "text": "What is 'product-market fit'?",
+      "options": [
+        "Having a product that fits in the market",
+        "When your product satisfies strong market demand - customers can't live without it",
+        "Matching colors to brand",
+        "Pricing correctly"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Product-market fit means you've built something people desperately want. Signals: organic growth, high retention, customers upset if product disappeared, natural word-of-mouth. Marc Andreessen: 'You can always feel when product-market fit isn't happening.' Before fit: iterate quickly. After fit: scale aggressively."
+    },
+    {
+      "id": "tech_301_q3",
+      "text": "What is the difference between B2B and B2C business models?",
+      "options": [
+        "B2B is better than B2C",
+        "B2B sells to businesses with longer sales cycles and higher values; B2C sells to consumers with shorter cycles and lower values",
+        "Both are the same",
+        "B2B is only for technology"
+      ],
+      "correctAnswer": 1,
+      "explanation": "B2B (Business-to-Business): sell to companies, longer sales cycles, higher contract values, relationship-driven, ROI-focused. B2C (Business-to-Consumer): sell to individuals, shorter cycles, lower values, emotion-driven, volume-focused. Each requires different marketing, sales, and product strategies."
+    },
+    {
+      "id": "tech_301_q4",
+      "text": "What is 'burn rate' for startups?",
+      "options": [
+        "How fast employees work",
+        "Monthly cash spent exceeding revenue - indicates how long the company can survive",
+        "Calories burned at work",
+        "Office temperature"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Burn rate is monthly cash outflow minus inflow. If you have $1M and burn $100K/month, you have 10 months of runway. Critical metric for fundraising and survival. High burn requires either: (1) Reaching profitability quickly, (2) Raising more capital, or (3) Reducing expenses. Many startups die from running out of cash."
+    },
+    {
+      "id": "tech_301_q5",
+      "text": "What is 'pivoting' in startup context?",
+      "options": [
+        "Rotating office furniture",
+        "Fundamentally changing your product or business model based on learnings while keeping your vision",
+        "Giving up",
+        "Dancing move"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A pivot is a structured course correction to test a new hypothesis about your product/business model. Famous pivots: Twitter started as Odeo (podcasting), Instagram started as Burbn (check-in app), YouTube started as video dating site. Pivoting isn't failure - it's learning. The vision persists; the strategy evolves."
+    },
+    {
+      "id": "tech_301_q6",
+      "text": "What is the typical venture capital funding sequence?",
+      "options": [
+        "IPO → Series A → Seed → Series B",
+        "Seed → Series A → Series B → Series C → IPO/Exit",
+        "Only one round of funding",
+        "Bank loans only"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Typical VC stages: (1) Seed ($500K-$2M) - prove concept, (2) Series A ($2-15M) - prove product-market fit, (3) Series B ($10-50M) - scale operations, (4) Series C+ - expand markets/prepare exit. Each round dilutes founders but provides capital for growth. Not all startups raise VC - bootstrapping is valid."
+    }
+  ]
+}

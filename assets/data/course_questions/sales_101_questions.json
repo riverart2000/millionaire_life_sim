@@ -1,0 +1,65 @@
+{
+  "courseId": "sales_101",
+  "questions": [
+    {
+      "id": "sales_101_q1",
+      "text": "What is consultative selling?",
+      "options": [
+        "Hiring consultants to sell for you",
+        "Acting as a trusted advisor who understands customer needs and recommends solutions - relationship over transaction",
+        "Aggressive closing techniques",
+        "Consulting while selling"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Consultative selling focuses on understanding the customer's business, challenges, and goals before recommending solutions. You're a problem-solver, not a product pusher. Steps: (1) Ask questions, (2) Listen deeply, (3) Understand pain points, (4) Prescribe solutions. Builds trust and long-term relationships - crucial for high-ticket sales."
+    },
+    {
+      "id": "sales_101_q2",
+      "text": "What is the difference between features and benefits?",
+      "options": [
+        "They're the same thing",
+        "Features describe what a product is/does; benefits explain how it improves the customer's life",
+        "Features are for marketing, benefits for sales",
+        "Benefits are always price-related"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Features are product attributes: '1TB storage, 12-hour battery, titanium frame.' Benefits answer 'So what?' and connect to emotions/outcomes: 'Never delete photos' (1TB), 'Work unplugged all day' (battery), 'Lasts a lifetime' (titanium). People buy benefits, not features. Always translate features into benefits."
+    },
+    {
+      "id": "sales_101_q3",
+      "text": "What is the SPIN selling framework?",
+      "options": [
+        "Spinning the conversation in circles",
+        "Situation, Problem, Implication, Need-payoff - question sequence that uncovers and develops needs",
+        "A sales manipulation technique",
+        "Speed, Price, Interest, Negotiate"
+      ],
+      "correctAnswer": 1,
+      "explanation": "SPIN (Neil Rackham): (1) Situation questions - understand current state, (2) Problem questions - identify difficulties, (3) Implication questions - explore consequences of problems, (4) Need-payoff questions - get them to articulate value of solving it. The prospect talks themselves into buying by recognizing their own needs."
+    },
+    {
+      "id": "sales_101_q4",
+      "text": "What is 'social proof' in sales?",
+      "options": [
+        "Showing your social media followers",
+        "Evidence that others have chosen and benefited from your solution - testimonials, case studies, reviews",
+        "Proving you're social",
+        "Social media marketing"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Social proof leverages the psychological principle that people follow others' actions. Types: testimonials, case studies, reviews, logos of big clients, user counts, awards. Reduces perceived risk. Example: 'Over 10,000 businesses trust us' or 'Apple uses our software.' Especially powerful when proof comes from similar customers."
+    },
+    {
+      "id": "sales_101_q5",
+      "text": "What is the purpose of discovery calls?",
+      "options": [
+        "To pitch your product immediately",
+        "To ask questions, understand needs, qualify prospects, and determine if there's a mutual fit",
+        "To discover new products",
+        "To waste time"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Discovery calls gather information to determine fit and build your sales strategy. Goals: (1) Understand their situation/challenges, (2) Qualify budget/authority/need/timing, (3) Build rapport, (4) Set expectations for next steps. Listen 70%, talk 30%. Common mistake: pitching too early without understanding needs."
+    }
+  ]
+}

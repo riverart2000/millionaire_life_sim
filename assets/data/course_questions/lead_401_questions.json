@@ -1,0 +1,65 @@
+{
+  "courseId": "lead_401",
+  "questions": [
+    {
+      "id": "lead_401_q1",
+      "text": "What is the OODA Loop decision-making framework?",
+      "options": [
+        "A programming loop",
+        "Observe, Orient, Decide, Act - a rapid decision cycle from military strategy",
+        "A yoga position",
+        "A business formation type"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The OODA Loop (John Boyd): (1) Observe - gather information, (2) Orient - analyze and synthesize data, (3) Decide - determine action, (4) Act - implement. Then loop back. Faster OODA loops than competitors create advantage. Used in military, business, and crisis management for rapid, adaptive decisions."
+    },
+    {
+      "id": "lead_401_q2",
+      "text": "What is 'analysis paralysis' and how do you overcome it?",
+      "options": [
+        "A medical condition",
+        "Overthinking decisions leads to no decision - overcome with deadlines, 80% rule, and accepting imperfect information",
+        "Analyzing too little",
+        "Being paralyzed physically"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Analysis paralysis occurs when overthinking prevents decision-making. Combat it with: (1) Set decision deadlines, (2) Apply 80/20 rule - decide with 80% of info, (3) Accept you'll never have perfect data, (4) Make reversible decisions quickly, (5) Remember not deciding is still a decision - often the worst one."
+    },
+    {
+      "id": "lead_401_q3",
+      "text": "What is a 'pre-mortem' in decision-making?",
+      "options": [
+        "A funeral planning session",
+        "Imagining a decision has failed spectacularly, then working backwards to identify potential causes before implementing",
+        "Morning meetings",
+        "Post-project review"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A pre-mortem imagines your decision has catastrophically failed. Ask: 'What went wrong?' Team members identify potential failure points you might have missed. This uncovers blind spots, reduces overconfidence, and improves decisions. More effective than typical 'what could go wrong?' because it assumes failure already happened."
+    },
+    {
+      "id": "lead_401_q4",
+      "text": "What is the 'regret minimization framework'?",
+      "options": [
+        "Never making decisions",
+        "Imagine yourself at 80 years old looking back - which choice will you regret least?",
+        "Avoiding all risks",
+        "Always choosing the safe option"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Jeff Bezos's framework: When facing big decisions, project yourself to age 80 looking back. Will you regret not trying? Most people regret inaction more than failed attempts. This long-term perspective cuts through short-term fears and clarifies what truly matters."
+    },
+    {
+      "id": "lead_401_q5",
+      "text": "What is 'second-order thinking'?",
+      "options": [
+        "Thinking twice",
+        "Considering not just immediate effects but the consequences of those consequences - 'and then what?'",
+        "Being second-best",
+        "Backup planning only"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Second-order thinking asks 'And then what?' repeatedly. First-order: 'This deal increases revenue!' Second-order: 'But it requires hiring 50 people, straining culture and cash flow, potentially destroying what made us successful.' Great leaders think 3-4 moves ahead like chess players."
+    }
+  ]
+}

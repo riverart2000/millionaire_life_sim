@@ -1,0 +1,77 @@
+{
+  "courseId": "fin_501",
+  "questions": [
+    {
+      "id": "fin_501_q1",
+      "text": "What is the primary legal purpose of offshore banking?",
+      "options": [
+        "Tax evasion",
+        "Asset protection, privacy, diversification, and legal tax optimization",
+        "Money laundering",
+        "Hiding criminal proceeds"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Legitimate offshore banking serves legal purposes: protecting assets from lawsuits, diversifying currency risk, accessing international investments, and legal tax planning. Tax evasion is illegal - legitimate offshore accounts must be reported to your home country's tax authority (FBAR, FATCA in US)."
+    },
+    {
+      "id": "fin_501_q2",
+      "text": "What is FATCA and why is it important for US citizens?",
+      "options": [
+        "A foreign travel agency",
+        "Foreign Account Tax Compliance Act requiring US citizens to report foreign accounts exceeding $10,000",
+        "A cryptocurrency exchange",
+        "An international airline"
+      ],
+      "correctAnswer": 1,
+      "explanation": "FATCA (Foreign Account Tax Compliance Act) requires US citizens and residents to report foreign financial accounts exceeding $10,000 annually via FBAR filing. Penalties for non-compliance are severe. Foreign banks also report US account holders to IRS. Compliance is crucial for legitimate offshore banking."
+    },
+    {
+      "id": "fin_501_q3",
+      "text": "What is an international business company (IBC)?",
+      "options": [
+        "Any company doing business internationally",
+        "An offshore corporation in tax-friendly jurisdictions, often used for international trading and asset protection",
+        "A shipping company",
+        "A travel agency"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An IBC is a corporation registered in a low-tax jurisdiction (like BVI, Cayman Islands, Seychelles) that conducts business outside its registration country. Benefits include lower corporate taxes, asset protection, and privacy. Must be used legally and reported to home tax authorities."
+    },
+    {
+      "id": "fin_501_q4",
+      "text": "What is asset protection and why use offshore structures?",
+      "options": [
+        "Hiding assets illegally",
+        "Legal strategies to shield wealth from creditors, lawsuits, and political instability using jurisdictions with strong protection laws",
+        "Insurance only",
+        "Investing in gold"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Asset protection involves legal structures (offshore trusts, corporations, LLCs) in jurisdictions with strong asset protection laws. These shield wealth from frivolous lawsuits, creditors, and political risk. Timing is critical - structures must be established before threats emerge to avoid fraudulent transfer claims."
+    },
+    {
+      "id": "fin_501_q5",
+      "text": "What are the risks of offshore banking if not done properly?",
+      "options": [
+        "There are no risks",
+        "Legal penalties for non-reporting, frozen accounts, criminal charges, and reputational damage",
+        "Making too much money",
+        "Currency gains"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Improper offshore banking risks include: massive fines for failing to report accounts (FBAR penalties up to 50% of account value), criminal charges for tax evasion, accounts frozen or seized, and damaged reputation. Always work with qualified international tax attorneys and fully comply with reporting requirements."
+    },
+    {
+      "id": "fin_501_q6",
+      "text": "What is the difference between tax avoidance and tax evasion?",
+      "options": [
+        "They're the same thing",
+        "Tax avoidance is legal planning to minimize taxes; tax evasion is illegal concealment of income or assets",
+        "Both are illegal",
+        "Only poor people avoid taxes"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Tax avoidance is legal use of tax laws to reduce tax burden (deductions, credits, offshore structures with proper reporting). Tax evasion is illegal - hiding income, falsifying records, not reporting foreign accounts. Offshore banking is legal when properly structured and fully reported."
+    }
+  ]
+}

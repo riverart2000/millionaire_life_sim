@@ -1,0 +1,65 @@
+{
+  "courseId": "tech_101",
+  "questions": [
+    {
+      "id": "tech_101_q1",
+      "text": "What is blockchain technology?",
+      "options": [
+        "A type of chain link fence",
+        "A decentralized, distributed ledger that records transactions across many computers",
+        "A computer blocking tool",
+        "A type of cryptocurrency"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Blockchain is a distributed database that maintains a continuously growing list of records (blocks) linked cryptographically. Each block contains transaction data, timestamp, and link to previous block. It's decentralized (no single authority), transparent, and virtually tamper-proof. Bitcoin runs on blockchain, but blockchain has many other uses."
+    },
+    {
+      "id": "tech_101_q2",
+      "text": "What is DeFi (Decentralized Finance)?",
+      "options": [
+        "Default financing",
+        "Financial services using blockchain/crypto without traditional intermediaries like banks",
+        "A type of loan",
+        "Deficit financing"
+      ],
+      "correctAnswer": 1,
+      "explanation": "DeFi provides financial services (lending, borrowing, trading, earning interest) using smart contracts on blockchain, eliminating intermediaries. Benefits: 24/7 access, lower fees, no gatekeepers. Risks: smart contract bugs, volatility, less regulation. Examples: Aave, Uniswap, Compound."
+    },
+    {
+      "id": "tech_101_q3",
+      "text": "What is a cryptocurrency wallet?",
+      "options": [
+        "A physical leather wallet",
+        "Software that stores private keys allowing you to access and manage your cryptocurrency",
+        "A bank account for crypto",
+        "A coin purse"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A crypto wallet stores private keys (like passwords) that prove ownership of your crypto. Hot wallets (online) are convenient but less secure. Cold wallets (offline hardware) are more secure. Remember: 'Not your keys, not your crypto' - keeping coins on exchanges means you don't truly own them."
+    },
+    {
+      "id": "tech_101_q4",
+      "text": "What are NFTs (Non-Fungible Tokens)?",
+      "options": [
+        "A type of fungus",
+        "Unique digital assets verified on blockchain - can represent art, music, virtual land, collectibles",
+        "New File Types",
+        "A cryptocurrency"
+      ],
+      "correctAnswer": 1,
+      "explanation": "NFTs are unique digital tokens on blockchain that prove ownership and authenticity of specific digital (or physical) items. Unlike Bitcoin (fungible - one equals another), each NFT is unique. Uses: digital art, music rights, virtual real estate, gaming items, event tickets, membership passes."
+    },
+    {
+      "id": "tech_101_q5",
+      "text": "What is the key security rule for cryptocurrency?",
+      "options": [
+        "Share your private keys with everyone",
+        "Never share your private keys or seed phrase with anyone - they give complete access to your funds",
+        "Keep everything on exchanges",
+        "Use simple passwords"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Your private key/seed phrase is like the master key to your bank vault. If someone gets it, they own your crypto - transactions are irreversible. Never: (1) Share it with anyone (no legitimate service asks), (2) Store it digitally, (3) Take photos of it. Write it down, store securely offline. Crypto transfers are permanent."
+    }
+  ]
+}

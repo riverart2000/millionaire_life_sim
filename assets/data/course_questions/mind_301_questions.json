@@ -1,0 +1,65 @@
+{
+  "courseId": "mind_301",
+  "questions": [
+    {
+      "id": "mind_301_q1",
+      "text": "What is a limiting belief?",
+      "options": [
+        "A smart financial boundary",
+        "An unconscious assumption about yourself or the world that restricts your potential and actions",
+        "A religious doctrine",
+        "A legal restriction"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Limiting beliefs are unconscious assumptions that hold you back: 'I'm not smart enough,' 'Rich people are greedy,' 'I don't deserve success.' They're usually formed in childhood and operate below awareness, sabotaging efforts. Identifying and reframing them is crucial for breakthrough success."
+    },
+    {
+      "id": "mind_301_q2",
+      "text": "What is the best way to identify your limiting beliefs?",
+      "options": [
+        "Ignore them and push harder",
+        "Examine areas where you're stuck or self-sabotaging; complete the sentence 'I can't [goal] because...'",
+        "Ask strangers",
+        "They can't be identified"
+      ],
+      "correctAnswer": 1,
+      "explanation": "To uncover limiting beliefs: (1) Identify goals you're not achieving despite effort, (2) Complete: 'I can't [achieve X] because...' multiple times, (3) Notice recurring self-talk and excuses, (4) Explore childhood messages about money/success. The patterns reveal hidden beliefs blocking progress."
+    },
+    {
+      "id": "mind_301_q3",
+      "text": "What is the technique for reframing a limiting belief?",
+      "options": [
+        "Positive thinking only",
+        "Identify the belief, find contradicting evidence, create empowering replacement belief, reinforce with action",
+        "Pretend it doesn't exist",
+        "Complain about it"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Reframing process: (1) Identify belief: 'I'm bad with money,' (2) Find evidence against it: 'I successfully budgeted for my vacation,' (3) Create empowering belief: 'I'm learning to manage money better each day,' (4) Prove it with small actions, (5) Repeat new belief daily."
+    },
+    {
+      "id": "mind_301_q4",
+      "text": "What is 'imposter syndrome'?",
+      "options": [
+        "Being a fraud",
+        "Feeling like a fraud despite evidence of competence - common limiting belief among high achievers",
+        "A criminal offense",
+        "Acting ability"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Imposter syndrome is feeling like you don't deserve your success and fearing being 'exposed' as a fraud, despite clear evidence of competence. It affects 70% of people, especially high achievers. Combat it by: acknowledging accomplishments, accepting compliments, and recognizing feelings aren't facts."
+    },
+    {
+      "id": "mind_301_q5",
+      "text": "What is the 'growth mindset' concept by Carol Dweck?",
+      "options": [
+        "Always being positive",
+        "Believing abilities and intelligence can be developed through effort, strategy, and learning from failure",
+        "Only thinking about growth investments",
+        "Growing your business only"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Growth mindset (vs fixed mindset) believes intelligence and abilities are developable through effort and learning. Fixed mindset believes they're innate and unchangeable. Growth mindset people embrace challenges, persist through setbacks, see effort as path to mastery - leading to greater achievement."
+    }
+  ]
+}

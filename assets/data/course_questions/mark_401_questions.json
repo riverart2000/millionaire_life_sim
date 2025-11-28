@@ -1,0 +1,41 @@
+{
+  "courseId": "mark_401",
+  "questions": [
+    {
+      "id": "mark_401_q1",
+      "text": "What is the main purpose of an email welcome sequence?",
+      "options": [
+        "To immediately sell products",
+        "To build trust, deliver value, and introduce your brand over multiple touchpoints",
+        "To collect more email addresses",
+        "To spam subscribers daily"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A welcome sequence is designed to nurture new subscribers by building trust, delivering value, and introducing your brand gradually. It typically includes 3-7 emails that educate, engage, and eventually present offers when trust is established."
+    },
+    {
+      "id": "mark_401_q2",
+      "text": "What is a good open rate for email marketing campaigns?",
+      "options": [
+        "5-10%",
+        "15-25%",
+        "50-60%",
+        "80-90%"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Industry average open rates typically range from 15-25%. Rates above 25% are considered excellent. Factors affecting open rates include subject line quality, sender reputation, audience engagement, and timing."
+    },
+    {
+      "id": "mark_401_q3",
+      "text": "What does segmentation mean in email marketing?",
+      "options": [
+        "Sending the same email to everyone",
+        "Dividing your email list into targeted groups based on behavior, interests, or demographics",
+        "Removing inactive subscribers",
+        "Scheduling emails at different times"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Segmentation involves dividing your email list into smaller, targeted groups based on specific criteria like purchase history, engagement level, interests, or demographics. This allows you to send more relevant, personalized messages that drive higher engagement and conversions."
+    }
+  ]
+}

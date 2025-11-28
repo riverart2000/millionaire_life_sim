@@ -1,0 +1,77 @@
+{
+  "courseId": "net_301",
+  "questions": [
+    {
+      "id": "net_301_q1",
+      "text": "What is the #1 fear in public speaking?",
+      "options": [
+        "Forgetting your speech",
+        "Being judged or rejected by the audience",
+        "Technical difficulties",
+        "Running out of time"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The core fear isn't speaking itself - it's being judged, rejected, or humiliated. This fear is evolutionary (social rejection meant death in tribal times). Overcome it by: (1) Reframing: audience wants you to succeed, (2) Preparation: confidence comes from practice, (3) Focus on message, not self, (4) Start small and build. Fear lessens with each successful talk."
+    },
+    {
+      "id": "net_301_q2",
+      "text": "What is the 'power of storytelling' in presentations?",
+      "options": [
+        "Telling any story",
+        "Stories engage emotions, increase retention 22x, and make complex ideas memorable and relatable",
+        "Reading fairy tales",
+        "Fiction writing"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Facts tell, stories sell. Stories: (1) Engage emotions (where decisions are made), (2) Increase retention 22x vs facts alone, (3) Make you relatable and human, (4) Illustrate concepts memorably. Structure: Hero (relatable character) + Problem (they face) + Journey (struggle) + Resolution (transformation). Use personal stories to illustrate each key point."
+    },
+    {
+      "id": "net_301_q3",
+      "text": "What is the 'rule of three' in presentations?",
+      "options": [
+        "Having three speakers",
+        "People remember things better in groups of three - use it for structure and key points",
+        "Speaking for three hours",
+        "Three slides only"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The brain processes and remembers information better in threes. Use it for: (1) Main points: 'Today we'll cover X, Y, Z,' (2) Examples: 'First client increased revenue 50%, second doubled their team, third launched internationally,' (3) Lists: '3 ways to improve sales.' Structure: Introduction + 3 main points + Conclusion. More than 3 main points overwhelms audiences."
+    },
+    {
+      "id": "net_301_q4",
+      "text": "What is 'vocal variety' and why does it matter?",
+      "options": [
+        "Speaking multiple languages",
+        "Varying pace, pitch, and volume to maintain interest and emphasize key points",
+        "Having a unique voice",
+        "Speaking loudly"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Monotone voices cause audiences to disengage. Vocal variety: (1) Pace - speed up for excitement, slow down for emphasis, (2) Pitch - vary high/low for interest, (3) Volume - louder for passion, softer for intimacy, (4) Pauses - silence creates impact. Watch TED talks: speakers modulate constantly. Practice reading aloud with exaggerated variation."
+    },
+    {
+      "id": "net_301_q5",
+      "text": "What is the most important thing to do with nervous energy before speaking?",
+      "options": [
+        "Try to eliminate it completely",
+        "Channel it into enthusiasm and use it to energize your delivery",
+        "Drink alcohol",
+        "Avoid it by not speaking"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Nervousness and excitement are physiologically identical - racing heart, adrenaline, heightened awareness. The difference is interpretation. Reframe: 'I'm not nervous, I'm excited!' Then channel that energy: gesture more, move purposefully, speak passionately. The best speakers aren't calm - they're energized. Nervousness never disappears completely; masters harness it."
+    },
+    {
+      "id": "net_301_q6",
+      "text": "What should you do if you forget your speech?",
+      "options": [
+        "Panic and run off stage",
+        "Pause, take a breath, refer to notes if needed, or skip to next point - audience rarely notices",
+        "Apologize profusely",
+        "Make something up quickly"
+      ],
+      "correctAnswer": 1,
+      "explanation": "If you blank: (1) Pause and breathe - feels like eternity to you, normal to them, (2) Look at notes - it's okay, (3) Say: 'Let me check my notes on that...' or 'Moving to my next point...', (4) Skip it - they don't know what you planned to say. What destroys credibility isn't forgetting - it's how you react. Confident recovery maintains authority."
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "courseId": "lead_301",
+  "questions": [
+    {
+      "id": "lead_301_q1",
+      "text": "What is the most important factor in building a high-performance team?",
+      "options": [
+        "Hiring the smartest individuals",
+        "Psychological safety - team members feel safe to take risks and be vulnerable",
+        "Highest salaries",
+        "Longest hours worked"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Google's Project Aristotle found psychological safety was the #1 predictor of team success. When people feel safe to speak up, admit mistakes, ask questions, and disagree without fear of punishment, teams innovate more and perform better. Leaders create this through vulnerability, embracing failure, and rewarding candor."
+    },
+    {
+      "id": "lead_301_q2",
+      "text": "What is 'A-player' hiring philosophy?",
+      "options": [
+        "Only hiring people with straight As",
+        "Hiring people better than you in their domain, who raise the team's average talent level",
+        "Hiring the cheapest workers",
+        "Hiring your friends only"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A-players are top 10% performers who: deliver exceptional results, raise team standards, require minimal management, and attract other A-players. Netflix's rule: 'Would you fight hard to keep this person?' If not, they're not an A-player. One A-player often outperforms three B-players while costing less."
+    },
+    {
+      "id": "lead_301_q3",
+      "text": "What is the 'hiring for culture fit vs culture add' debate?",
+      "options": [
+        "Both are the same",
+        "Culture fit maintains current culture; culture add brings diverse perspectives that evolve culture positively",
+        "Culture doesn't matter",
+        "Only fit matters"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Culture fit' can create homogeneous teams and groupthink. 'Culture add' seeks people who share core values but bring different perspectives, backgrounds, and skills that enhance culture. Look for: shared values + diverse thinking = innovation and growth while maintaining cohesion."
+    },
+    {
+      "id": "lead_301_q4",
+      "text": "What is 'radical candor' in leadership?",
+      "options": [
+        "Being brutally honest without care",
+        "Caring personally while challenging directly - honest feedback from a place of genuine concern",
+        "Never giving negative feedback",
+        "Being rude"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Radical Candor (Kim Scott) has two dimensions: (1) Care Personally - genuine concern for the person, (2) Challenge Directly - honest feedback. It's not 'brutal honesty' (obnoxious aggression) or 'nice' silence (ruinous empathy). Clear, direct feedback from a place of care helps people grow."
+    },
+    {
+      "id": "lead_301_q5",
+      "text": "What is 'retention' and why is it more important than hiring?",
+      "options": [
+        "Keeping office supplies",
+        "Keeping great employees by creating an environment where they want to stay - replacing A-players costs 2-3x salary",
+        "Memory techniques",
+        "Contract clauses"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Replacing an employee costs 1.5-3x their annual salary (recruiting, training, productivity loss). A-players leave when: unchallenged, undervalued, or seeing no growth path. Retain them through: meaningful work, growth opportunities, recognition, autonomy, and great team culture. Prevention beats replacement."
+    }
+  ]
+}

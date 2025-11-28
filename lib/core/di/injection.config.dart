@@ -12,6 +12,8 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:millionaire_life_simulator/services/bootstrap_service.dart'
     as _i108;
+import 'package:millionaire_life_simulator/services/riddle_service.dart'
+    as _i38;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -25,6 +27,7 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     gh.lazySingleton<_i108.BootstrapService>(() => _i108.BootstrapService());
+    gh.lazySingleton<_i38.RiddleService>(() => _i38.RiddleService());
     return this;
   }
 }

@@ -1,0 +1,65 @@
+{
+  "courseId": "lead_101",
+  "questions": [
+    {
+      "id": "lead_101_q1",
+      "text": "What is the difference between management and leadership?",
+      "options": [
+        "They're the same thing",
+        "Management focuses on systems/processes; leadership focuses on inspiring people toward a vision",
+        "Management is for big companies only",
+        "Leadership is just being bossy"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Management is about efficiency - organizing, planning, controlling systems to achieve goals. Leadership is about effectiveness - inspiring, motivating, and influencing people toward a compelling vision. Great organizations need both: 'Managers do things right; leaders do the right things' (Peter Drucker)."
+    },
+    {
+      "id": "lead_101_q2",
+      "text": "What is 'servant leadership'?",
+      "options": [
+        "Being submissive to employees",
+        "Leading by serving others' needs first - empowering team members to reach their highest potential",
+        "Doing all the work yourself",
+        "Avoiding responsibility"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Servant leadership (Robert Greenleaf) puts team members' growth and wellbeing first. The leader serves by: removing obstacles, providing resources, developing people, and empowering decision-making. Paradoxically, this approach builds stronger teams and better results than command-and-control leadership."
+    },
+    {
+      "id": "lead_101_q3",
+      "text": "What are the key components of effective communication for leaders?",
+      "options": [
+        "Talking loudly",
+        "Clarity, active listening, empathy, consistency, and feedback",
+        "Sending lots of emails",
+        "Using complex language"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Effective leader communication requires: (1) Clarity - simple, direct messages, (2) Active listening - truly hearing others, (3) Empathy - understanding others' perspectives, (4) Consistency - aligned words and actions, (5) Feedback - two-way dialogue. Poor communication is the #1 cause of organizational dysfunction."
+    },
+    {
+      "id": "lead_101_q4",
+      "text": "What is a 'vision statement' and why is it important?",
+      "options": [
+        "A mission statement",
+        "A compelling picture of the desired future that inspires and guides the organization's direction",
+        "A list of rules",
+        "Financial projections"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A vision statement describes the aspirational future you're creating - where you're going and why it matters. It inspires action, aligns decisions, and attracts talent. Example: Microsoft's early vision: 'A computer on every desk and in every home.' Clear vision creates clarity and motivation."
+    },
+    {
+      "id": "lead_101_q5",
+      "text": "What is 'leading by example' and why is it powerful?",
+      "options": [
+        "Showing off your skills",
+        "Modeling the behaviors, values, and work ethic you expect from others - actions speak louder than words",
+        "Doing everyone's work",
+        "Being perfect"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Leading by example means embodying the standards you set for others. If you expect punctuality, arrive early. If you value learning, visibly invest in your growth. People watch leaders' actions more than words. Hypocrisy destroys trust and credibility faster than anything."
+    }
+  ]
+}

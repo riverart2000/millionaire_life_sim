@@ -53,173 +53,112 @@ class SoundService {
 
   Future<void> playCelebration() async {
     if (!_enabled) return;
-    await _playUrl(
-      'https://assets.mixkit.co/active_storage/sfx/2014/2014-preview.mp3',
-      volume: 0.4,
-    );
+    await _playAsset('sounds/celebration.mp3', volume: 0.4);
   }
 
   Future<void> playNotification() async {
     if (!_enabled) return;
-    await _playUrl(
-      'https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3',
-      volume: 0.3,
-    );
+    await _playAsset('sounds/notification.mp3', volume: 0.3);
   }
 
   Future<void> playButtonClick() async {
     if (!_enabled) return;
     // Pleasant, soft button click sound
-    await _playUrl(
-      'https://assets.mixkit.co/active_storage/sfx/2997/2997-preview.mp3',
-      volume: 0.25,
-    );
+    await _playAsset('sounds/button_click.mp3', volume: 0.25);
   }
 
   // Jar-specific jingles
   Future<void> playNecJingle() async {
     if (!_enabled) return;
     // Home/Necessities - Warm, comforting bell sound
-    await _playUrl(
-      'https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3',
-      volume: 0.35,
-    );
+    await _playAsset('sounds/nec_jar.mp3', volume: 0.35);
   }
 
   Future<void> playFfaJingle() async {
     if (!_enabled) return;
     // Financial Freedom - Success/achievement chime
-    await _playUrl(
-      'https://assets.mixkit.co/active_storage/sfx/2018/2018-preview.mp3',
-      volume: 0.35,
-    );
+    await _playAsset('sounds/ffa_jar.mp3', volume: 0.35);
   }
 
   Future<void> playLtssJingle() async {
     if (!_enabled) return;
     // Long Term Savings - Growing/ascending chime
-    await _playUrl(
-      'https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3',
-      volume: 0.35,
-    );
+    await _playAsset('sounds/ltss_jar.mp3', volume: 0.35);
   }
 
   Future<void> playEduJingle() async {
     if (!_enabled) return;
     // Education - Bright, enlightening ding
-    await _playUrl(
-      'https://assets.mixkit.co/active_storage/sfx/2021/2021-preview.mp3',
-      volume: 0.35,
-    );
+    await _playAsset('sounds/edu_jar.mp3', volume: 0.35);
   }
 
   Future<void> playPlayJingle() async {
     if (!_enabled) return;
     // Play - Fun, playful chime
-    await _playUrl(
-      'https://assets.mixkit.co/active_storage/sfx/2015/2015-preview.mp3',
-      volume: 0.35,
-    );
+    await _playAsset('sounds/play_jar.mp3', volume: 0.35);
   }
 
   Future<void> playGiveJingle() async {
     if (!_enabled) return;
     // Give - Generous, warm bell
-    await _playUrl(
-      'https://assets.mixkit.co/active_storage/sfx/2016/2016-preview.mp3',
-      volume: 0.35,
-    );
+    await _playAsset('sounds/give_jar.mp3', volume: 0.35);
   }
 
   // Simulate Next Day jingle
   Future<void> playNextDayJingle() async {
-    if (kIsWeb) {
-      print('🎵 Next Day jingle requested (enabled: $_enabled)');
-    }
-    if (!_enabled) {
-      if (kIsWeb) print('⏸️ Sound is disabled, skipping');
-      return;
-    }
+    if (!_enabled) return;
     // New day - Uplifting, fresh start chime
-    await _playUrl(
-      'https://assets.mixkit.co/active_storage/sfx/2001/2001-preview.mp3',
-      volume: 0.4,
-    );
+    await _playAsset('sounds/next_day.mp3', volume: 0.4);
   }
 
   // Investment-specific jingles (powerful and motivating!)
   Future<void> playGoldInvestmentJingle() async {
     if (!_enabled) return;
     // Gold - Rich, luxurious success sound
-    await _playUrl(
-      'https://assets.mixkit.co/active_storage/sfx/2004/2004-preview.mp3',
-      volume: 0.45,
-    );
+    await _playAsset('sounds/gold_invest.mp3', volume: 0.45);
   }
 
   Future<void> playSilverInvestmentJingle() async {
     if (!_enabled) return;
     // Silver - Bright, victory chime
-    await _playUrl(
-      'https://assets.mixkit.co/active_storage/sfx/2003/2003-preview.mp3',
-      volume: 0.45,
-    );
+    await _playAsset('sounds/silver_invest.mp3', volume: 0.45);
   }
 
   Future<void> playBtcInvestmentJingle() async {
     if (!_enabled) return;
     // Bitcoin - Futuristic, high-tech success sound
-    await _playUrl(
-      'https://assets.mixkit.co/active_storage/sfx/2020/2020-preview.mp3',
-      volume: 0.45,
-    );
+    await _playAsset('sounds/btc_invest.mp3', volume: 0.45);
   }
 
   Future<void> playRealEstateInvestmentJingle() async {
     if (!_enabled) return;
     // Real Estate - Grand, achievement fanfare
-    await _playUrl(
-      'https://assets.mixkit.co/active_storage/sfx/2002/2002-preview.mp3',
-      volume: 0.5,
-    );
+    await _playAsset('sounds/real_estate_invest.mp3', volume: 0.5);
   }
 
-  Future<void> _playUrl(String url, {double volume = 0.3}) async {
+  Future<void> _playAsset(String assetPath, {double volume = 0.3}) async {
     if (!_enabled || _player == null) return;
     
     try {
       if (kIsWeb) {
-        print('🎵 Playing sound on web: $url at volume $volume');
         // For web: create a new player for each sound to avoid conflicts
         final webPlayer = AudioPlayer();
         await webPlayer.setVolume(volume);
         await webPlayer.setReleaseMode(ReleaseMode.release);
-        await webPlayer.play(UrlSource(url));
+        await webPlayer.play(AssetSource(assetPath));
         // Auto-dispose after playing
         webPlayer.onPlayerComplete.listen((_) {
           webPlayer.dispose();
         });
-        print('✅ Web sound started');
       } else {
-        // For mobile: reuse the same player
+        // For mobile/desktop: reuse the same player
         await _player!.stop();
         await _player!.setVolume(volume);
-        await _player!.play(UrlSource(url));
+        await _player!.play(AssetSource(assetPath));
       }
     } catch (error) {
-      if (kIsWeb) {
-        print('❌ Web audio error: $error');
-        print('ℹ️ Tip: Interact with the page first (click a button) to enable audio');
-      }
-      
-      // Fallback to system sound (mobile only)
-      if (!kIsWeb) {
-        try {
-          await SystemSound.play(SystemSoundType.click);
-        } catch (_) {
-          // Silently fail
-        }
-      }
+      // Silently fail on all platforms - audio is nice-to-have
+      // Just continue without sound rather than showing errors
     }
   }
 

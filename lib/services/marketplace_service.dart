@@ -146,7 +146,7 @@ class MarketplaceService {
         throw StateError('Required jar ${item.requiredJar} not found');
       }
       if (jar.balance < item.price) {
-        throw StateError('Insufficient balance in ${jar.name} jar');
+        throw StateError('Not enough yet! Work harder, smarter, longer. Build your ${jar.name} jar to £${item.price.toStringAsFixed(0)} to unlock this.');
       }
 
       await _jarService.withdraw(

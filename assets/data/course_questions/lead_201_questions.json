@@ -1,0 +1,65 @@
+{
+  "courseId": "lead_201",
+  "questions": [
+    {
+      "id": "lead_201_q1",
+      "text": "What are the five components of emotional intelligence (EQ)?",
+      "options": [
+        "Reading, writing, math, science, art",
+        "Self-awareness, self-regulation, motivation, empathy, social skills",
+        "IQ, talent, education, experience, luck",
+        "Speaking, listening, thinking, feeling, doing"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Daniel Goleman's EQ framework: (1) Self-awareness - knowing your emotions, (2) Self-regulation - managing emotions effectively, (3) Motivation - internal drive toward goals, (4) Empathy - understanding others' emotions, (5) Social skills - managing relationships. EQ predicts leadership success better than IQ."
+    },
+    {
+      "id": "lead_201_q2",
+      "text": "What is 'empathy' in leadership context?",
+      "options": [
+        "Feeling sorry for people",
+        "Understanding and sharing others' feelings/perspectives to build connection and trust",
+        "Agreeing with everyone",
+        "Weakness"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Empathy is understanding others' emotions and perspectives without necessarily agreeing. It builds trust, improves communication, and enables you to motivate and influence effectively. Cognitive empathy understands thinking; emotional empathy feels emotions; compassionate empathy moves to action."
+    },
+    {
+      "id": "lead_201_q3",
+      "text": "What is 'self-awareness' and why is it foundational for leadership?",
+      "options": [
+        "Being selfish",
+        "Understanding your emotions, strengths, weaknesses, values, and impact on others",
+        "Looking in mirrors often",
+        "Self-centeredness"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Self-awareness is recognizing your emotional patterns, triggers, strengths, blind spots, and how you affect others. It's the foundation of EQ. Without it, you can't regulate emotions or empathize. Develop it through: reflection, feedback seeking, journaling, and personality assessments."
+    },
+    {
+      "id": "lead_201_q4",
+      "text": "What is 'active listening'?",
+      "options": [
+        "Hearing words only",
+        "Fully concentrating, understanding, responding, and remembering what's being said - listening to understand, not reply",
+        "Waiting for your turn to talk",
+        "Agreeing with everything"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Active listening means giving full attention, showing engagement (eye contact, nodding), asking clarifying questions, and reflecting back what you heard. Goal: truly understand before responding. Most people listen to reply, not understand. Leaders who master this build trust and solve problems effectively."
+    },
+    {
+      "id": "lead_201_q5",
+      "text": "What is 'emotional regulation' and why does it matter for leaders?",
+      "options": [
+        "Hiding all emotions",
+        "Managing your emotional responses appropriately rather than being controlled by them - crucial for decision-making and team morale",
+        "Always being happy",
+        "Never feeling emotions"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Emotional regulation means experiencing emotions fully but choosing your response rather than reacting impulsively. Leaders face high stress - poor regulation leads to reactive decisions, damaged relationships, and toxic culture. Techniques: pause before responding, name the emotion, reframe situations, use breathing exercises."
+    }
+  ]
+}

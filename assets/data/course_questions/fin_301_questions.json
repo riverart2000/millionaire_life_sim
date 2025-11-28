@@ -1,0 +1,65 @@
+{
+  "courseId": "fin_301",
+  "questions": [
+    {
+      "id": "fin_301_q1",
+      "text": "What is a tax-advantaged retirement account?",
+      "options": [
+        "A secret offshore account",
+        "Accounts like 401(k) or IRA that offer tax benefits for retirement savings",
+        "A checking account with no fees",
+        "A Bitcoin wallet"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Tax-advantaged accounts like 401(k), IRA, Roth IRA offer tax benefits. Traditional accounts give upfront tax deductions and tax-deferred growth. Roth accounts have no upfront deduction but offer tax-free withdrawals in retirement. These dramatically reduce lifetime tax burden."
+    },
+    {
+      "id": "fin_301_q2",
+      "text": "What is tax-loss harvesting?",
+      "options": [
+        "Growing vegetables to avoid grocery taxes",
+        "Selling investments at a loss to offset capital gains and reduce taxable income",
+        "Not paying taxes",
+        "Hiding losses from the IRS"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Tax-loss harvesting involves selling investments that have lost value to offset capital gains from profitable investments. This reduces your overall tax liability. You can use up to $3,000 in losses to offset ordinary income annually, with excess losses carrying forward to future years."
+    },
+    {
+      "id": "fin_301_q3",
+      "text": "What is the difference between tax deduction and tax credit?",
+      "options": [
+        "They're the same thing",
+        "Deduction reduces taxable income; credit directly reduces tax owed dollar-for-dollar",
+        "Deductions are illegal, credits are legal",
+        "Credits are only for businesses"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Tax deductions reduce your taxable income (if you're in 25% bracket, $1,000 deduction saves $250). Tax credits reduce your tax bill dollar-for-dollar ($1,000 credit saves $1,000). Credits are more valuable than deductions of the same amount."
+    },
+    {
+      "id": "fin_301_q4",
+      "text": "What is the 'backdoor Roth IRA' strategy?",
+      "options": [
+        "An illegal tax evasion scheme",
+        "A legal method to contribute to Roth IRA by converting traditional IRA contributions when income limits prevent direct Roth contributions",
+        "Breaking into the IRS building",
+        "A type of home renovation"
+      ],
+      "correctAnswer": 1,
+      "explanation": "High earners often can't contribute directly to Roth IRAs due to income limits. The backdoor Roth involves making non-deductible traditional IRA contributions, then immediately converting to Roth IRA. This legal strategy allows high earners to benefit from Roth's tax-free growth."
+    },
+    {
+      "id": "fin_301_q5",
+      "text": "What is depreciation in tax strategy for property owners?",
+      "options": [
+        "Property losing value",
+        "A non-cash deduction that reduces taxable income by spreading property cost over its useful life",
+        "Property damage",
+        "Lower property taxes"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Depreciation allows property owners to deduct the cost of income-producing property over 27.5 years (residential) or 39 years (commercial). This creates a 'paper loss' that reduces taxable income without actual cash outflow, significantly lowering tax burden on rental income."
+    }
+  ]
+}
