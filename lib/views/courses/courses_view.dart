@@ -8,6 +8,7 @@ import '../../providers/session_providers.dart';
 import '../../providers/bootstrap_provider.dart';
 import '../../core/utils/currency_formatter.dart';
 import '../../core/utils/result.dart';
+import '../../widgets/course_quiz_dialog.dart';
 
 class CoursesView extends ConsumerStatefulWidget {
   const CoursesView({super.key});
@@ -500,6 +501,28 @@ class _CourseCard extends ConsumerWidget {
             const SizedBox(height: 8),
             Text('Duration: ${course.duration}'),
             const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primaryContainer,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Row(
+                children: [
+                  const Icon(Icons.quiz_outlined, size: 20),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      'You\'ll need to pass a quiz to complete this course!',
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 8),
             Text(
               'This will be deducted from your EDU jar balance.',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
@@ -515,13 +538,47 @@ class _CourseCard extends ConsumerWidget {
           ),
           FilledButton(
             onPressed: () => Navigator.of(context).pop(true),
-            child: const Text('Enroll Now'),
+            child: const Text('Start Course'),
           ),
         ],
       ),
     );
 
     if (confirmed != true || !context.mounted) return;
+
+    // Load quiz questions
+    final questionService = ref.read(courseQuestionServiceProvider);
+    final quiz = await questionService.loadCourseQuestions(course.id);
+    
+    if (quiz == null || quiz.questions.isEmpty) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('⚠️ Quiz not available for this course yet. Coming soon!'),
+            backgroundColor: Colors.orange,
+          ),
+        );
+      }
+      return;
+    }
+
+    // Show quiz dialog
+    bool quizCompleted = false;
+    if (context.mounted) {
+      await showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => CourseQuizDialog(
+          quiz: quiz,
+          courseTitle: course.title,
+          onComplete: () {
+            quizCompleted = true;
+          },
+        ),
+      );
+    }
+
+    if (!quizCompleted || !context.mounted) return;
 
     final jarService = ref.read(jarServiceProvider);
     final userRepo = ref.read(userRepositoryProvider);

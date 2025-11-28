@@ -1,0 +1,89 @@
+{
+  "courseId": "biz_401",
+  "questions": [
+    {
+      "id": "biz_401_q1",
+      "text": "What is EBITDA and why is it important in business valuation?",
+      "options": [
+        "Total revenue minus expenses",
+        "Earnings Before Interest, Taxes, Depreciation, and Amortization - shows operational profitability",
+        "The total value of company assets",
+        "Expected Business Income Through Daily Activities"
+      ],
+      "correctAnswer": 1,
+      "explanation": "EBITDA represents earnings before interest, taxes, depreciation, and amortization. It's crucial in valuations because it shows pure operational performance independent of financing decisions, tax situations, and accounting methods, making it easier to compare businesses."
+    },
+    {
+      "id": "biz_401_q2",
+      "text": "What is a typical valuation multiple for small businesses?",
+      "options": [
+        "0.5-1x revenue",
+        "10-15x revenue",
+        "2-4x EBITDA or SDE",
+        "50% of total assets"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Small businesses typically sell for 2-4x EBITDA (or SDE - Seller's Discretionary Earnings). This multiple varies by industry, growth rate, customer concentration, and other factors. High-growth tech companies may command higher multiples."
+    },
+    {
+      "id": "biz_401_q3",
+      "text": "What is 'earnout' in an acquisition deal?",
+      "options": [
+        "Paying the full price upfront",
+        "Additional payments contingent on future performance",
+        "Employee bonuses after sale",
+        "Tax deductions from the sale"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An earnout is additional payment to the seller contingent on the business achieving certain performance metrics post-sale. It bridges valuation gaps, aligns incentives, and reduces risk for buyers when there's uncertainty about future performance."
+    },
+    {
+      "id": "biz_401_q4",
+      "text": "What is 'due diligence' in the context of selling a business?",
+      "options": [
+        "Marketing the business to potential buyers",
+        "The buyer's thorough investigation of the business before purchase",
+        "Legal paperwork after the sale",
+        "Employee training programs"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Due diligence is the comprehensive investigation a buyer conducts before purchase, examining financials, legal issues, customer contracts, intellectual property, operations, and more. Sellers should prepare for this by organizing records and addressing issues proactively."
+    },
+    {
+      "id": "biz_401_q5",
+      "text": "Why is customer concentration a concern for buyers?",
+      "options": [
+        "It shows strong customer relationships",
+        "Heavy reliance on few customers increases risk if they leave",
+        "It doesn't matter in valuations",
+        "It makes marketing easier"
+      ],
+      "correctAnswer": 1,
+      "explanation": "High customer concentration (e.g., one customer representing >20% of revenue) is risky because losing that customer could devastate the business. Buyers discount valuations for high concentration risk, so diversifying your customer base before sale maximizes value."
+    },
+    {
+      "id": "biz_401_q6",
+      "text": "What is the difference between an asset sale and a stock sale?",
+      "options": [
+        "There is no difference",
+        "Asset sale: buyer picks specific assets/liabilities; Stock sale: buyer gets entire entity",
+        "Asset sale is always better for sellers",
+        "Stock sale is illegal in most states"
+      ],
+      "correctAnswer": 1,
+      "explanation": "In an asset sale, the buyer cherry-picks specific assets and liabilities, leaving others with the seller. In a stock sale, the buyer purchases the entire entity including all assets and liabilities. Each has different tax implications and risk profiles."
+    },
+    {
+      "id": "biz_401_q7",
+      "text": "What is a 'letter of intent' (LOI) in the sale process?",
+      "options": [
+        "A legally binding purchase agreement",
+        "A non-binding document outlining proposed deal terms before formal contract",
+        "A marketing brochure for the business",
+        "The final closing documents"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Letter of Intent (LOI) is typically a non-binding document outlining proposed deal terms (price, structure, timeline, conditions). It demonstrates serious intent and provides a framework for negotiation before investing in expensive legal work for definitive agreements."
+    }
+  ]
+}

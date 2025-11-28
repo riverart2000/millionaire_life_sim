@@ -1,0 +1,41 @@
+{
+  "courseId": "inv_401",
+  "questions": [
+    {
+      "id": "inv_401_q1",
+      "text": "What is Warren Buffett's famous 'circle of competence' principle?",
+      "options": [
+        "Only invest in companies within your area of understanding",
+        "Always diversify across all sectors",
+        "Only invest in technology companies",
+        "Follow expert recommendations blindly"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Warren Buffett's circle of competence means investing only in businesses you truly understand. If you can't explain how a company makes money and what gives it competitive advantages, you shouldn't invest in it."
+    },
+    {
+      "id": "inv_401_q2",
+      "text": "What does 'intrinsic value' mean in value investing?",
+      "options": [
+        "The current market price of a stock",
+        "The true worth of a company based on fundamentals",
+        "The price paid by insiders",
+        "The average analyst price target"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Intrinsic value is what a company is truly worth based on its fundamentals (earnings, assets, growth potential, etc.), independent of its market price. Value investors seek stocks trading below their intrinsic value."
+    },
+    {
+      "id": "inv_401_q3",
+      "text": "What is a 'moat' in value investing terminology?",
+      "options": [
+        "A water-filled ditch around a castle",
+        "A sustainable competitive advantage that protects a company's profits",
+        "A legal barrier preventing competition",
+        "A type of defensive investment strategy"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An economic moat is a sustainable competitive advantage that protects a company's market position and profitability. Examples include brand power (Coca-Cola), network effects (Facebook), or cost advantages (Walmart)."
+    }
+  ]
+}

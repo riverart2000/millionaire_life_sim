@@ -1,0 +1,41 @@
+{
+  "courseId": "biz_101",
+  "questions": [
+    {
+      "id": "biz_101_q1",
+      "text": "What is the primary purpose of a business model canvas?",
+      "options": [
+        "To create detailed financial projections",
+        "To visualize and develop key business components on a single page",
+        "To design marketing campaigns",
+        "To hire employees"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A business model canvas is a strategic tool that helps entrepreneurs visualize and develop all key aspects of their business on a single page, including value proposition, customer segments, revenue streams, and cost structure."
+    },
+    {
+      "id": "biz_101_q2",
+      "text": "What does MVP stand for in entrepreneurship?",
+      "options": [
+        "Most Valuable Product",
+        "Maximum Value Proposition",
+        "Minimum Viable Product",
+        "Marketing Validation Process"
+      ],
+      "correctAnswer": 2,
+      "explanation": "MVP stands for Minimum Viable Product - it's the simplest version of your product that allows you to test your business idea with real customers and gather feedback before investing heavily in development."
+    },
+    {
+      "id": "biz_101_q3",
+      "text": "What is a key characteristic of successful entrepreneurs?",
+      "options": [
+        "They avoid all risks",
+        "They wait for perfect conditions",
+        "They take calculated risks and learn from failures",
+        "They work alone without seeking help"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Successful entrepreneurs take calculated risks, meaning they evaluate potential rewards against possible losses, and they view failures as learning opportunities rather than setbacks. They understand that entrepreneurship involves uncertainty but manage it intelligently."
+    }
+  ]
+}

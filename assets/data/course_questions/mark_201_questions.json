@@ -1,0 +1,41 @@
+{
+  "courseId": "mark_201",
+  "questions": [
+    {
+      "id": "mark_201_q1",
+      "text": "What is the difference between a brand and a logo?",
+      "options": [
+        "They are the same thing",
+        "A brand is the overall perception and experience; a logo is just the visual symbol",
+        "A logo is more important than a brand",
+        "Brands are only for large companies"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Your logo is just one visual element of your brand. Your brand is the entire perception people have of your business - including your values, personality, customer experience, and emotional connection. A strong brand goes far beyond visual identity."
+    },
+    {
+      "id": "mark_201_q2",
+      "text": "What is a 'brand positioning statement'?",
+      "options": [
+        "Your company's mission statement",
+        "A clear statement of who you serve, what you offer, and why you're different",
+        "Your advertising slogan",
+        "A list of your products"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A brand positioning statement articulates your target audience, what you provide, your unique value proposition, and key differentiators. It's an internal guide that keeps all brand communications consistent and focused. Example: 'For [target audience] who [need], [brand] is [category] that [unique benefit]'."
+    },
+    {
+      "id": "mark_201_q3",
+      "text": "What are 'brand archetypes' and why do they matter?",
+      "options": [
+        "Logo design templates",
+        "Universal personality patterns that help brands connect emotionally with audiences",
+        "Market research categories",
+        "Social media algorithms"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Brand archetypes (like Hero, Sage, Rebel, Caregiver) are universal personality patterns that help brands create consistent, relatable identities. They guide tone of voice, messaging, and imagery to create deeper emotional connections with your target audience."
+    }
+  ]
+}

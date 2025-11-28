@@ -1,9 +1,14 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/course_model.dart';
 import '../services/courses_service.dart';
+import '../services/course_question_service.dart';
 
 final coursesServiceProvider = Provider<CoursesService>((ref) {
   return CoursesService();
+});
+
+final courseQuestionServiceProvider = Provider<CourseQuestionService>((ref) {
+  return CourseQuestionService();
 });
 
 final coursesLoadProvider = FutureProvider<void>((ref) async {

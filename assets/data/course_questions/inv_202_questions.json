@@ -1,0 +1,65 @@
+{
+  "courseId": "inv_202",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "What is the 1% rule in real estate investing?",
+      "options": [
+        "Property should cost 1% of your net worth",
+        "Monthly rent should be at least 1% of purchase price",
+        "Down payment should be 1%",
+        "Property tax rate should be 1%"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The 1% rule suggests monthly rent should equal at least 1% of the property's purchase price for positive cash flow."
+    },
+    {
+      "id": "q2",
+      "text": "What is cash flow in real estate?",
+      "options": [
+        "The purchase price",
+        "Income minus expenses",
+        "Property appreciation",
+        "Mortgage payment"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cash flow is the net income after subtracting all expenses from rental income."
+    },
+    {
+      "id": "q3",
+      "text": "What is appreciation in real estate?",
+      "options": [
+        "Property losing value",
+        "Property gaining value over time",
+        "Monthly rental income",
+        "Property maintenance"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Appreciation is the increase in property value over time, building equity."
+    },
+    {
+      "id": "q4",
+      "text": "What does cap rate measure?",
+      "options": [
+        "Mortgage interest rate",
+        "Property insurance cost",
+        "Expected rate of return",
+        "Down payment percentage"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Capitalization rate (cap rate) measures the expected rate of return on a real estate investment."
+    },
+    {
+      "id": "q5",
+      "text": "What is the BRRRR method?",
+      "options": [
+        "Buy, Rent, Renovate, Refinance, Repeat",
+        "Buy, Renovate, Rent, Refinance, Repeat",
+        "Build, Rent, Renovate, Resell, Repeat",
+        "Buy, Rent, Resell, Refinance, Retire"
+      ],
+      "correctAnswer": 1,
+      "explanation": "BRRRR stands for Buy, Renovate, Rent, Refinance, Repeat - a popular real estate investment strategy."
+    }
+  ]
+}

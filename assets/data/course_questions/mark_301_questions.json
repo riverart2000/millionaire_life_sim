@@ -1,0 +1,41 @@
+{
+  "courseId": "mark_301",
+  "questions": [
+    {
+      "id": "mark_301_q1",
+      "text": "What is the main goal of content marketing?",
+      "options": [
+        "To sell products directly",
+        "To provide value that attracts and educates your audience, building trust over time",
+        "To get as many page views as possible",
+        "To replace all advertising"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Content marketing focuses on creating valuable, relevant content that attracts and educates your target audience. Rather than directly pitching products, you build trust and authority. Sales become a natural outcome of the relationship you've built."
+    },
+    {
+      "id": "mark_301_q2",
+      "text": "What is a 'content pillar' in content strategy?",
+      "options": [
+        "A physical column in your office",
+        "A core topic or theme around which you create multiple pieces of content",
+        "The first blog post you write",
+        "A type of social media post"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Content pillars are core topics aligned with your expertise and audience interests. Each pillar becomes a foundation for multiple content pieces (blogs, videos, podcasts, etc.), helping you build authority in specific areas while maintaining focus."
+    },
+    {
+      "id": "mark_301_q3",
+      "text": "What is the 'content distribution rule' often cited in marketing?",
+      "options": [
+        "100% creation, 0% promotion",
+        "80% creation, 20% promotion",
+        "20% creation, 80% promotion",
+        "50% creation, 50% promotion"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The 80/20 rule suggests spending 20% of your time creating content and 80% promoting it. Many creators do the opposite, but great content without distribution won't reach anyone. Promotion through multiple channels is crucial for content marketing success."
+    }
+  ]
+}

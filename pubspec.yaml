@@ -50,5 +50,6 @@ flutter:
     - assets/data/motivational_quotes.json
     - assets/data/courses.json
     - assets/data/declarations.json
+    - assets/data/course_questions/
     - MMI-affirmations.txt
 

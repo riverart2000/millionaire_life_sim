@@ -1,0 +1,89 @@
+{
+  "courseId": "inv_303",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "What is a call option?",
+      "options": [
+        "Right to sell stock at set price",
+        "Right to buy stock at set price",
+        "Obligation to buy stock",
+        "Insurance for stocks"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A call option gives you the right (not obligation) to buy a stock at a predetermined price."
+    },
+    {
+      "id": "q2",
+      "text": "What is a put option?",
+      "options": [
+        "Right to buy stock at set price",
+        "Right to sell stock at set price",
+        "Obligation to sell stock",
+        "Type of dividend"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A put option gives you the right (not obligation) to sell a stock at a predetermined price."
+    },
+    {
+      "id": "q3",
+      "text": "What is the strike price?",
+      "options": [
+        "Current market price",
+        "Price paid for the option",
+        "Predetermined price in option contract",
+        "Broker commission"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Strike price is the predetermined price at which the option can be exercised."
+    },
+    {
+      "id": "q4",
+      "text": "What does 'in the money' mean for a call option?",
+      "options": [
+        "Option has no value",
+        "Stock price below strike price",
+        "Stock price above strike price",
+        "Option expired"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A call option is 'in the money' when the stock price is above the strike price, making it profitable."
+    },
+    {
+      "id": "q5",
+      "text": "What is time decay (theta) in options?",
+      "options": [
+        "Price increasing over time",
+        "Value loss as expiration approaches",
+        "Stock price volatility",
+        "Interest rate changes"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Time decay (theta) is the erosion of an option's value as it approaches its expiration date."
+    },
+    {
+      "id": "q6",
+      "text": "What is a covered call strategy?",
+      "options": [
+        "Buying calls without owning stock",
+        "Selling calls on stock you own",
+        "Buying puts for protection",
+        "Selling naked puts"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A covered call involves selling call options on stocks you already own to generate income."
+    },
+    {
+      "id": "q7",
+      "text": "What is implied volatility?",
+      "options": [
+        "Historical price movement",
+        "Market's expectation of future volatility",
+        "Current stock price",
+        "Option premium cost"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Implied volatility reflects the market's expectation of how much the stock price will move in the future."
+    }
+  ]
+}

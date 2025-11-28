@@ -1,0 +1,41 @@
+{
+  "courseId": "inv_101",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "What is diversification in investing?",
+      "options": [
+        "Putting all money in one stock",
+        "Spreading investments across different assets",
+        "Only investing in bonds",
+        "Avoiding the stock market"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Diversification means spreading investments across different assets to reduce risk."
+    },
+    {
+      "id": "q2",
+      "text": "What does ROI stand for?",
+      "options": [
+        "Rate of Income",
+        "Return on Investment",
+        "Risk of Investing",
+        "Revenue of Interest"
+      ],
+      "correctAnswer": 1,
+      "explanation": "ROI (Return on Investment) measures the profitability of an investment."
+    },
+    {
+      "id": "q3",
+      "text": "Which investment typically has higher risk but higher potential returns?",
+      "options": [
+        "Savings account",
+        "Government bonds",
+        "Stocks",
+        "Cash under mattress"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Stocks generally offer higher potential returns but come with higher risk compared to bonds or savings."
+    }
+  ]
+}

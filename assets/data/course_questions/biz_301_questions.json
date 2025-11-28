@@ -1,0 +1,65 @@
+{
+  "courseId": "biz_301",
+  "questions": [
+    {
+      "id": "biz_301_q1",
+      "text": "What is the primary purpose of Standard Operating Procedures (SOPs)?",
+      "options": [
+        "To micromanage employees",
+        "To ensure consistency and quality as you scale",
+        "To create more paperwork",
+        "To replace all employee training"
+      ],
+      "correctAnswer": 1,
+      "explanation": "SOPs document the best way to perform tasks, ensuring consistency and quality as your business grows. They enable you to scale because anyone following the SOP should achieve the same results, reducing dependence on specific individuals."
+    },
+    {
+      "id": "biz_301_q2",
+      "text": "What does 'delegation' truly mean in business scaling?",
+      "options": [
+        "Dumping work on others",
+        "Transferring both responsibility and authority to team members",
+        "Asking employees to work overtime",
+        "Reducing your own workload only"
+      ],
+      "correctAnswer": 1,
+      "explanation": "True delegation means transferring both responsibility for outcomes and the authority to make decisions. It's not just assigning tasks, but empowering team members to own results, which is essential for scaling beyond your personal capacity."
+    },
+    {
+      "id": "biz_301_q3",
+      "text": "What is a key principle of the 'E-Myth' by Michael Gerber?",
+      "options": [
+        "Only hire experts in your field",
+        "Work on your business, not just in your business",
+        "Never delegate important tasks",
+        "Focus only on sales growth"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The E-Myth emphasizes working ON your business (building systems, strategy, leadership) rather than just IN your business (doing daily tasks). This mindset shift is crucial for scaling - you need to build a business that works without you."
+    },
+    {
+      "id": "biz_301_q4",
+      "text": "What is a 'bottleneck' in business operations?",
+      "options": [
+        "A storage container",
+        "A constraint that limits overall capacity or flow",
+        "A type of manufacturing equipment",
+        "A payment processing issue"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A bottleneck is any constraint that limits your business's capacity or throughput. Identifying and addressing bottlenecks is crucial for scaling - improving non-bottleneck areas won't increase overall capacity until you address the bottleneck."
+    },
+    {
+      "id": "biz_301_q5",
+      "text": "What is 'company culture' and why does it matter when scaling?",
+      "options": [
+        "The office decorations and amenities",
+        "The shared values, beliefs, and behaviors that guide how people work",
+        "The country where the company is located",
+        "The type of customers you serve"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Company culture is the shared values, beliefs, and behaviors that define 'how we do things here'. As you scale, strong culture ensures consistency in decision-making and behavior across a growing team, maintaining quality and cohesion."
+    }
+  ]
+}

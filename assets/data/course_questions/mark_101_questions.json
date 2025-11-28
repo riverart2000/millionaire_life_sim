@@ -1,0 +1,41 @@
+{
+  "courseId": "mark_101",
+  "questions": [
+    {
+      "id": "mark_101_q1",
+      "text": "What does SEO stand for in digital marketing?",
+      "options": [
+        "Social Engagement Optimization",
+        "Search Engine Optimization",
+        "Sales Enhancement Operations",
+        "Strategic Email Outreach"
+      ],
+      "correctAnswer": 1,
+      "explanation": "SEO stands for Search Engine Optimization - the practice of improving your website to increase its visibility when people search for products or services related to your business in search engines like Google."
+    },
+    {
+      "id": "mark_101_q2",
+      "text": "What is the marketing funnel's typical order of stages?",
+      "options": [
+        "Action → Interest → Awareness → Desire",
+        "Awareness → Interest → Desire → Action",
+        "Interest → Awareness → Action → Desire",
+        "Desire → Awareness → Interest → Action"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The classic marketing funnel follows AIDA: Awareness (people learn about you), Interest (they want to know more), Desire (they want your product), and Action (they make a purchase). This model helps you understand the customer journey."
+    },
+    {
+      "id": "mark_101_q3",
+      "text": "What is a key benefit of content marketing?",
+      "options": [
+        "It guarantees immediate sales",
+        "It builds trust and authority over time",
+        "It replaces all other marketing methods",
+        "It requires no planning or strategy"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Content marketing builds trust and establishes your authority in your industry by providing valuable information to your audience. While it doesn't guarantee instant results, it creates long-term relationships and positions you as an expert."
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "courseId": "biz_201",
+  "questions": [
+    {
+      "id": "biz_201_q1",
+      "text": "What is a key component of the 'freemium' business model?",
+      "options": [
+        "All features are always free",
+        "Basic service is free, premium features require payment",
+        "First month free, then mandatory payment",
+        "Free for individuals, paid for businesses only"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The freemium model offers a basic version of the product for free to attract users, while charging for premium features, advanced functionality, or additional services. This lowers barriers to entry while creating revenue from engaged users."
+    },
+    {
+      "id": "biz_201_q2",
+      "text": "What does 'network effects' mean in business?",
+      "options": [
+        "Having good internet connectivity",
+        "The product becomes more valuable as more people use it",
+        "Marketing through professional networks",
+        "Connecting multiple businesses together"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Network effects occur when a product or service becomes more valuable as more people use it. Examples include social media platforms, marketplaces, and communication tools - each new user increases the value for all existing users."
+    },
+    {
+      "id": "biz_201_q3",
+      "text": "What is the primary goal of a 'pivot' in business?",
+      "options": [
+        "To change the company name",
+        "To fire underperforming employees",
+        "To change strategy based on market feedback",
+        "To move to a new office location"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A pivot is a strategic change in business direction based on what you've learned from the market. It might involve changing your target customer, value proposition, or product features while leveraging your existing assets and knowledge."
+    },
+    {
+      "id": "biz_201_q4",
+      "text": "What is 'customer lifetime value' (CLV)?",
+      "options": [
+        "The time a customer stays with your company",
+        "The total revenue a customer generates over their entire relationship with your business",
+        "The average age of your customers",
+        "The number of purchases a customer makes per year"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Customer Lifetime Value (CLV) is the total revenue you can expect from a single customer account throughout their relationship with your business. It's crucial for determining how much you can spend on customer acquisition."
+    },
+    {
+      "id": "biz_201_q5",
+      "text": "What is the 'razor and blades' business model?",
+      "options": [
+        "Selling expensive razors with cheap blades",
+        "Selling a low-margin or loss-leader product to drive sales of high-margin complementary products",
+        "A subscription service for shaving supplies",
+        "Competing on price by undercutting competitors"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The 'razor and blades' model involves selling a primary product cheaply (or even at a loss) to drive recurring sales of complementary consumables at higher margins. Examples include printers and ink cartridges, or gaming consoles and games."
+    }
+  ]
+}

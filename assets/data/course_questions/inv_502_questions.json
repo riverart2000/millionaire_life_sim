@@ -1,0 +1,41 @@
+{
+  "courseId": "inv_502",
+  "questions": [
+    {
+      "id": "inv_502_q1",
+      "text": "What is a dividend yield?",
+      "options": [
+        "The percentage of profit a company pays out",
+        "The annual dividend payment divided by the stock price",
+        "The total dividends received in a year",
+        "The growth rate of dividend payments"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dividend yield is calculated by dividing the annual dividend per share by the current stock price. For example, if a stock costs $100 and pays $4 annually in dividends, its yield is 4%."
+    },
+    {
+      "id": "inv_502_q2",
+      "text": "What is the significance of a company's 'dividend growth streak'?",
+      "options": [
+        "It means dividends are paid monthly",
+        "It indicates how many consecutive years the company has increased its dividend",
+        "It shows the percentage increase each year",
+        "It represents the total number of dividend payments"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A dividend growth streak represents consecutive years of increasing dividend payments. Companies that increase dividends for 25+ years are called Dividend Aristocrats, demonstrating strong, stable businesses with shareholder-friendly management."
+    },
+    {
+      "id": "inv_502_q3",
+      "text": "What is 'dividend reinvestment' (DRIP)?",
+      "options": [
+        "Selling dividends to buy other stocks",
+        "Automatically using dividend payments to purchase more shares",
+        "Saving dividends in a bank account",
+        "Donating dividends to charity"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dividend Reinvestment Plans (DRIPs) automatically use your dividend payments to purchase additional shares of the same stock, often without commission fees. This compounds your returns over time through the power of reinvestment."
+    }
+  ]
+}

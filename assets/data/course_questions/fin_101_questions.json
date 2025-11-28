@@ -1,0 +1,41 @@
+{
+  "courseId": "fin_101",
+  "questions": [
+    {
+      "id": "fin_101_q1",
+      "text": "What is the '50/30/20 budgeting rule'?",
+      "options": [
+        "50% savings, 30% needs, 20% wants",
+        "50% needs, 30% wants, 20% savings",
+        "50% wants, 30% savings, 20% needs",
+        "Equal thirds for everything"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The 50/30/20 rule suggests allocating 50% of after-tax income to needs (housing, food, utilities), 30% to wants (entertainment, dining out), and 20% to savings and debt repayment. It's a simple framework for balanced financial management."
+    },
+    {
+      "id": "fin_101_q2",
+      "text": "What is the 'debt snowball' method?",
+      "options": [
+        "Paying off the highest interest debt first",
+        "Paying off the smallest debt first for psychological wins",
+        "Consolidating all debts into one loan",
+        "Ignoring small debts completely"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The debt snowball method focuses on paying off your smallest debt first while making minimum payments on others. Once the smallest is paid off, you roll that payment to the next smallest debt. This creates quick wins and motivation, though mathematically the 'avalanche' method (highest interest first) saves more money."
+    },
+    {
+      "id": "fin_101_q3",
+      "text": "What is an emergency fund and how much should it contain?",
+      "options": [
+        "$1,000 maximum",
+        "1 month of expenses",
+        "3-6 months of living expenses",
+        "Emergency funds are unnecessary"
+      ],
+      "correctAnswer": 2,
+      "explanation": "An emergency fund is savings set aside for unexpected expenses (job loss, medical emergency, car repair). Financial experts recommend 3-6 months of living expenses. This prevents you from going into debt when emergencies occur and provides peace of mind."
+    }
+  ]
+}
