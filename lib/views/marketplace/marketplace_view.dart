@@ -568,22 +568,6 @@ class _MarketplaceImage extends StatelessWidget {
       return _buildPlaceholder(context);
     }
 
-    // Use Image.network for URLs, Image.asset for local assets
-    final isNetworkImage = imageUrl.startsWith('http://') || imageUrl.startsWith('https://');
-    
-    if (isNetworkImage) {
-      return Image.network(
-        imageUrl,
-        width: width,
-        height: height,
-        fit: fit,
-        errorBuilder: (context, error, stackTrace) {
-          debugPrint('Failed to load image: $imageUrl - Error: $error');
-          return _buildPlaceholder(context);
-        },
-      );
-    }
-
     return Image.asset(
       imageUrl,
       width: width,
