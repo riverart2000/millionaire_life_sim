@@ -4,6 +4,29 @@
 
 The easiest way to build for all platforms is using GitHub Actions:
 
+### 📱 Install on Android Phone
+
+**Easy 3-Step Installation:**
+
+1. **Download on your phone:**
+   - Open browser on your Android phone
+   - Go to: https://github.com/riverart2000/millionaire_life_sim/releases
+   - Tap on `app-release.apk` to download
+
+2. **Enable installation:**
+   - Go to Settings → Security (or Privacy)
+   - Enable "Install Unknown Apps" for your browser
+   - Or tap the notification and allow installation
+
+3. **Install & Play:**
+   - Tap the downloaded APK file
+   - Tap "Install"
+   - Open and enjoy! 🎮
+
+**Note:** The app is 100% offline - no internet needed after installation!
+
+---
+
 ### Create a Release
 
 1. **Tag your version:**
