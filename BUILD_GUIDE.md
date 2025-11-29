@@ -176,19 +176,6 @@ flutter build appbundle --release
 
 ## 🔧 Build Optimizations
 
-### Web-Specific Optimizations
-
-```bash
-# Build with CanvasKit (better performance, larger size)
-flutter build web --release --web-renderer canvaskit
-
-# Build with HTML renderer (smaller size, some limitations)
-flutter build web --release --web-renderer html
-
-# Build with auto renderer (recommended)
-flutter build web --release --web-renderer auto
-```
-
 ### Size Optimizations
 
 ```bash

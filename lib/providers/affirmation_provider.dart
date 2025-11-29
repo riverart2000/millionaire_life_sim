@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 import '../services/affirmation_service.dart';
+import '../core/config/app_config.dart';
 
 class AffirmationSettings {
   final bool enabled;
@@ -12,12 +13,12 @@ class AffirmationSettings {
   final double fontSize;
 
   const AffirmationSettings({
-    this.enabled = true,
-    this.flashDurationMs = 150,
-    this.opacity = 0.15,
-    this.intervalSeconds = 60,
-    this.randomPosition = true,
-    this.fontSize = 32.0,
+    required this.enabled,
+    required this.flashDurationMs,
+    required this.opacity,
+    required this.intervalSeconds,
+    required this.randomPosition,
+    required this.fontSize,
   });
 
   AffirmationSettings copyWith({
@@ -67,19 +68,42 @@ class AffirmationSettingsNotifier extends Notifier<AffirmationSettings> {
   @override
   AffirmationSettings build() {
     _loadSettings();
-    return const AffirmationSettings();
+    // Return temporary defaults while loading
+    return const AffirmationSettings(
+      enabled: true,
+      flashDurationMs: 150,
+      opacity: 0.15,
+      intervalSeconds: 60,
+      randomPosition: true,
+      fontSize: 32.0,
+    );
   }
 
   Future<void> _loadSettings() async {
     try {
       final prefs = await SharedPreferences.getInstance();
       final jsonString = prefs.getString(_storageKey);
+      
       if (jsonString != null) {
+        // User has saved settings
         final json = jsonDecode(jsonString) as Map<String, dynamic>;
         state = AffirmationSettings.fromJson(json);
+      } else {
+        // First time - load from config file
+        final config = await AppConfig.load();
+        final affConfig = config.affirmations;
+        state = AffirmationSettings(
+          enabled: affConfig.enabled,
+          flashDurationMs: affConfig.flashDurationMs,
+          opacity: affConfig.opacity,
+          intervalSeconds: affConfig.intervalSeconds,
+          randomPosition: affConfig.randomPosition,
+          fontSize: affConfig.fontSize,
+        );
       }
     } catch (e) {
-      // Use default settings
+      // Use defaults if config loading fails
+      print('Error loading affirmation settings: $e');
     }
   }
 

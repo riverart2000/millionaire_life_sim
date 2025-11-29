@@ -9,6 +9,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/constants/hive_box_constants.dart';
+import '../../core/config/app_config.dart';
 import '../../providers/affirmation_provider.dart';
 import '../../core/constants/jar_constants.dart';
 import '../../core/utils/result.dart';
@@ -52,26 +53,23 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
   bool _savingInvestmentReturn = false;
   bool _billsLoading = true;
   bool _savingBills = false;
-  Map<String, double> _interestRatesPercent = {
-    JarConstants.ffa: 0.3,
-    JarConstants.ltss: 0.4,
-    JarConstants.edu: 0.2,
-  };
-  Map<String, double> _investmentReturnRatesPercent = {
-    'GOLD': 0.1,
-    'SILVER': 0.1,
-    'BTC': 0.2,
-    'REALESTATE': 0.5,
-  };
+  Map<String, double> _interestRatesPercent = {};
+  Map<String, double> _investmentReturnRatesPercent = {};
+  AppConfig? _appConfig;
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      _loadConfig();
       _loadInterestRates();
       _loadInvestmentReturnRates();
       _loadBills();
     });
+  }
+
+  Future<void> _loadConfig() async {
+    _appConfig = await AppConfig.load();
   }
 
   @override
@@ -853,9 +851,14 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
     if (!mounted) return;
 
     setState(() {
-      _interestRatesPercent = rates.map(
-        (key, value) => MapEntry(key, ((value * 100).clamp(0.1, 2.0)).toDouble()),
-      );
+      if (rates.isEmpty && _appConfig != null) {
+        // Use config defaults
+        _interestRatesPercent = _appConfig!.interestRates;
+      } else {
+        _interestRatesPercent = rates.map(
+          (key, value) => MapEntry(key, ((value * 100).clamp(0.1, 2.0)).toDouble()),
+        );
+      }
       _interestLoading = false;
     });
   }
@@ -867,9 +870,14 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
     if (!mounted) return;
 
     setState(() {
-      _investmentReturnRatesPercent = rates.map(
-        (key, value) => MapEntry(key, ((value * 100).clamp(0.1, 2.0)).toDouble()),
-      );
+      if (rates.isEmpty && _appConfig != null) {
+        // Use config defaults
+        _investmentReturnRatesPercent = _appConfig!.investmentReturns;
+      } else {
+        _investmentReturnRatesPercent = rates.map(
+          (key, value) => MapEntry(key, ((value * 100).clamp(0.1, 2.0)).toDouble()),
+        );
+      }
       _investmentReturnLoading = false;
     });
   }
@@ -880,11 +888,16 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
 
     if (!mounted) return;
 
+    final billsConfig = _appConfig?.bills;
     setState(() {
-      _rentController.text = bills[BillsService.rentKey]?.toStringAsFixed(2) ?? '10.00';
-      _foodController.text = bills[BillsService.foodKey]?.toStringAsFixed(2) ?? '10.00';
-      _travelController.text = bills[BillsService.travelKey]?.toStringAsFixed(2) ?? '10.00';
-      _accessoriesController.text = bills[BillsService.accessoriesKey]?.toStringAsFixed(2) ?? '10.00';
+      _rentController.text = bills[BillsService.rentKey]?.toStringAsFixed(2) ?? 
+          billsConfig?.rent.toStringAsFixed(2) ?? '10.00';
+      _foodController.text = bills[BillsService.foodKey]?.toStringAsFixed(2) ?? 
+          billsConfig?.food.toStringAsFixed(2) ?? '10.00';
+      _travelController.text = bills[BillsService.travelKey]?.toStringAsFixed(2) ?? 
+          billsConfig?.travel.toStringAsFixed(2) ?? '10.00';
+      _accessoriesController.text = bills[BillsService.accessoriesKey]?.toStringAsFixed(2) ?? 
+          billsConfig?.accessories.toStringAsFixed(2) ?? '10.00';
       _billsLoading = false;
     });
   }

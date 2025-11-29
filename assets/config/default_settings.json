@@ -1,0 +1,39 @@
+{
+  "affirmations": {
+    "enabled": true,
+    "flashDurationMs": 150,
+    "opacity": 0.15,
+    "intervalSeconds": 60,
+    "randomPosition": true,
+    "fontSize": 32.0
+  },
+  "income": {
+    "dailyIncome": 100.0,
+    "autoSimulateDaily": true
+  },
+  "bills": {
+    "rent": 10.0,
+    "food": 10.0,
+    "travel": 10.0,
+    "accessories": 10.0
+  },
+  "interestRates": {
+    "FFA": 0.3,
+    "LTSS": 0.4,
+    "EDU": 0.2
+  },
+  "investmentReturns": {
+    "GOLD": 0.1,
+    "SILVER": 0.1,
+    "BTC": 0.2,
+    "REALESTATE": 0.5
+  },
+  "jarPercentages": {
+    "FFA": 10.0,
+    "LTSS": 10.0,
+    "EDU": 10.0,
+    "NEC": 55.0,
+    "PLAY": 10.0,
+    "GIVE": 5.0
+  }
+}

@@ -42,6 +42,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/config/default_settings.json
     - assets/data/marketplace_items.json
     - assets/data/motivational_quotes.json
     - assets/data/courses.json
