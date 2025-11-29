@@ -1,0 +1,198 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+
+jobs:
+  build-android:
+    name: Build Android APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+      
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.35.7'
+          channel: 'stable'
+          cache: true
+      
+      - name: Get dependencies
+        run: flutter pub get
+      
+      - name: Build APK
+        run: flutter build apk --release
+      
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+
+  build-macos:
+    name: Build macOS App
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.35.7'
+          channel: 'stable'
+          cache: true
+      
+      - name: Get dependencies
+        run: flutter pub get
+      
+      - name: Build macOS
+        run: flutter build macos --release
+      
+      - name: Create DMG
+        run: |
+          brew install create-dmg
+          create-dmg \
+            --volname "Millionaire Life Simulator" \
+            --window-pos 200 120 \
+            --window-size 800 400 \
+            --icon-size 100 \
+            --app-drop-link 600 185 \
+            "MillionaireLifeSimulator.dmg" \
+            "build/macos/Build/Products/Release/millionaire_life_simulator.app" || true
+          
+          # Fallback if create-dmg fails
+          if [ ! -f "MillionaireLifeSimulator.dmg" ]; then
+            hdiutil create -volname "Millionaire Life Simulator" \
+              -srcfolder "build/macos/Build/Products/Release/millionaire_life_simulator.app" \
+              -ov -format UDZO "MillionaireLifeSimulator.dmg"
+          fi
+      
+      - name: Upload DMG
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-dmg
+          path: MillionaireLifeSimulator.dmg
+
+  build-windows:
+    name: Build Windows App
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.35.7'
+          channel: 'stable'
+          cache: true
+      
+      - name: Get dependencies
+        run: flutter pub get
+      
+      - name: Build Windows
+        run: flutter build windows --release
+      
+      - name: Create ZIP
+        run: |
+          Compress-Archive -Path build/windows/x64/runner/Release/* -DestinationPath MillionaireLifeSimulator-Windows.zip
+      
+      - name: Upload ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-zip
+          path: MillionaireLifeSimulator-Windows.zip
+
+  build-web:
+    name: Build Web App
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.35.7'
+          channel: 'stable'
+          cache: true
+      
+      - name: Get dependencies
+        run: flutter pub get
+      
+      - name: Build Web
+        run: flutter build web --release --web-renderer canvaskit
+      
+      - name: Create ZIP
+        run: |
+          cd build/web
+          zip -r ../../MillionaireLifeSimulator-Web.zip .
+      
+      - name: Upload Web Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-build
+          path: MillionaireLifeSimulator-Web.zip
+      
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
+
+  create-release:
+    name: Create GitHub Release
+    needs: [build-android, build-macos, build-windows, build-web]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+      
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            android-apk/app-release.apk
+            macos-dmg/MillionaireLifeSimulator.dmg
+            windows-zip/MillionaireLifeSimulator-Windows.zip
+            web-build/MillionaireLifeSimulator-Web.zip
+          body: |
+            ## 🎮 Millionaire Life Simulator
+            
+            ### Downloads
+            
+            - **Android**: Download `app-release.apk` and install on your Android device
+            - **macOS**: Download `MillionaireLifeSimulator.dmg`, open and drag to Applications
+            - **Windows**: Download `MillionaireLifeSimulator-Windows.zip`, extract and run the .exe
+            - **Web**: Play online at https://${{ github.repository_owner }}.github.io/millionaire_life_sim/
+            
+            ### Features
+            - ✅ Fully offline - no internet required
+            - ✅ 54 marketplace items including biohacking & spiritual retreats
+            - ✅ Randomized quiz questions
+            - ✅ Visual progress tracking
+            - ✅ 6-jar money management system
+            
+            ### Installation Notes
+            
+            **macOS**: You may need to right-click and select "Open" the first time to bypass Gatekeeper
+            
+            **Windows**: If Windows Defender blocks it, click "More info" → "Run anyway"
+            
+            **Android**: Enable "Install from Unknown Sources" in Settings
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

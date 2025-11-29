@@ -1,5 +1,40 @@
 # 🚀 Build & Deploy Guide
 
+## 🤖 Automated Builds (GitHub Actions)
+
+The easiest way to build for all platforms is using GitHub Actions:
+
+### Create a Release
+
+1. **Tag your version:**
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+2. **GitHub Actions will automatically:**
+   - Build for Android, macOS, Windows, and Web
+   - Create a GitHub Release with downloadable files
+   - Deploy web version to GitHub Pages
+
+3. **Download builds from:**
+   - Go to: https://github.com/riverart2000/millionaire_life_sim/releases
+   - Latest release will have all platform builds attached
+
+### Manual Trigger
+
+You can also trigger builds manually:
+1. Go to: https://github.com/riverart2000/millionaire_life_sim/actions
+2. Select "Build & Release" workflow
+3. Click "Run workflow"
+
+### Play Online
+
+Web version automatically deploys to:
+- https://riverart2000.github.io/millionaire_life_sim/
+
+---
+
 ## Quick Start - Development Mode
 
 ```bash
