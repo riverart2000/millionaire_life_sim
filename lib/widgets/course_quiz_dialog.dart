@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
 import '../models/course_question_model.dart';
@@ -19,6 +20,18 @@ class CourseQuizDialog extends StatefulWidget {
   State<CourseQuizDialog> createState() => _CourseQuizDialogState();
 }
 
+class _ShuffledQuestion {
+  final CourseQuestion question;
+  final List<String> shuffledOptions;
+  final int newCorrectAnswer;
+
+  _ShuffledQuestion({
+    required this.question,
+    required this.shuffledOptions,
+    required this.newCorrectAnswer,
+  });
+}
+
 class _CourseQuizDialogState extends State<CourseQuizDialog> {
   int _currentQuestionIndex = 0;
   int? _selectedAnswer;
@@ -26,11 +39,36 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
   bool _isCorrect = false;
   int _correctAnswers = 0;
   late ConfettiController _confettiController;
+  late List<_ShuffledQuestion> _shuffledQuestions;
 
   @override
   void initState() {
     super.initState();
     _confettiController = ConfettiController(duration: const Duration(seconds: 2));
+    _shuffleQuestions();
+  }
+
+  void _shuffleQuestions() {
+    final random = Random();
+    
+    // Shuffle questions
+    final questions = List<CourseQuestion>.from(widget.quiz.questions);
+    questions.shuffle(random);
+    
+    // Shuffle options for each question
+    _shuffledQuestions = questions.map((question) {
+      final indices = List.generate(question.options.length, (i) => i);
+      indices.shuffle(random);
+      
+      final shuffledOptions = indices.map((i) => question.options[i]).toList();
+      final newCorrectAnswer = indices.indexOf(question.correctAnswer);
+      
+      return _ShuffledQuestion(
+        question: question,
+        shuffledOptions: shuffledOptions,
+        newCorrectAnswer: newCorrectAnswer,
+      );
+    }).toList();
   }
 
   @override
@@ -39,15 +77,15 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
     super.dispose();
   }
 
-  CourseQuestion get _currentQuestion => widget.quiz.questions[_currentQuestionIndex];
-  int get _totalQuestions => widget.quiz.questions.length;
+  _ShuffledQuestion get _currentQuestion => _shuffledQuestions[_currentQuestionIndex];
+  int get _totalQuestions => _shuffledQuestions.length;
   bool get _isLastQuestion => _currentQuestionIndex == _totalQuestions - 1;
 
   void _checkAnswer() {
     if (_selectedAnswer == null) return;
 
     setState(() {
-      _isCorrect = _selectedAnswer == _currentQuestion.correctAnswer;
+      _isCorrect = _selectedAnswer == _currentQuestion.newCorrectAnswer;
       _showExplanation = true;
       
       if (_isCorrect) {
@@ -179,7 +217,7 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Text(
-                          _currentQuestion.text,
+                          _currentQuestion.question.text,
                           style: theme.textTheme.bodyLarge?.copyWith(
                             fontWeight: FontWeight.w600,
                           ),
@@ -187,9 +225,9 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
                         const SizedBox(height: 12),
 
                         // Options
-                        ...List.generate(_currentQuestion.options.length, (index) {
+                        ...List.generate(_currentQuestion.shuffledOptions.length, (index) {
                           final isSelected = _selectedAnswer == index;
-                          final isCorrect = index == _currentQuestion.correctAnswer;
+                          final isCorrect = index == _currentQuestion.newCorrectAnswer;
                           final showResult = _showExplanation;
 
                           Color? backgroundColor;
@@ -254,7 +292,7 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
                                     const SizedBox(width: 12),
                                     Expanded(
                                       child: Text(
-                                        _currentQuestion.options[index],
+                                        _currentQuestion.shuffledOptions[index],
                                         style: theme.textTheme.bodyMedium,
                                       ),
                                     ),
@@ -305,7 +343,7 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
                                 ),
                                 const SizedBox(height: 6),
                                 Text(
-                                  _currentQuestion.explanation,
+                                  _currentQuestion.question.explanation,
                                   style: theme.textTheme.bodySmall,
                                 ),
                               ],

@@ -259,5 +259,230 @@
     "price": 50000,
     "description": "Lifetime access to all Soho House locations worldwide with events.",
     "imageUrl": "assets/images/marketplace/membership001.jpg"
+  },
+  {
+    "id": "biohack001",
+    "name": "NAD+ IV Therapy Package (12 months)",
+    "category": "Biohacking & Longevity",
+    "requiredJar": "LTSS",
+    "price": 24000,
+    "description": "Monthly NAD+ infusions to boost cellular energy and slow aging.",
+    "imageUrl": "https://images.unsplash.com/photo-1579154204845-3f427de6e99f?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "biohack002",
+    "name": "Peptide Therapy Protocol",
+    "category": "Biohacking & Longevity",
+    "requiredJar": "LTSS",
+    "price": 15000,
+    "description": "Year-long customized peptide stack including BPC-157, TB-500, and GHK-Cu.",
+    "imageUrl": "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "biohack003",
+    "name": "Stem Cell Banking Service",
+    "category": "Biohacking & Longevity",
+    "requiredJar": "LTSS",
+    "price": 45000,
+    "description": "Collect and cryopreserve your stem cells for future regenerative treatments.",
+    "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "biohack004",
+    "name": "Exosome Therapy Treatment",
+    "category": "Biohacking & Longevity",
+    "requiredJar": "LTSS",
+    "price": 35000,
+    "description": "IV exosome therapy for cellular regeneration and anti-aging benefits.",
+    "imageUrl": "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "biohack005",
+    "name": "Full Body MRI & Biological Age Testing",
+    "category": "Biohacking & Longevity",
+    "requiredJar": "LTSS",
+    "price": 8500,
+    "description": "Comprehensive whole-body MRI scan plus epigenetic age analysis.",
+    "imageUrl": "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "biohack006",
+    "name": "Hyperbaric Oxygen Chamber",
+    "category": "Biohacking & Longevity",
+    "requiredJar": "LTSS",
+    "price": 125000,
+    "description": "Personal hyperbaric chamber for home use to enhance healing and longevity.",
+    "imageUrl": "https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "biohack007",
+    "name": "Senolytic Therapy Program",
+    "category": "Biohacking & Longevity",
+    "requiredJar": "LTSS",
+    "price": 18000,
+    "description": "Quarterly treatments to eliminate senescent cells and extend healthspan.",
+    "imageUrl": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "biohack008",
+    "name": "Platelet-Rich Plasma (PRP) Facial Rejuvenation",
+    "category": "Biohacking & Longevity",
+    "requiredJar": "LTSS",
+    "price": 12000,
+    "description": "6-session vampire facial protocol using your own growth factors.",
+    "imageUrl": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "biohack009",
+    "name": "Telomere Extension Protocol",
+    "category": "Biohacking & Longevity",
+    "requiredJar": "LTSS",
+    "price": 85000,
+    "description": "Year-long program with supplements, lifestyle coaching, and monitoring.",
+    "imageUrl": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "biohack010",
+    "name": "Red Light Therapy Bed",
+    "category": "Biohacking & Longevity",
+    "requiredJar": "LTSS",
+    "price": 35000,
+    "description": "Medical-grade full-body photobiomodulation system for home use.",
+    "imageUrl": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "spiritual001",
+    "name": "Bali Silent Meditation Retreat (30 days)",
+    "category": "Spiritual & Wellness",
+    "requiredJar": "PLAY",
+    "price": 15000,
+    "description": "Intensive Vipassana meditation retreat in luxury Balinese sanctuary.",
+    "imageUrl": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "spiritual002",
+    "name": "Himalayan Yoga & Breathwork Immersion",
+    "category": "Spiritual & Wellness",
+    "requiredJar": "PLAY",
+    "price": 25000,
+    "description": "21-day transformational journey with master yogis in the Himalayas.",
+    "imageUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "spiritual003",
+    "name": "Ayahuasca Retreat in Peru",
+    "category": "Spiritual & Wellness",
+    "requiredJar": "PLAY",
+    "price": 8500,
+    "description": "7-day shamanic plant medicine ceremony with experienced facilitators.",
+    "imageUrl": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "spiritual004",
+    "name": "Japanese Zen Temple Stay (90 days)",
+    "category": "Spiritual & Wellness",
+    "requiredJar": "PLAY",
+    "price": 35000,
+    "description": "Authentic monastic experience with Zen masters in Kyoto temple.",
+    "imageUrl": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "spiritual005",
+    "name": "Ibiza Kundalini Yoga Teacher Training",
+    "category": "Spiritual & Wellness",
+    "requiredJar": "PLAY",
+    "price": 18000,
+    "description": "200-hour certification at luxury retreat center with ocean views.",
+    "imageUrl": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "spiritual006",
+    "name": "Sacred Sound Healing & Frequency Therapy",
+    "category": "Spiritual & Wellness",
+    "requiredJar": "PLAY",
+    "price": 12000,
+    "description": "10-session program with Tibetan bowls, gongs, and binaural beats.",
+    "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "spiritual007",
+    "name": "Sedona Energy Vortex Retreat",
+    "category": "Spiritual & Wellness",
+    "requiredJar": "PLAY",
+    "price": 9500,
+    "description": "Week-long chakra balancing and energy work at sacred vortex sites.",
+    "imageUrl": "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "spiritual008",
+    "name": "Personal Spiritual Guide (1 year)",
+    "category": "Spiritual & Wellness",
+    "requiredJar": "PLAY",
+    "price": 65000,
+    "description": "Dedicated enlightened teacher for weekly sessions and 24/7 guidance.",
+    "imageUrl": "https://images.unsplash.com/photo-1599447332239-2252d15de11c?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "spiritual009",
+    "name": "Quantum Healing Hypnosis Intensive",
+    "category": "Spiritual & Wellness",
+    "requiredJar": "PLAY",
+    "price": 7500,
+    "description": "5-day QHHT certification with past life regression training.",
+    "imageUrl": "https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "spiritual010",
+    "name": "Holotropic Breathwork Facilitator Training",
+    "category": "Spiritual & Wellness",
+    "requiredJar": "PLAY",
+    "price": 22000,
+    "description": "6-week intensive with Stanislav Grof's certified practitioners.",
+    "imageUrl": "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "biohack011",
+    "name": "Cryotherapy Chamber Installation",
+    "category": "Biohacking & Longevity",
+    "requiredJar": "LTSS",
+    "price": 95000,
+    "description": "Personal whole-body cryotherapy chamber reaching -220°F for recovery.",
+    "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "biohack012",
+    "name": "Neurohacker Nootropic Stack (lifetime supply)",
+    "category": "Biohacking & Longevity",
+    "requiredJar": "LTSS",
+    "price": 45000,
+    "description": "Customized cognitive enhancement protocol with premium ingredients.",
+    "imageUrl": "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "biohack013",
+    "name": "Ozone Therapy System",
+    "category": "Biohacking & Longevity",
+    "requiredJar": "LTSS",
+    "price": 28000,
+    "description": "Medical-grade ozone generator for home IV treatments and immune support.",
+    "imageUrl": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "spiritual011",
+    "name": "Tulum Temazcal Ceremony Package",
+    "category": "Spiritual & Wellness",
+    "requiredJar": "PLAY",
+    "price": 5500,
+    "description": "Traditional Mayan sweat lodge purification with shamanic healing.",
+    "imageUrl": "https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "spiritual012",
+    "name": "Reiki Master Certification in Japan",
+    "category": "Spiritual & Wellness",
+    "requiredJar": "PLAY",
+    "price": 16000,
+    "description": "Complete Reiki training to master level at Usui lineage temple.",
+    "imageUrl": "https://images.unsplash.com/photo-1528164344705-47542687000d?w=400&h=300&fit=crop"
   }
 ]

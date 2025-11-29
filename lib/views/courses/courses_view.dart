@@ -44,6 +44,54 @@ class _CoursesViewState extends ConsumerState<CoursesView> {
             'Invest in yourself to boost your earning potential. Each course increases your mindset multiplier.',
             style: theme.textTheme.bodySmall,
           ),
+          const SizedBox(height: 12),
+
+          // Course Progress Bar
+          profileAsync.when(
+            data: (profile) {
+              final completedCount = profile?.purchasedCourses.length ?? 0;
+              final totalCount = allCourses.length;
+              final progress = totalCount > 0 ? (completedCount / totalCount).clamp(0.0, 1.0) : 0.0;
+              
+              return Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Stack(
+                        children: [
+                          Container(
+                            height: 6,
+                            decoration: BoxDecoration(
+                              color: theme.colorScheme.surfaceContainerHighest,
+                            ),
+                          ),
+                          AnimatedContainer(
+                            duration: const Duration(milliseconds: 800),
+                            curve: Curves.easeOutCubic,
+                            height: 6,
+                            width: constraints.maxWidth * progress,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  theme.colorScheme.primary,
+                                  theme.colorScheme.secondary,
+                                  theme.colorScheme.tertiary,
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              );
+            },
+            loading: () => const SizedBox.shrink(),
+            error: (_, __) => const SizedBox.shrink(),
+          ),
           const SizedBox(height: 16),
 
           // Stats Card

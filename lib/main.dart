@@ -22,6 +22,7 @@ import 'views/transactions/transactions_view.dart';
 import 'widgets/template_footer.dart';
 import 'widgets/common_sticky_header.dart';
 import 'widgets/top_menu.dart';
+import 'widgets/affirmation_overlay.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -211,35 +212,40 @@ class _RootShellState extends ConsumerState<_RootShell> {
     final userName = authProvider.name ?? 'Millionaire';
 
     return userBootstrap.when(
-      data: (_) => Scaffold(
-        body: Column(
-          children: [
-            // Common Sticky Header with navigation icons and motivational quote
-            CommonStickyHeader(
-              currentScreen: _activeMenuId,
-              userName: userName,
-              menuItems: _menuItems,
-              onMenuSelected: _onMenuSelected,
-              onLogout: _handleLogout,
+      data: (_) => Stack(
+        children: [
+          Scaffold(
+            body: Column(
+              children: [
+                // Common Sticky Header with navigation icons and motivational quote
+                CommonStickyHeader(
+                  currentScreen: _activeMenuId,
+                  userName: userName,
+                  menuItems: _menuItems,
+                  onMenuSelected: _onMenuSelected,
+                  onLogout: _handleLogout,
+                ),
+                // Main content area
+                Expanded(
+                  child: IndexedStack(
+                    index: _currentIndex,
+                    children: const [
+                      DashboardView(),
+                      MarketplaceView(),
+                      CoursesView(),
+                      InvestmentsView(),
+                      TransactionsView(),
+                      SettingsView(),
+                    ],
+                  ),
+                ),
+                // Template Footer
+                const TemplateFooter(),
+              ],
             ),
-            // Main content area
-            Expanded(
-              child: IndexedStack(
-                index: _currentIndex,
-                children: const [
-                  DashboardView(),
-                  MarketplaceView(),
-                  CoursesView(),
-                  InvestmentsView(),
-                  TransactionsView(),
-                  SettingsView(),
-                ],
-              ),
-            ),
-            // Template Footer
-            const TemplateFooter(),
-          ],
-        ),
+          ),
+          const AffirmationOverlay(),
+        ],
       ),
       loading: () => const Scaffold(
         body: Center(child: CircularProgressIndicator()),

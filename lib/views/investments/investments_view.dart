@@ -92,6 +92,8 @@ class InvestmentsView extends ConsumerWidget {
               ),
             ],
           ),
+          const SizedBox(height: 12),
+          _buildInvestmentProgressBar(context, ref),
           const SizedBox(height: 8),
           Expanded(
             child: investmentsAsync.when(
@@ -628,6 +630,62 @@ class _DetailRow extends StatelessWidget {
 String _formatCurrency(double value) {
   return CurrencyFormatter.format(value);
 }
+  Widget _buildInvestmentProgressBar(BuildContext context, WidgetRef ref) {
+    final transactionsAsync = ref.watch(transactionsProvider);
+    
+    return transactionsAsync.when(
+      data: (transactions) {
+        // Count investment-related transactions (buy/sell)
+        final investmentTxCount = transactions.where((tx) => 
+          tx.description.toLowerCase().contains('bought') || 
+          tx.description.toLowerCase().contains('sold') ||
+          tx.description.toLowerCase().contains('investment')
+        ).length;
+        
+        // Calculate progress - each transaction adds a small increment (max 1000 = 100%)
+        final maxTransactions = 1000;
+        final simpleProgress = (investmentTxCount / maxTransactions).clamp(0.0, 1.0);
+        
+        return Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Stack(
+                  children: [
+                    Container(
+                      height: 6,
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                      ),
+                    ),
+                    AnimatedContainer(
+                      duration: const Duration(milliseconds: 800),
+                      curve: Curves.easeOutCubic,
+                      height: 6,
+                      width: constraints.maxWidth * simpleProgress,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Theme.of(context).colorScheme.primary,
+                            Theme.of(context).colorScheme.secondary,
+                            Theme.of(context).colorScheme.tertiary,
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        );
+      },
+      loading: () => const SizedBox.shrink(),
+      error: (_, __) => const SizedBox.shrink(),
+    );
+  }
 
 double _ffaBalance(List<Jar> jars) {
   for (final jar in jars) {

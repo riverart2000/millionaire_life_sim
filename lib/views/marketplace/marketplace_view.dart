@@ -77,6 +77,54 @@ class MarketplaceView extends ConsumerWidget {
             'List items from your catalog or acquire assets from other investors.',
             style: Theme.of(context).textTheme.bodySmall,
           ),
+          const SizedBox(height: 12),
+
+          // Marketplace Progress Bar
+          localCatalog.when(
+            data: (catalogItems) {
+              final purchasedCount = catalogItems.where((item) => item.isOwned).length;
+              final totalCount = catalogItems.length;
+              final progress = totalCount > 0 ? (purchasedCount / totalCount).clamp(0.0, 1.0) : 0.0;
+              
+              return Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Stack(
+                        children: [
+                          Container(
+                            height: 6,
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                            ),
+                          ),
+                          AnimatedContainer(
+                            duration: const Duration(milliseconds: 800),
+                            curve: Curves.easeOutCubic,
+                            height: 6,
+                            width: constraints.maxWidth * progress,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  Theme.of(context).colorScheme.primary,
+                                  Theme.of(context).colorScheme.secondary,
+                                  Theme.of(context).colorScheme.tertiary,
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              );
+            },
+            loading: () => const SizedBox.shrink(),
+            error: (_, __) => const SizedBox.shrink(),
+          ),
           const SizedBox(height: 16),
           localCatalog.when(
             data: (items) => _LocalCatalogSection(items: items, userId: userId),
@@ -518,6 +566,22 @@ class _MarketplaceImage extends StatelessWidget {
   Widget build(BuildContext context) {
     if (imageUrl.isEmpty) {
       return _buildPlaceholder(context);
+    }
+
+    // Use Image.network for URLs, Image.asset for local assets
+    final isNetworkImage = imageUrl.startsWith('http://') || imageUrl.startsWith('https://');
+    
+    if (isNetworkImage) {
+      return Image.network(
+        imageUrl,
+        width: width,
+        height: height,
+        fit: fit,
+        errorBuilder: (context, error, stackTrace) {
+          debugPrint('Failed to load image: $imageUrl - Error: $error');
+          return _buildPlaceholder(context);
+        },
+      );
     }
 
     return Image.asset(

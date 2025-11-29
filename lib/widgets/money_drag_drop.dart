@@ -1,5 +1,3 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart' as legacy;
@@ -636,9 +634,7 @@ class _MoneyDragDropWidgetState extends State<MoneyDragDropWidget> {
             Wrap(
               spacing: 12,
               runSpacing: 12,
-              children: widget.jars
-                  .map(
-                    (jar) {
+              children: widget.jars.map((jar) {
                       // Calculate if this jar is at max
                       final originalTotalAvailable = _availableAmounts.fold<double>(
                         0.0, 
@@ -759,9 +755,7 @@ class _MoneyDragDropWidgetState extends State<MoneyDragDropWidget> {
                           });
                         },
                       );
-                    },
-                  )
-                  .toList(),
+                    }).toList(),
             ),
           ],
         ),

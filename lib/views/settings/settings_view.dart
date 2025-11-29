@@ -9,6 +9,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/constants/hive_box_constants.dart';
+import '../../providers/affirmation_provider.dart';
 import '../../core/constants/jar_constants.dart';
 import '../../core/utils/result.dart';
 import '../../models/investment_price_model.dart';
@@ -120,6 +121,8 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
           ),
           const SizedBox(height: 16),
           _buildThemeCard(context),
+          const SizedBox(height: 16),
+          _buildSubliminalAffirmationsCard(context),
           const SizedBox(height: 16),
           _buildIncomeCard(context),
           const SizedBox(height: 16),
@@ -248,6 +251,170 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
             child: const Text('Close'),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildSubliminalAffirmationsCard(BuildContext context) {
+    final settings = ref.watch(affirmationSettingsProvider);
+    final theme = Theme.of(context);
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                const Icon(Icons.psychology),
+                const SizedBox(width: 8),
+                Text(
+                  'Subliminal Affirmations',
+                  style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Brief affirmations flash on screen to reinforce positive money beliefs subconsciously.',
+              style: theme.textTheme.bodySmall,
+            ),
+            const SizedBox(height: 16),
+            
+            // Enable/Disable
+            SwitchListTile(
+              title: const Text('Enable subliminal affirmations'),
+              subtitle: const Text('Show brief affirmation flashes during app use'),
+              value: settings.enabled,
+              onChanged: (value) {
+                ref.read(affirmationSettingsProvider.notifier).setEnabled(value);
+              },
+            ),
+            
+            const Divider(),
+            
+            // Flash Duration
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text('Flash Duration'),
+                      Text('${settings.flashDurationMs}ms', style: theme.textTheme.titleSmall),
+                    ],
+                  ),
+                  Slider(
+                    value: settings.flashDurationMs.toDouble(),
+                    min: 100,
+                    max: 500,
+                    divisions: 40,
+                    label: '${settings.flashDurationMs}ms',
+                    onChanged: (value) {
+                      ref.read(affirmationSettingsProvider.notifier).setFlashDuration(value.toInt());
+                    },
+                  ),
+                ],
+              ),
+            ),
+            
+            // Opacity
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text('Opacity'),
+                      Text('${(settings.opacity * 100).toInt()}%', style: theme.textTheme.titleSmall),
+                    ],
+                  ),
+                  Slider(
+                    value: settings.opacity,
+                    min: 0.05,
+                    max: 0.50,
+                    divisions: 45,
+                    label: '${(settings.opacity * 100).toInt()}%',
+                    onChanged: (value) {
+                      ref.read(affirmationSettingsProvider.notifier).setOpacity(value);
+                    },
+                  ),
+                ],
+              ),
+            ),
+            
+            // Interval
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text('Interval'),
+                      Text('${settings.intervalSeconds}s', style: theme.textTheme.titleSmall),
+                    ],
+                  ),
+                  Slider(
+                    value: settings.intervalSeconds.toDouble(),
+                    min: 5,
+                    max: 120,
+                    divisions: 23,
+                    label: '${settings.intervalSeconds}s',
+                    onChanged: (value) {
+                      ref.read(affirmationSettingsProvider.notifier).setInterval(value.toInt());
+                    },
+                  ),
+                ],
+              ),
+            ),
+            
+            const Divider(),
+            
+            // Random Position
+            SwitchListTile(
+              title: const Text('Random positions'),
+              subtitle: const Text('Show affirmations at random screen positions'),
+              value: settings.randomPosition,
+              onChanged: (value) {
+                ref.read(affirmationSettingsProvider.notifier).setRandomPosition(value);
+              },
+            ),
+            
+            // Font Size
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text('Font Size'),
+                      Text('${settings.fontSize.toInt()}', style: theme.textTheme.titleSmall),
+                    ],
+                  ),
+                  Slider(
+                    value: settings.fontSize,
+                    min: 24,
+                    max: 48,
+                    divisions: 24,
+                    label: '${settings.fontSize.toInt()}',
+                    onChanged: (value) {
+                      ref.read(affirmationSettingsProvider.notifier).setFontSize(value);
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
