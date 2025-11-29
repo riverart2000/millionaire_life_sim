@@ -116,12 +116,9 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
       _confettiController.play();
       SoundService.instance.playCelebration();
       
-      Future.delayed(const Duration(milliseconds: 500), () {
-        if (mounted) {
-          Navigator.of(context).pop();
-          widget.onComplete();
-        }
-      });
+      // Close dialog and call onComplete immediately
+      Navigator.of(context).pop();
+      widget.onComplete();
     } else {
       setState(() {
         _currentQuestionIndex++;
