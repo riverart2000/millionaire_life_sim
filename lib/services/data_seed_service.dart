@@ -20,7 +20,19 @@ class DataSeedService {
   Future<Result<void>> seedMarketplaceFromAsset(String assetPath) async {
     try {
       final raw = await rootBundle.loadString(assetPath);
-      final list = (jsonDecode(raw) as List<dynamic>)
+      final jsonData = jsonDecode(raw);
+      
+      // Handle both old array format and new versioned format
+      final List<dynamic> itemsList;
+      if (jsonData is Map<String, dynamic>) {
+        // New versioned format
+        itemsList = jsonData['items'] as List<dynamic>;
+      } else {
+        // Old array format
+        itemsList = jsonData as List<dynamic>;
+      }
+      
+      final list = itemsList
           .map((e) => MarketplaceItem.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList();
       await _marketplaceRepository.saveLocalItems(list);

@@ -1,9 +1,11 @@
-[
-  {
-    "id": "watch001",
-    "name": "Rolex Submariner",
-    "category": "Luxury Watches",
-    "requiredJar": "PLAY",
+{
+  "version": 2,
+  "items": [
+    {
+      "id": "watch001",
+      "name": "Rolex Submariner",
+      "category": "Luxury Watches",
+      "requiredJar": "PLAY",
     "price": 15000,
     "description": "Iconic luxury dive watch with timeless design and Swiss precision.",
     "imageUrl": "assets/images/marketplace/watch001.jpg"
@@ -484,5 +486,6 @@
     "price": 16000,
     "description": "Complete Reiki training to master level at Usui lineage temple.",
     "imageUrl": "assets/images/marketplace/spiritual012.jpg"
-  }
-]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../core/di/injection.dart';
 import '../core/utils/logger.dart';
@@ -172,19 +173,29 @@ final userBootstrapProvider = FutureProvider<void>((ref) async {
       logInfo('✅ Jars already initialized');
     }
 
-    // Seed marketplace catalog from assets if empty
+    // Seed marketplace catalog from assets if empty or version mismatch
     logInfo('Found ${catalog.length} marketplace items');
     
-    if (catalog.isEmpty) {
-      logInfo('Seeding marketplace...');
+    // Check marketplace version
+    final prefs = await SharedPreferences.getInstance();
+    final currentVersion = prefs.getInt('marketplace_version') ?? 0;
+    const expectedVersion = 2; // Update this when marketplace changes
+    
+    if (catalog.isEmpty || currentVersion < expectedVersion) {
+      if (currentVersion < expectedVersion) {
+        logInfo('Marketplace version outdated ($currentVersion < $expectedVersion), re-seeding...');
+      } else {
+        logInfo('Seeding marketplace...');
+      }
       final seedResult = await dataSeedService.seedMarketplaceFromAsset('assets/data/marketplace_items.json');
       if (seedResult.isSuccess) {
-        logInfo('✅ Seeded marketplace catalog locally');
+        await prefs.setInt('marketplace_version', expectedVersion);
+        logInfo('✅ Seeded marketplace catalog locally (version $expectedVersion)');
       } else {
         logError('Failed to seed marketplace', seedResult.error);
       }
     } else {
-      logInfo('✅ Marketplace already seeded locally');
+      logInfo('✅ Marketplace already seeded locally (version $currentVersion)');
     }
     
     logInfo('✅ Bootstrap complete!');
