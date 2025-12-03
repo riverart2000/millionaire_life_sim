@@ -136,10 +136,12 @@ class _RiddleDialogState extends State<RiddleDialog> {
     return Stack(
       children: [
         Dialog(
+          insetPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           child: Container(
-            constraints: const BoxConstraints(maxWidth: 600, maxHeight: 700),
-            padding: EdgeInsets.all(24),
+            constraints: const BoxConstraints(maxWidth: 600),
+            width: double.maxFinite,
+            padding: const EdgeInsets.all(16),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,

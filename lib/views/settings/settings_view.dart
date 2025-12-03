@@ -108,8 +108,9 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
   }
 
   Widget _buildContent(BuildContext context, UserProfile? profile, List<Jar> jars) {
+    final horizontalPadding = MediaQuery.of(context).size.width < 600 ? 8.0 : 16.0;
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -751,9 +752,9 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
             GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 3.5,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: MediaQuery.of(context).size.width < 600 ? 1 : 2,
+                childAspectRatio: MediaQuery.of(context).size.width < 600 ? 5.0 : 3.5,
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
               ),

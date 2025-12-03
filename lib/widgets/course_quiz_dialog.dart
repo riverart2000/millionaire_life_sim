@@ -151,9 +151,11 @@ class _CourseQuizDialogState extends State<CourseQuizDialog> {
         
         // Dialog
         Dialog(
+          insetPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
           child: Container(
-            constraints: const BoxConstraints(maxWidth: 600, maxHeight: 650),
-            padding: const EdgeInsets.all(16),
+            constraints: const BoxConstraints(maxWidth: 600),
+            width: double.maxFinite,
+            padding: const EdgeInsets.all(12),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,

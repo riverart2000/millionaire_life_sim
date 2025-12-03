@@ -103,20 +103,28 @@ class InvestmentsView extends ConsumerWidget {
                   builder: (context, constraints) {
                     final maxWidth = constraints.maxWidth;
                     int crossAxisCount;
+                    double aspectRatio;
                     if (maxWidth >= 1100) {
                       crossAxisCount = 3;
+                      aspectRatio = 2.5;
                     } else if (maxWidth >= 720) {
                       crossAxisCount = 2;
+                      aspectRatio = 2.8;
+                    } else if (maxWidth >= 500) {
+                      crossAxisCount = 1;
+                      aspectRatio = 3.5;
                     } else {
                       crossAxisCount = 1;
+                      aspectRatio = 4.0; // Taller cards for very small screens
                     }
 
                     return GridView.builder(
+                      padding: const EdgeInsets.all(8),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: crossAxisCount,
-                        crossAxisSpacing: 6,
-                        mainAxisSpacing: 6,
-                        childAspectRatio: crossAxisCount == 1 ? 3.5 : 2.5,
+                        crossAxisSpacing: 8,
+                        mainAxisSpacing: 8,
+                        childAspectRatio: aspectRatio,
                       ),
                       itemCount: investments.length,
                       itemBuilder: (context, index) {
