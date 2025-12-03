@@ -117,57 +117,53 @@ class _CommonStickyHeaderState extends State<CommonStickyHeader> {
                       horizontal: isNarrowScreen ? 2.0 : 8.0,
                       vertical: isNarrowScreen ? 4.0 : 8.0,
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    child: Wrap(
+                      alignment: WrapAlignment.spaceEvenly,
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      spacing: isNarrowScreen ? 2.0 : 4.0,
+                      runSpacing: isNarrowScreen ? 2.0 : 4.0,
                       children: [
-                        Expanded(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              // Dynamically render menu items
-                              ...widget.menuItems.where((item) => item.id != 'settings').map((item) {
-                                return _buildIconButton(
-                                  icon: item.icon,
-                                  label: _getShortLabel(item.label, isNarrowScreen),
-                                  isActive: widget.currentScreen == item.id,
-                                  isCompact: isNarrowScreen,
-                                  onPressed: () {
-                                    if (widget.currentScreen != item.id) {
-                                      widget.onMenuSelected(item.id);
-                                    }
-                                  },
-                                );
-                              }),
-                              // Sound toggle
-                              legacy.Consumer<SoundProvider>(
-                                builder: (context, soundProvider, _) =>
-                                    _buildIconButton(
-                                  icon: soundProvider.isEnabled ? Icons.volume_up : Icons.volume_off,
-                                  label: 'Sound',
-                                  isActive: false,
-                                  isCompact: isNarrowScreen,
-                                  onPressed: () async {
-                                    await soundProvider.toggleSound();
-                                  },
-                                ),
-                              ),
-                              // Settings (always last)
-                              ...widget.menuItems.where((item) => item.id == 'settings').map((item) {
-                                return _buildIconButton(
-                                  icon: item.icon,
-                                  label: _getShortLabel(item.label, isNarrowScreen),
-                                  isActive: widget.currentScreen == item.id,
-                                  isCompact: isNarrowScreen,
-                                  onPressed: () {
-                                    if (widget.currentScreen != item.id) {
-                                      widget.onMenuSelected(item.id);
-                                    }
-                                  },
-                                );
-                              }),
-                            ],
+                        // Dynamically render menu items
+                        ...widget.menuItems.where((item) => item.id != 'settings').map((item) {
+                          return _buildIconButton(
+                            icon: item.icon,
+                            label: _getShortLabel(item.label, isNarrowScreen),
+                            isActive: widget.currentScreen == item.id,
+                            isCompact: isNarrowScreen,
+                            onPressed: () {
+                              if (widget.currentScreen != item.id) {
+                                widget.onMenuSelected(item.id);
+                              }
+                            },
+                          );
+                        }),
+                        // Sound toggle
+                        legacy.Consumer<SoundProvider>(
+                          builder: (context, soundProvider, _) =>
+                              _buildIconButton(
+                            icon: soundProvider.isEnabled ? Icons.volume_up : Icons.volume_off,
+                            label: 'Sound',
+                            isActive: false,
+                            isCompact: isNarrowScreen,
+                            onPressed: () async {
+                              await soundProvider.toggleSound();
+                            },
                           ),
                         ),
+                        // Settings (always last)
+                        ...widget.menuItems.where((item) => item.id == 'settings').map((item) {
+                          return _buildIconButton(
+                            icon: item.icon,
+                            label: _getShortLabel(item.label, isNarrowScreen),
+                            isActive: widget.currentScreen == item.id,
+                            isCompact: isNarrowScreen,
+                            onPressed: () {
+                              if (widget.currentScreen != item.id) {
+                                widget.onMenuSelected(item.id);
+                              }
+                            },
+                          );
+                        }),
                         // Logout Button
                         _buildIconButton(
                           icon: Icons.logout,
