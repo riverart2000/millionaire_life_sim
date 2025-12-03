@@ -57,13 +57,14 @@ class MarketplaceView extends ConsumerWidget {
                     (jar) => jar.id == 'LTSS',
                     orElse: () => jarList.first,
                   );
-                  return Row(
-                    mainAxisSize: MainAxisSize.min,
+                  return Wrap(
+                    alignment: WrapAlignment.end,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    spacing: 8,
+                    runSpacing: 4,
                     children: [
                       _JarChip(label: 'FFA', balance: ffaJar.balance, color: Colors.green),
-                      const SizedBox(width: 8),
                       _JarChip(label: 'PLAY', balance: playJar.balance, color: Colors.purple),
-                      const SizedBox(width: 8),
                       _JarChip(label: 'LTSS', balance: ltssJar.balance, color: Colors.blue),
                     ],
                   );
