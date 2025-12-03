@@ -430,9 +430,12 @@ class _InvestmentCardState extends State<_InvestmentCard> {
             const SizedBox(height: 1),
             _DetailRow(label: 'Value', value: _formatCurrency(investment.marketValue)),
             const SizedBox(height: 4),
-            Row(
+            Wrap(
+              spacing: 4,
+              runSpacing: 4,
               children: [
-                Expanded(
+                SizedBox(
+                  width: (MediaQuery.of(context).size.width * 0.4).clamp(100.0, 150.0),
                   child: FilledButton.icon(
                     onPressed: _isBuying || _isSelling ? null : () => _showBuyDialog(context),
                     icon: _isBuying
@@ -446,8 +449,8 @@ class _InvestmentCardState extends State<_InvestmentCard> {
                     ),
                   ),
                 ),
-                const SizedBox(width: 4),
-                Expanded(
+                SizedBox(
+                  width: (MediaQuery.of(context).size.width * 0.4).clamp(100.0, 150.0),
                   child: FilledButton.icon(
                     onPressed: (_isBuying || _isSelling || investment.unitsOwned <= 0) ? null : () => _showSellDialog(context),
                     icon: _isSelling
@@ -617,18 +620,25 @@ class _DetailRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          label,
-          style: theme.textTheme.bodySmall?.copyWith(
-            color: theme.colorScheme.onSurfaceVariant,
-            fontSize: 11,
+        Flexible(
+          child: Text(
+            label,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+              fontSize: 11,
+            ),
+            overflow: TextOverflow.ellipsis,
           ),
         ),
-        Text(
-          value,
-          style: theme.textTheme.bodySmall?.copyWith(
-            fontWeight: FontWeight.bold,
-            fontSize: 12,
+        const SizedBox(width: 4),
+        Flexible(
+          child: Text(
+            value,
+            style: theme.textTheme.bodySmall?.copyWith(
+              fontWeight: FontWeight.bold,
+              fontSize: 12,
+            ),
+            overflow: TextOverflow.ellipsis,
           ),
         ),
       ],
