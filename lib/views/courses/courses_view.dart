@@ -7,6 +7,7 @@ import '../../providers/data_providers.dart';
 import '../../providers/session_providers.dart';
 import '../../providers/bootstrap_provider.dart';
 import '../../core/utils/currency_formatter.dart';
+import '../../core/utils/responsive.dart';
 import '../../core/utils/result.dart';
 import '../../widgets/course_quiz_dialog.dart';
 
@@ -37,7 +38,7 @@ class _CoursesViewState extends ConsumerState<CoursesView> {
         children: [
           Text(
             'Education Center',
-            style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+            style: Responsive.scaleTextStyle(context, theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
           ),
           const SizedBox(height: 8),
           Text(

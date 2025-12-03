@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
+import '../core/utils/responsive.dart';
 import '../models/riddle_model.dart';
 import '../services/riddle_service.dart';
 import '../services/sound_service.dart';

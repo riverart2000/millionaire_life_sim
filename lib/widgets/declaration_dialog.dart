@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../core/utils/responsive.dart';
 import '../models/declaration_model.dart';
 import '../providers/declaration_provider.dart';
 import '../services/declaration_service.dart';

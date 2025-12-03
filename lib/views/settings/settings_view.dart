@@ -12,6 +12,7 @@ import '../../core/constants/hive_box_constants.dart';
 import '../../core/config/app_config.dart';
 import '../../providers/affirmation_provider.dart';
 import '../../core/constants/jar_constants.dart';
+import '../../core/utils/responsive.dart';
 import '../../core/utils/result.dart';
 import '../../models/investment_price_model.dart';
 import '../../models/jar_model.dart';

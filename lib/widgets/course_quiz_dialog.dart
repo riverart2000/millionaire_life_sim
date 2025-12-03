@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
+import '../core/utils/responsive.dart';
 import '../models/course_question_model.dart';
 import '../services/sound_service.dart';
 

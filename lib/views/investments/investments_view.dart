@@ -4,6 +4,7 @@ import 'package:provider/provider.dart' as legacy;
 import 'package:get_it/get_it.dart';
 
 import '../../core/utils/currency_formatter.dart';
+import '../../core/utils/responsive.dart';
 import '../../core/utils/result.dart';
 import '../../models/investment_model.dart';
 import '../../models/jar_model.dart';

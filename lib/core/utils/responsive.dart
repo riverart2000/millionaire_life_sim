@@ -38,9 +38,16 @@ class Responsive {
     double? tablet,
     double? desktop,
   }) {
-    if (isMobile(context)) return mobile ?? base * 0.9;
-    if (isTablet(context)) return tablet ?? base;
-    return desktop ?? base * 1.1;
+    if (isMobile(context)) return mobile ?? base * 0.85;
+    if (isTablet(context)) return tablet ?? base * 0.95;
+    return desktop ?? base;
+  }
+
+  /// Scale a TextStyle with responsive font size
+  static TextStyle? scaleTextStyle(BuildContext context, TextStyle? style) {
+    if (style == null) return null;
+    final scale = isMobile(context) ? 0.85 : (isTablet(context) ? 0.95 : 1.0);
+    return style.copyWith(fontSize: (style.fontSize ?? 14.0) * scale);
   }
 
   /// Get responsive grid columns

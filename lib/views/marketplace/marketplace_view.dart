@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../core/utils/result.dart';
+import '../../core/utils/responsive.dart';
 import '../../models/marketplace_item_model.dart';
 import '../../providers/data_providers.dart';
 import '../../providers/bootstrap_provider.dart';
@@ -40,7 +41,7 @@ class MarketplaceView extends ConsumerWidget {
             children: [
               Text(
                 'Marketplace',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                style: Responsive.scaleTextStyle(context, Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
               ),
               jars.when(
                 data: (jarList) {

@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:confetti/confetti.dart';
 
 import '../../core/utils/currency_formatter.dart';
+import '../../core/utils/responsive.dart';
 import '../../core/utils/result.dart';
 import '../../models/jar_model.dart';
 import '../../models/transaction_model.dart';
