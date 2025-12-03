@@ -22,9 +22,9 @@ class InterestService {
   Future<Map<String, double>> _getDefaultRates() async {
     final config = await _configuration;
     return {
-      'FFA': config.interestRates.ffa / 100, // Convert percentage to decimal
-      'LTSS': config.interestRates.ltss / 100,
-      'EDU': config.interestRates.edu / 100,
+      'FFA': (config.interestRates['FFA'] ?? 0.3) / 100, // Convert percentage to decimal
+      'LTSS': (config.interestRates['LTSS'] ?? 0.4) / 100,
+      'EDU': (config.interestRates['EDU'] ?? 0.2) / 100,
     };
   }
 

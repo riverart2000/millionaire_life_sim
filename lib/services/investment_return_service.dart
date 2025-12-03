@@ -22,10 +22,10 @@ class InvestmentReturnService {
   Future<Map<String, double>> _getDefaultRates() async {
     final config = await _configuration;
     return {
-      'GOLD': config.investmentReturns.gold / 100, // Convert percentage to decimal
-      'SILVER': config.investmentReturns.silver / 100,
-      'BTC': config.investmentReturns.btc / 100,
-      'REALESTATE': config.investmentReturns.realEstate / 100,
+      'GOLD': (config.investmentReturns['GOLD'] ?? 0.1) / 100, // Convert percentage to decimal
+      'SILVER': (config.investmentReturns['SILVER'] ?? 0.1) / 100,
+      'BTC': (config.investmentReturns['BTC'] ?? 0.2) / 100,
+      'REALESTATE': (config.investmentReturns['REALESTATE'] ?? 0.5) / 100,
     };
   }
 
