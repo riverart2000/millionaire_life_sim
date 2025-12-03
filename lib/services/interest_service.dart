@@ -1,28 +1,39 @@
 import 'package:shared_preferences/shared_preferences.dart';
+import '../core/config/app_config.dart';
 
 class InterestService {
-  InterestService({SharedPreferences? preferences}) : _preferences = preferences;
+  InterestService({
+    SharedPreferences? preferences,
+    AppConfig? config,
+  })  : _preferences = preferences,
+        _config = config;
 
   static const double minRate = 0.001; // 0.1% per day
   static const double maxRate = 0.02; // 2.0% per day
 
-  static const Map<String, double> _defaultRates = {
-    'FFA': 0.003, // 0.3%
-    'LTSS': 0.004, // 0.4%
-    'EDU': 0.002, // 0.2%
-  };
-
   static const String _prefsPrefix = 'interest_rate_';
 
   SharedPreferences? _preferences;
+  AppConfig? _config;
 
   Future<SharedPreferences> get _prefs async => _preferences ??= await SharedPreferences.getInstance();
+  Future<AppConfig> get _configuration async => _config ??= await AppConfig.load();
+
+  Future<Map<String, double>> _getDefaultRates() async {
+    final config = await _configuration;
+    return {
+      'FFA': config.interestRates.ffa / 100, // Convert percentage to decimal
+      'LTSS': config.interestRates.ltss / 100,
+      'EDU': config.interestRates.edu / 100,
+    };
+  }
 
   Future<Map<String, double>> loadRates() async {
     final prefs = await _prefs;
+    final defaultRates = await _getDefaultRates();
     final rates = <String, double>{};
 
-    for (final entry in _defaultRates.entries) {
+    for (final entry in defaultRates.entries) {
       final stored = prefs.getDouble('$_prefsPrefix${entry.key}') ?? entry.value;
       final clamped = stored.clamp(minRate, maxRate);
       rates[entry.key] = clamped;

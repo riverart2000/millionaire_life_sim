@@ -1,29 +1,40 @@
 import 'package:shared_preferences/shared_preferences.dart';
+import '../core/config/app_config.dart';
 
 class BillsService {
-  BillsService({SharedPreferences? preferences}) : _preferences = preferences;
+  BillsService({
+    SharedPreferences? preferences,
+    AppConfig? config,
+  })  : _preferences = preferences,
+        _config = config;
 
   static const String rentKey = 'bill_rent';
   static const String foodKey = 'bill_food';
   static const String travelKey = 'bill_travel';
   static const String accessoriesKey = 'bill_accessories';
 
-  static const Map<String, double> _defaultBills = {
-    rentKey: 10.0, // Default £10/day
-    foodKey: 10.0, // Default £10/day
-    travelKey: 10.0, // Default £10/day
-    accessoriesKey: 10.0, // Default £10/day
-  };
-
   SharedPreferences? _preferences;
+  AppConfig? _config;
 
   Future<SharedPreferences> get _prefs async => _preferences ??= await SharedPreferences.getInstance();
+  Future<AppConfig> get _configuration async => _config ??= await AppConfig.load();
+
+  Future<Map<String, double>> _getDefaultBills() async {
+    final config = await _configuration;
+    return {
+      rentKey: config.bills.rent,
+      foodKey: config.bills.food,
+      travelKey: config.bills.travel,
+      accessoriesKey: config.bills.accessories,
+    };
+  }
 
   Future<Map<String, double>> loadBills() async {
     final prefs = await _prefs;
+    final defaultBills = await _getDefaultBills();
     final bills = <String, double>{};
 
-    for (final entry in _defaultBills.entries) {
+    for (final entry in defaultBills.entries) {
       final stored = prefs.getDouble(entry.key) ?? entry.value;
       bills[entry.key] = stored.clamp(0.0, double.infinity);
     }
@@ -33,22 +44,26 @@ class BillsService {
 
   Future<double> getRent() async {
     final prefs = await _prefs;
-    return prefs.getDouble(rentKey) ?? _defaultBills[rentKey]!;
+    final defaultBills = await _getDefaultBills();
+    return prefs.getDouble(rentKey) ?? defaultBills[rentKey]!;
   }
 
   Future<double> getFood() async {
     final prefs = await _prefs;
-    return prefs.getDouble(foodKey) ?? _defaultBills[foodKey]!;
+    final defaultBills = await _getDefaultBills();
+    return prefs.getDouble(foodKey) ?? defaultBills[foodKey]!;
   }
 
   Future<double> getTravel() async {
     final prefs = await _prefs;
-    return prefs.getDouble(travelKey) ?? _defaultBills[travelKey]!;
+    final defaultBills = await _getDefaultBills();
+    return prefs.getDouble(travelKey) ?? defaultBills[travelKey]!;
   }
 
   Future<double> getAccessories() async {
     final prefs = await _prefs;
-    return prefs.getDouble(accessoriesKey) ?? _defaultBills[accessoriesKey]!;
+    final defaultBills = await _getDefaultBills();
+    return prefs.getDouble(accessoriesKey) ?? defaultBills[accessoriesKey]!;
   }
 
   Future<void> saveBill(String key, double amount) async {

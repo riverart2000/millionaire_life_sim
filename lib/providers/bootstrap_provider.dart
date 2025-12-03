@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../core/config/app_config.dart';
 import '../core/di/injection.dart';
 import '../core/utils/logger.dart';
 import '../core/constants/jar_constants.dart';
@@ -110,6 +111,10 @@ final userBootstrapProvider = FutureProvider<void>((ref) async {
   try {
     logInfo('Starting user bootstrap...');
     
+    // Load configuration first
+    final config = await AppConfig.load();
+    logInfo('✅ Configuration loaded');
+    
     final userId = ref.read(userIdProvider);
     final userRepository = ref.read(userRepositoryProvider);
     final jarRepository = ref.read(jarRepositoryProvider);
@@ -132,19 +137,19 @@ final userBootstrapProvider = FutureProvider<void>((ref) async {
     // Ensure user profile exists locally
     var finalProfile = profile;
     if (finalProfile == null) {
-      logInfo('Creating new user profile...');
+      logInfo('Creating new user profile with config values...');
       finalProfile = UserProfile(
         id: userId,
         name: ref.read(userDisplayNameProvider), // Use authenticated name
         email: '',
-        dailyIncome: 200,
-        jarPercentages: JarConstants.defaultPercentages,
-        autoSimulateDaily: false,
+        dailyIncome: config.income.dailyIncome,
+        jarPercentages: config.jarPercentages,
+        autoSimulateDaily: config.income.autoSimulateDaily,
         lastSyncedAt: DateTime.now(),
         syncEnabled: false, // Default to offline mode
       );
       await userRepository.saveProfile(finalProfile);
-      logInfo('✅ Created new user profile');
+      logInfo('✅ Created new user profile (dailyIncome: ${config.income.dailyIncome})');
     } else {
       logInfo('✅ User profile loaded: ${finalProfile.name}');
     }
@@ -153,9 +158,9 @@ final userBootstrapProvider = FutureProvider<void>((ref) async {
     logInfo('Found ${existingJars.length} existing jars');
     
     if (existingJars.isEmpty) {
-      logInfo('Initializing default jars...');
-      // Create jars directly without remote sync
-      final defaultJars = JarConstants.defaultPercentages.entries.map((entry) {
+      logInfo('Initializing default jars from config...');
+      // Create jars directly without remote sync using config percentages
+      final defaultJars = config.jarPercentages.entries.map((entry) {
         return Jar(
           id: entry.key,
           name: entry.key,

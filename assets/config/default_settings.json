@@ -29,10 +29,10 @@
     "REALESTATE": 0.5
   },
   "jarPercentages": {
-    "FFA": 20.0,
-    "LTSS": 20.0,
+    "FFA": 25.0,
+    "LTSS": 25.0,
     "EDU": 20.0,
-    "NEC": 25.0,
+    "NEC": 15.0,
     "PLAY": 10.0,
     "GIVE": 5.0
   }

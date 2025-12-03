@@ -1,4 +1,4 @@
-import '../core/constants/jar_constants.dart';
+import '../core/config/app_config.dart';
 import '../core/utils/logger.dart';
 import '../core/utils/result.dart';
 import '../models/jar_model.dart';
@@ -13,15 +13,20 @@ class JarService {
     JarRemoteRepository? remoteRepository,
     required UserRepository userRepository,
     required TransactionService transactionService,
+    AppConfig? config,
   })  : _localRepository = localRepository,
         _remoteRepository = remoteRepository,
         _userRepository = userRepository,
-        _transactionService = transactionService;
+        _transactionService = transactionService,
+        _config = config;
 
   final JarRepository _localRepository;
   final JarRemoteRepository? _remoteRepository;
   final UserRepository _userRepository;
   final TransactionService _transactionService;
+  AppConfig? _config;
+
+  Future<AppConfig> get _configuration async => _config ??= await AppConfig.load();
 
   Future<Result<List<Jar>>> initializeDefaultJars(String userId) async {
     try {
@@ -30,7 +35,8 @@ class JarService {
         return Success(existing);
       }
 
-      final jars = JarConstants.defaultPercentages.entries
+      final config = await _configuration;
+      final jars = config.jarPercentages.entries
           .map(
             (entry) => Jar(
               id: entry.key,
@@ -185,7 +191,8 @@ class JarService {
     try {
       final profile = await _userRepository.fetchProfile();
       final jars = await _localRepository.fetchAll();
-      final percentages = profile?.jarPercentages ?? JarConstants.defaultPercentages;
+      final config = await _configuration;
+      final percentages = profile?.jarPercentages ?? config.jarPercentages;
 
       final allocations = jars.map((jar) {
         final percentage = percentages[jar.id] ?? jar.percentage;

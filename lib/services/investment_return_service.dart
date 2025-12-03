@@ -1,29 +1,40 @@
 import 'package:shared_preferences/shared_preferences.dart';
+import '../core/config/app_config.dart';
 
 class InvestmentReturnService {
-  InvestmentReturnService({SharedPreferences? preferences}) : _preferences = preferences;
+  InvestmentReturnService({
+    SharedPreferences? preferences,
+    AppConfig? config,
+  })  : _preferences = preferences,
+        _config = config;
 
   static const double minRate = 0.001; // 0.1% per day
   static const double maxRate = 0.02; // 2.0% per day
 
-  static const Map<String, double> _defaultRates = {
-    'GOLD': 0.001, // 0.1% per day
-    'SILVER': 0.001, // 0.1% per day
-    'BTC': 0.002, // 0.2% per day
-    'REALESTATE': 0.005, // 0.5% per day (real estate generates rental income)
-  };
-
   static const String _prefsPrefix = 'investment_return_rate_';
 
   SharedPreferences? _preferences;
+  AppConfig? _config;
 
   Future<SharedPreferences> get _prefs async => _preferences ??= await SharedPreferences.getInstance();
+  Future<AppConfig> get _configuration async => _config ??= await AppConfig.load();
+
+  Future<Map<String, double>> _getDefaultRates() async {
+    final config = await _configuration;
+    return {
+      'GOLD': config.investmentReturns.gold / 100, // Convert percentage to decimal
+      'SILVER': config.investmentReturns.silver / 100,
+      'BTC': config.investmentReturns.btc / 100,
+      'REALESTATE': config.investmentReturns.realEstate / 100,
+    };
+  }
 
   Future<Map<String, double>> loadRates() async {
     final prefs = await _prefs;
+    final defaultRates = await _getDefaultRates();
     final rates = <String, double>{};
 
-    for (final entry in _defaultRates.entries) {
+    for (final entry in defaultRates.entries) {
       final stored = prefs.getDouble('$_prefsPrefix${entry.key}') ?? entry.value;
       final clamped = stored.clamp(minRate, maxRate);
       rates[entry.key] = clamped;
