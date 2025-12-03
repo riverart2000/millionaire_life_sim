@@ -300,7 +300,7 @@ class _NextDayButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return FilledButton.icon(
+    return FilledButton(
       onPressed: () async {
         // Step 1: Show affirmation quest dialog
         bool affirmationCompleted = false;
@@ -441,16 +441,23 @@ class _NextDayButton extends ConsumerWidget {
           await _executeSimulation(context, ref);
         }
       },
-      icon: const Icon(Icons.calendar_today),
-      label: Consumer(
-        builder: (context, ref, _) {
-          final profileAsync = ref.watch(userProfileProvider);
-          return profileAsync.when(
-            data: (profile) => Text('Goto DAY ${profile?.dayCounter ?? 1}'),
-            loading: () => const Text('Goto DAY 1'),
-            error: (_, __) => const Text('Goto DAY 1'),
-          );
-        },
+      child: Wrap(
+        alignment: WrapAlignment.center,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        spacing: 8,
+        children: [
+          const Icon(Icons.calendar_today, size: 20),
+          Consumer(
+            builder: (context, ref, _) {
+              final profileAsync = ref.watch(userProfileProvider);
+              return profileAsync.when(
+                data: (profile) => Text('Goto DAY ${profile?.dayCounter ?? 1}'),
+                loading: () => const Text('Goto DAY 1'),
+                error: (_, __) => const Text('Goto DAY 1'),
+              );
+            },
+          ),
+        ],
       ),
     );
   }
